@@ -14,7 +14,7 @@ namespace Control_Inventario
 
         private void labRecCont_Click(object sender, EventArgs e)
         {
-            FormRecCont frm = new FormRecCont();    
+            FormRecCont frm = new FormRecCont();
             frm.Show();
             this.Hide();
 
