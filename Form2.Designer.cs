@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comBoxTipoId = new System.Windows.Forms.ComboBox();
             this.labVersion = new System.Windows.Forms.Label();
             this.labSalir = new System.Windows.Forms.Label();
             this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
@@ -37,7 +38,6 @@
             this.tBoxContraseña = new System.Windows.Forms.TextBox();
             this.labTipId = new System.Windows.Forms.Label();
             this.labNumId = new System.Windows.Forms.Label();
-            this.comBoxTipoId = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -45,9 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.comBoxTipoId);
@@ -65,6 +63,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(615, 382);
             this.panel1.TabIndex = 3;
+            // 
+            // comBoxTipoId
+            // 
+            this.comBoxTipoId.FormattingEnabled = true;
+            this.comBoxTipoId.Items.AddRange(new object[] {
+            "Tarjerta de Identidad",
+            "Cedula de Ciudadania",
+            "Cedula de Extranjeria",
+            "Pasaporte"});
+            this.comBoxTipoId.Location = new System.Drawing.Point(240, 157);
+            this.comBoxTipoId.Name = "comBoxTipoId";
+            this.comBoxTipoId.Size = new System.Drawing.Size(203, 27);
+            this.comBoxTipoId.TabIndex = 10;
             // 
             // labVersion
             // 
@@ -151,19 +162,6 @@
             this.labNumId.TabIndex = 1;
             this.labNumId.Text = "Numero de Identificacion";
             // 
-            // comBoxTipoId
-            // 
-            this.comBoxTipoId.FormattingEnabled = true;
-            this.comBoxTipoId.Items.AddRange(new object[] {
-            "Tarjerta de Identidad",
-            "Cedula de Ciudadania",
-            "Cedula de Extranjeria",
-            "Pasaporte"});
-            this.comBoxTipoId.Location = new System.Drawing.Point(240, 157);
-            this.comBoxTipoId.Name = "comBoxTipoId";
-            this.comBoxTipoId.Size = new System.Drawing.Size(203, 27);
-            this.comBoxTipoId.TabIndex = 10;
-            // 
             // FormRecCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -172,11 +170,10 @@
             this.ClientSize = new System.Drawing.Size(613, 381);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(629, 420);
-            this.MinimumSize = new System.Drawing.Size(629, 420);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRecCont";
             this.Text = "Control de Inventario [Recuperar Contraseña]";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).EndInit();
