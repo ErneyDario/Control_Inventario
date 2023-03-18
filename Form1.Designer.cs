@@ -31,6 +31,7 @@
             this.labUsuario = new System.Windows.Forms.Label();
             this.labContraseña = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labVersion = new System.Windows.Forms.Label();
             this.labRecCont = new System.Windows.Forms.Label();
             this.labSalir = new System.Windows.Forms.Label();
             this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
@@ -38,7 +39,6 @@
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
             this.tBoxContraseña = new System.Windows.Forms.TextBox();
             this.tBoxUsuario = new System.Windows.Forms.TextBox();
-            this.labVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -68,6 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labVersion);
             this.panel1.Controls.Add(this.labRecCont);
             this.panel1.Controls.Add(this.labSalir);
@@ -78,12 +79,24 @@
             this.panel1.Controls.Add(this.tBoxUsuario);
             this.panel1.Controls.Add(this.labUsuario);
             this.panel1.Controls.Add(this.labContraseña);
-            this.panel1.Location = new System.Drawing.Point(359, 147);
+            this.panel1.Location = new System.Drawing.Point(358, 178);
             this.panel1.MaximumSize = new System.Drawing.Size(615, 382);
             this.panel1.MinimumSize = new System.Drawing.Size(615, 382);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(615, 382);
             this.panel1.TabIndex = 2;
+            // 
+            // labVersion
+            // 
+            this.labVersion.AutoSize = true;
+            this.labVersion.BackColor = System.Drawing.Color.LightCyan;
+            this.labVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labVersion.ForeColor = System.Drawing.Color.Silver;
+            this.labVersion.Location = new System.Drawing.Point(449, 366);
+            this.labVersion.Name = "labVersion";
+            this.labVersion.Size = new System.Drawing.Size(164, 14);
+            this.labVersion.TabIndex = 9;
+            this.labVersion.Text = "Control de Inventario 1.0";
             // 
             // labRecCont
             // 
@@ -157,23 +170,11 @@
             this.tBoxUsuario.Size = new System.Drawing.Size(203, 27);
             this.tBoxUsuario.TabIndex = 2;
             // 
-            // labVersion
-            // 
-            this.labVersion.AutoSize = true;
-            this.labVersion.BackColor = System.Drawing.Color.LightCyan;
-            this.labVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labVersion.ForeColor = System.Drawing.Color.Silver;
-            this.labVersion.Location = new System.Drawing.Point(449, 366);
-            this.labVersion.Name = "labVersion";
-            this.labVersion.Size = new System.Drawing.Size(164, 14);
-            this.labVersion.TabIndex = 9;
-            this.labVersion.Text = "Control de Inventario 1.0";
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1255, 589);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -181,6 +182,7 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de Inventario [Login]";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
