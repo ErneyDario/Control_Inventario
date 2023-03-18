@@ -11,5 +11,13 @@ namespace Control_Inventario
         {
 
         }
+
+        private void labRecCont_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormRecCont frm = new FormRecCont();    
+            frm.Show();
+            
+        }
     }
 }
