@@ -109,6 +109,7 @@
             this.labRecCont.Size = new System.Drawing.Size(143, 14);
             this.labRecCont.TabIndex = 8;
             this.labRecCont.Text = "Recuperar Contraseña";
+            this.labRecCont.Click += new System.EventHandler(this.labRecCont_Click);
             // 
             // labSalir
             // 
