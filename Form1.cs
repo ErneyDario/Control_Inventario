@@ -19,5 +19,12 @@ namespace Control_Inventario
             this.Hide();
 
         }
+
+        private void iBtnEntrar_Click(object sender, EventArgs e)
+        {
+            FormPrincipal frm = new FormPrincipal();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

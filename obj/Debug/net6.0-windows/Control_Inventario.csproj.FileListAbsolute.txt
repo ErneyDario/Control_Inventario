@@ -19,3 +19,4 @@ C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inven
 C:\Users\erney\Desktop\Control_Inventario\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.csproj.CopyComplete
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.FormRecCont.resources
+C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.FormPrincipal.resources
