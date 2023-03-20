@@ -31,5 +31,10 @@ namespace Control_Inventario
         {
 
         }
+
+        private void panelTrabajo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
