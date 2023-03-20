@@ -136,6 +136,7 @@
             this.iBtnEntrar.Size = new System.Drawing.Size(74, 31);
             this.iBtnEntrar.TabIndex = 6;
             this.iBtnEntrar.UseVisualStyleBackColor = true;
+            this.iBtnEntrar.Click += new System.EventHandler(this.iBtnEntrar_Click);
             // 
             // picBoxBannerInferior
             // 
