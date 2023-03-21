@@ -31,14 +31,13 @@
             this.labUsuario = new System.Windows.Forms.Label();
             this.labContraseña = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnsalir = new System.Windows.Forms.Button();
+            this.txtcontrasena = new System.Windows.Forms.TextBox();
             this.labVersion = new System.Windows.Forms.Label();
             this.labRecCont = new System.Windows.Forms.Label();
-            this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
             this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
-            this.txtcontrasena = new System.Windows.Forms.TextBox();
+            this.labelSalir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -69,11 +68,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelSalir);
             this.panel1.Controls.Add(this.txtcontrasena);
-            this.panel1.Controls.Add(this.btnsalir);
             this.panel1.Controls.Add(this.labVersion);
             this.panel1.Controls.Add(this.labRecCont);
-            this.panel1.Controls.Add(this.iBtnEntrar);
             this.panel1.Controls.Add(this.picBoxBannerInferior);
             this.panel1.Controls.Add(this.picBoxBanerSup);
             this.panel1.Controls.Add(this.txtusuario);
@@ -86,15 +84,14 @@
             this.panel1.Size = new System.Drawing.Size(615, 382);
             this.panel1.TabIndex = 2;
             // 
-            // btnsalir
+            // txtcontrasena
             // 
-            this.btnsalir.Location = new System.Drawing.Point(364, 246);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(63, 28);
-            this.btnsalir.TabIndex = 10;
-            this.btnsalir.Text = "Salir";
-            this.btnsalir.UseVisualStyleBackColor = true;
-            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            this.txtcontrasena.Location = new System.Drawing.Point(245, 188);
+            this.txtcontrasena.Name = "txtcontrasena";
+            this.txtcontrasena.PasswordChar = '*';
+            this.txtcontrasena.Size = new System.Drawing.Size(203, 27);
+            this.txtcontrasena.TabIndex = 11;
+            this.txtcontrasena.UseSystemPasswordChar = true;
             // 
             // labVersion
             // 
@@ -120,21 +117,6 @@
             this.labRecCont.TabIndex = 8;
             this.labRecCont.Text = "Recuperar Contraseña";
             this.labRecCont.Click += new System.EventHandler(this.labRecCont_Click);
-            // 
-            // iBtnEntrar
-            // 
-            this.iBtnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iBtnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iBtnEntrar.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            this.iBtnEntrar.IconColor = System.Drawing.Color.Black;
-            this.iBtnEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iBtnEntrar.IconSize = 30;
-            this.iBtnEntrar.Location = new System.Drawing.Point(468, 166);
-            this.iBtnEntrar.Name = "iBtnEntrar";
-            this.iBtnEntrar.Size = new System.Drawing.Size(74, 31);
-            this.iBtnEntrar.TabIndex = 6;
-            this.iBtnEntrar.UseVisualStyleBackColor = true;
-            this.iBtnEntrar.Click += new System.EventHandler(this.iBtnEntrar_Click);
             // 
             // picBoxBannerInferior
             // 
@@ -163,14 +145,18 @@
             this.txtusuario.Size = new System.Drawing.Size(203, 27);
             this.txtusuario.TabIndex = 2;
             // 
-            // txtcontrasena
+            // labelSalir
             // 
-            this.txtcontrasena.Location = new System.Drawing.Point(245, 188);
-            this.txtcontrasena.Name = "txtcontrasena";
-            this.txtcontrasena.PasswordChar = '*';
-            this.txtcontrasena.Size = new System.Drawing.Size(203, 27);
-            this.txtcontrasena.TabIndex = 11;
-            this.txtcontrasena.UseSystemPasswordChar = true;
+            this.labelSalir.AutoSize = true;
+            this.labelSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSalir.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.labelSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelSalir.Location = new System.Drawing.Point(339, 241);
+            this.labelSalir.Name = "labelSalir";
+            this.labelSalir.Size = new System.Drawing.Size(33, 14);
+            this.labelSalir.TabIndex = 12;
+            this.labelSalir.Text = "Salir";
+            this.labelSalir.Click += new System.EventHandler(this.labelSalir_Click);
             // 
             // FormLogin
             // 
@@ -205,7 +191,7 @@
         private FontAwesome.Sharp.IconButton iBtnEntrar;
         private Label labRecCont;
         private Label labVersion;
-        private Button btnsalir;
         private TextBox txtcontrasena;
+        private Label labelSalir;
     }
 }

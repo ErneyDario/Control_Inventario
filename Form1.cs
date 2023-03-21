@@ -38,27 +38,15 @@ namespace Control_Inventario
             }
         }
 
-        private void labSalir_Click(object sender, EventArgs e)
+        private void labelSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Segur(a)que desea salir del sistema?",
-                    "consulta",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
+                                "consulta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
-
-        private void btnsalir_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Segur(a)que desea salir del sistema?",
-                    "consulta",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
     }
 }
