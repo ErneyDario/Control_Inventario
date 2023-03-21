@@ -64,7 +64,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.iPicBoxPerfil);
@@ -97,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(69, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 14);
@@ -108,8 +108,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(41, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
@@ -157,7 +158,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.BackColor = System.Drawing.Color.IndianRed;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.iButtonUsuarios);
             this.panel3.Controls.Add(this.iButtonInformes);
@@ -265,7 +266,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTrabajo);
             this.Name = "FormPrincipal";
-            this.Text = "Form3";
+            this.Text = "Control_Inventario [Principal]";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
