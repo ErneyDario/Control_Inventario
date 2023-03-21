@@ -16,5 +16,10 @@ namespace Control_Inventario
         {
             InitializeComponent();
         }
+
+        private void labSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

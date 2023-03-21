@@ -33,12 +33,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labVersion = new System.Windows.Forms.Label();
             this.labRecCont = new System.Windows.Forms.Label();
-            this.labSalir = new System.Windows.Forms.Label();
             this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
             this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
             this.tBoxContraseña = new System.Windows.Forms.TextBox();
             this.tBoxUsuario = new System.Windows.Forms.TextBox();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -69,9 +69,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnsalir);
             this.panel1.Controls.Add(this.labVersion);
             this.panel1.Controls.Add(this.labRecCont);
-            this.panel1.Controls.Add(this.labSalir);
             this.panel1.Controls.Add(this.iBtnEntrar);
             this.panel1.Controls.Add(this.picBoxBannerInferior);
             this.panel1.Controls.Add(this.picBoxBanerSup);
@@ -110,18 +110,6 @@
             this.labRecCont.TabIndex = 8;
             this.labRecCont.Text = "Recuperar Contraseña";
             this.labRecCont.Click += new System.EventHandler(this.labRecCont_Click);
-            // 
-            // labSalir
-            // 
-            this.labSalir.AutoSize = true;
-            this.labSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labSalir.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.labSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labSalir.Location = new System.Drawing.Point(336, 244);
-            this.labSalir.Name = "labSalir";
-            this.labSalir.Size = new System.Drawing.Size(33, 14);
-            this.labSalir.TabIndex = 7;
-            this.labSalir.Text = "Salir";
             // 
             // iBtnEntrar
             // 
@@ -172,6 +160,16 @@
             this.tBoxUsuario.Size = new System.Drawing.Size(203, 27);
             this.tBoxUsuario.TabIndex = 2;
             // 
+            // btnsalir
+            // 
+            this.btnsalir.Location = new System.Drawing.Point(364, 246);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(63, 28);
+            this.btnsalir.TabIndex = 10;
+            this.btnsalir.Text = "Salir";
+            this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -205,7 +203,7 @@
         private PictureBox picBoxBanerSup;
         private FontAwesome.Sharp.IconButton iBtnEntrar;
         private Label labRecCont;
-        private Label labSalir;
         private Label labVersion;
+        private Button btnsalir;
     }
 }

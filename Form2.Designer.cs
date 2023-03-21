@@ -100,6 +100,7 @@
             this.labSalir.Size = new System.Drawing.Size(61, 14);
             this.labSalir.TabIndex = 7;
             this.labSalir.Text = "Regresar";
+            this.labSalir.Click += new System.EventHandler(this.labSalir_Click);
             // 
             // iBtnEntrar
             // 
