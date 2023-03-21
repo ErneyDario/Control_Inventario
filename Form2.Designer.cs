@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comBoxTipoId = new System.Windows.Forms.ComboBox();
             this.labVersion = new System.Windows.Forms.Label();
-            this.labSalir = new System.Windows.Forms.Label();
+            this.lblregresar = new System.Windows.Forms.Label();
             this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
             this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
@@ -50,7 +50,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.comBoxTipoId);
             this.panel1.Controls.Add(this.labVersion);
-            this.panel1.Controls.Add(this.labSalir);
+            this.panel1.Controls.Add(this.lblregresar);
             this.panel1.Controls.Add(this.iBtnEntrar);
             this.panel1.Controls.Add(this.picBoxBannerInferior);
             this.panel1.Controls.Add(this.picBoxBanerSup);
@@ -89,17 +89,18 @@
             this.labVersion.TabIndex = 9;
             this.labVersion.Text = "Control de Inventario 1.0";
             // 
-            // labSalir
+            // lblregresar
             // 
-            this.labSalir.AutoSize = true;
-            this.labSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labSalir.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.labSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labSalir.Location = new System.Drawing.Point(315, 232);
-            this.labSalir.Name = "labSalir";
-            this.labSalir.Size = new System.Drawing.Size(61, 14);
-            this.labSalir.TabIndex = 7;
-            this.labSalir.Text = "Regresar";
+            this.lblregresar.AutoSize = true;
+            this.lblregresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblregresar.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblregresar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblregresar.Location = new System.Drawing.Point(315, 232);
+            this.lblregresar.Name = "lblregresar";
+            this.lblregresar.Size = new System.Drawing.Size(61, 14);
+            this.lblregresar.TabIndex = 7;
+            this.lblregresar.Text = "Regresar";
+            this.lblregresar.Click += new System.EventHandler(this.labSalir_Click);
             // 
             // iBtnEntrar
             // 
@@ -187,7 +188,7 @@
         private Panel panel1;
         private ComboBox comBoxTipoId;
         private Label labVersion;
-        private Label labSalir;
+        private Label lblregresar;
         private FontAwesome.Sharp.IconButton iBtnEntrar;
         private PictureBox picBoxBannerInferior;
         private PictureBox picBoxBanerSup;

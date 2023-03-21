@@ -16,5 +16,19 @@ namespace Control_Inventario
         {
             InitializeComponent();
         }
+
+        private void labSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("desea regresar?",
+                    "consulta",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormLogin frm = new FormLogin ();
+                frm.Show();
+                this.Hide();
+               
+            }
+
+        }
     }
 }

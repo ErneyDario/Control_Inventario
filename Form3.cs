@@ -29,6 +29,13 @@ namespace Control_Inventario
 
         private void iButtonSalir_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Cerrar sesión?",
+                    "Consulta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
 
         }
 

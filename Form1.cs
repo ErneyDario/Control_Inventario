@@ -22,9 +22,43 @@ namespace Control_Inventario
 
         private void iBtnEntrar_Click(object sender, EventArgs e)
         {
-            FormPrincipal frm = new FormPrincipal();
-            frm.Show();
-            this.Hide();
+            String usuario, contrasena;
+            usuario = txtusuario.Text;
+            contrasena = txtcontrasena.Text;
+
+            if (usuario == "usuarioc#" && contrasena == "123")
+            {
+                FormPrincipal frm = new FormPrincipal();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos intentelo de nuevo");
+            }
         }
+
+        private void labSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Segur(a)que desea salir del sistema?",
+                    "consulta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Segur(a)que desea salir del sistema?",
+                    "consulta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
     }
 }
