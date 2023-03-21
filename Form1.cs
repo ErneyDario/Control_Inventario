@@ -48,5 +48,24 @@ namespace Control_Inventario
                 Application.Exit();
             }
         }
+
+        private void iButtonEntrar_Click(object sender, EventArgs e)
+        {
+            String usuario, contrasena;
+            usuario = txtusuario.Text;
+            contrasena = txtcontrasena.Text;
+
+            if (usuario == "usuarioc#" && contrasena == "123")
+            {
+                FormPrincipal frm = new FormPrincipal();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos intentelo de nuevo");
+            }
+
+        }
     }
 }
