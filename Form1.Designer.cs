@@ -31,14 +31,14 @@
             this.labUsuario = new System.Windows.Forms.Label();
             this.labContraseña = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.labVersion = new System.Windows.Forms.Label();
             this.labRecCont = new System.Windows.Forms.Label();
             this.iBtnEntrar = new FontAwesome.Sharp.IconButton();
             this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
-            this.tBoxContraseña = new System.Windows.Forms.TextBox();
-            this.tBoxUsuario = new System.Windows.Forms.TextBox();
-            this.btnsalir = new System.Windows.Forms.Button();
+            this.txtcontrasena = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -75,8 +75,8 @@
             this.panel1.Controls.Add(this.iBtnEntrar);
             this.panel1.Controls.Add(this.picBoxBannerInferior);
             this.panel1.Controls.Add(this.picBoxBanerSup);
-            this.panel1.Controls.Add(this.tBoxContraseña);
-            this.panel1.Controls.Add(this.tBoxUsuario);
+            this.panel1.Controls.Add(this.txtcontrasena);
+            this.panel1.Controls.Add(this.txtusuario);
             this.panel1.Controls.Add(this.labUsuario);
             this.panel1.Controls.Add(this.labContraseña);
             this.panel1.Location = new System.Drawing.Point(358, 178);
@@ -85,6 +85,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(615, 382);
             this.panel1.TabIndex = 2;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.Location = new System.Drawing.Point(364, 246);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(63, 28);
+            this.btnsalir.TabIndex = 10;
+            this.btnsalir.Text = "Salir";
+            this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // labVersion
             // 
@@ -146,29 +156,20 @@
             this.picBoxBanerSup.TabIndex = 4;
             this.picBoxBanerSup.TabStop = false;
             // 
-            // tBoxContraseña
+            // txtcontrasena
             // 
-            this.tBoxContraseña.Location = new System.Drawing.Point(245, 171);
-            this.tBoxContraseña.Name = "tBoxContraseña";
-            this.tBoxContraseña.Size = new System.Drawing.Size(203, 27);
-            this.tBoxContraseña.TabIndex = 3;
+            this.txtcontrasena.Location = new System.Drawing.Point(245, 171);
+            this.txtcontrasena.Name = "txtcontrasena";
+            this.txtcontrasena.PasswordChar = '*';
+            this.txtcontrasena.Size = new System.Drawing.Size(203, 27);
+            this.txtcontrasena.TabIndex = 3;
             // 
-            // tBoxUsuario
+            // txtusuario
             // 
-            this.tBoxUsuario.Location = new System.Drawing.Point(245, 138);
-            this.tBoxUsuario.Name = "tBoxUsuario";
-            this.tBoxUsuario.Size = new System.Drawing.Size(203, 27);
-            this.tBoxUsuario.TabIndex = 2;
-            // 
-            // btnsalir
-            // 
-            this.btnsalir.Location = new System.Drawing.Point(364, 246);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(63, 28);
-            this.btnsalir.TabIndex = 10;
-            this.btnsalir.Text = "Salir";
-            this.btnsalir.UseVisualStyleBackColor = true;
-            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            this.txtusuario.Location = new System.Drawing.Point(245, 138);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(203, 27);
+            this.txtusuario.TabIndex = 2;
             // 
             // FormLogin
             // 
@@ -197,8 +198,8 @@
         private Label labUsuario;
         private Label labContraseña;
         private Panel panel1;
-        private TextBox tBoxUsuario;
-        private TextBox tBoxContraseña;
+        private TextBox txtusuario;
+        private TextBox txtcontrasena;
         private PictureBox picBoxBannerInferior;
         private PictureBox picBoxBanerSup;
         private FontAwesome.Sharp.IconButton iBtnEntrar;

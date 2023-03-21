@@ -22,9 +22,16 @@ namespace Control_Inventario
 
         private void iBtnEntrar_Click(object sender, EventArgs e)
         {
-            FormPrincipal frm = new FormPrincipal();
-            frm.Show();
-            this.Hide();
+            String usuario, contrasena;
+            usuario = txtusuario.Text;
+            contrasena = txtcontrasena.Text;
+
+            if (usuario == "usuarioc#" && contrasena == "123")
+            {
+                FormPrincipal frm = new FormPrincipal();
+                frm.Show();
+                this.Hide();
+            }
         }
 
         private void labSalir_Click(object sender, EventArgs e)
