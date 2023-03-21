@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UU2OQL6njcy2/s1tBJBPZBzvvukpnGuHZ+xeoD5+DpWJRvoMSi8u3lDuY1DZ1hqgtKDjRxN3xCfJuVkwrb59xw==",
+  "dgSpecHash": "Rs3WMIm+d6aPrrFea3skCqk8JDhDIvQ9Uecksoa71dTVHyYN/QxfZzLEK6fHOL/hFV5OK9+aH0XWxnexNra0PA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pc\\Desktop\\cloneyesica\\Control_Inventario\\Control_Inventario.csproj",
+  "projectFilePath": "C:\\Users\\erney\\Desktop\\Control_Inventario\\Control_Inventario.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\pc\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "C:\\Users\\erney\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
   ],
   "logs": []
 }
