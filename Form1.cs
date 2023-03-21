@@ -32,6 +32,10 @@ namespace Control_Inventario
                 frm.Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos intentelo de nuevo");
+            }
         }
 
         private void labSalir_Click(object sender, EventArgs e)
