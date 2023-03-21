@@ -58,7 +58,7 @@
             this.panelTrabajo.Margin = new System.Windows.Forms.Padding(8);
             this.panelTrabajo.Name = "panelTrabajo";
             this.panelTrabajo.Padding = new System.Windows.Forms.Padding(6);
-            this.panelTrabajo.Size = new System.Drawing.Size(993, 660);
+            this.panelTrabajo.Size = new System.Drawing.Size(1053, 660);
             this.panelTrabajo.TabIndex = 0;
             this.panelTrabajo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTrabajo_Paint);
             // 
