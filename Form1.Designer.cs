@@ -31,6 +31,7 @@
             this.labUsuario = new System.Windows.Forms.Label();
             this.labContraseña = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iButtonEntrar = new FontAwesome.Sharp.IconButton();
             this.labelSalir = new System.Windows.Forms.Label();
             this.txtcontrasena = new System.Windows.Forms.TextBox();
             this.labVersion = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
             this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
-            this.iButtonEntrar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
@@ -85,6 +85,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(615, 382);
             this.panel1.TabIndex = 2;
+            // 
+            // iButtonEntrar
+            // 
+            this.iButtonEntrar.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+            this.iButtonEntrar.IconColor = System.Drawing.Color.Black;
+            this.iButtonEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iButtonEntrar.IconSize = 20;
+            this.iButtonEntrar.Location = new System.Drawing.Point(441, 150);
+            this.iButtonEntrar.Name = "iButtonEntrar";
+            this.iButtonEntrar.Size = new System.Drawing.Size(75, 38);
+            this.iButtonEntrar.TabIndex = 13;
+            this.iButtonEntrar.UseVisualStyleBackColor = true;
+            this.iButtonEntrar.Click += new System.EventHandler(this.iButtonEntrar_Click);
             // 
             // labelSalir
             // 
@@ -159,19 +172,6 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(203, 27);
             this.txtusuario.TabIndex = 2;
-            // 
-            // iButtonEntrar
-            // 
-            this.iButtonEntrar.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
-            this.iButtonEntrar.IconColor = System.Drawing.Color.Black;
-            this.iButtonEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonEntrar.IconSize = 20;
-            this.iButtonEntrar.Location = new System.Drawing.Point(441, 150);
-            this.iButtonEntrar.Name = "iButtonEntrar";
-            this.iButtonEntrar.Size = new System.Drawing.Size(75, 38);
-            this.iButtonEntrar.TabIndex = 13;
-            this.iButtonEntrar.UseVisualStyleBackColor = true;
-            this.iButtonEntrar.Click += new System.EventHandler(this.iButtonEntrar_Click);
             // 
             // FormLogin
             // 

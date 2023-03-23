@@ -52,8 +52,9 @@
             // 
             this.panelTrabajo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelTrabajo.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panelTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTrabajo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.panelTrabajo.ForeColor = System.Drawing.Color.White;
+            this.panelTrabajo.ForeColor = System.Drawing.Color.Black;
             this.panelTrabajo.Location = new System.Drawing.Point(200, 12);
             this.panelTrabajo.Margin = new System.Windows.Forms.Padding(8);
             this.panelTrabajo.Name = "panelTrabajo";
@@ -64,15 +65,15 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.iPicBoxPerfil);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 111);
+            this.panel1.Size = new System.Drawing.Size(161, 115);
             this.panel1.TabIndex = 0;
             // 
             // iPicBoxPerfil
@@ -85,10 +86,10 @@
             this.iPicBoxPerfil.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iPicBoxPerfil.IconColor = System.Drawing.Color.Black;
             this.iPicBoxPerfil.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.iPicBoxPerfil.IconSize = 64;
+            this.iPicBoxPerfil.IconSize = 62;
             this.iPicBoxPerfil.Location = new System.Drawing.Point(51, 3);
             this.iPicBoxPerfil.Name = "iPicBoxPerfil";
-            this.iPicBoxPerfil.Size = new System.Drawing.Size(64, 68);
+            this.iPicBoxPerfil.Size = new System.Drawing.Size(62, 70);
             this.iPicBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iPicBoxPerfil.TabIndex = 0;
             this.iPicBoxPerfil.TabStop = false;
@@ -96,9 +97,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(69, 95);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(69, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 14);
             this.label2.TabIndex = 1;
@@ -110,7 +112,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(41, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
@@ -121,6 +123,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.iButtonSalir);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
@@ -142,11 +145,11 @@
             this.iButtonSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iButtonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iButtonSalir.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-            this.iButtonSalir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.iButtonSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            this.iButtonSalir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iButtonSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonSalir.Location = new System.Drawing.Point(58, 594);
+            this.iButtonSalir.Location = new System.Drawing.Point(58, 587);
             this.iButtonSalir.Name = "iButtonSalir";
             this.iButtonSalir.Size = new System.Drawing.Size(66, 63);
             this.iButtonSalir.TabIndex = 0;
@@ -158,8 +161,8 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.IndianRed;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.iButtonUsuarios);
             this.panel3.Controls.Add(this.iButtonInformes);
             this.panel3.Location = new System.Drawing.Point(11, 428);
@@ -181,6 +184,7 @@
             this.iButtonUsuarios.TabIndex = 5;
             this.iButtonUsuarios.Text = "Usuarios";
             this.iButtonUsuarios.UseVisualStyleBackColor = false;
+            this.iButtonUsuarios.Click += new System.EventHandler(this.iButtonUsuarios_Click);
             // 
             // iButtonInformes
             // 
