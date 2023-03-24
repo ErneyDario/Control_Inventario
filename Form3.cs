@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Control_Inventario
@@ -34,7 +35,10 @@ namespace Control_Inventario
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                FormLogin form = new FormLogin();
+                form.Show();
+                this.Hide();
+
             }
 
         }
@@ -51,6 +55,19 @@ namespace Control_Inventario
             panelTrabajo.Controls.Add(frm);
             frm.Show();
 
+        }
+
+        private void iButtonInformes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iButtonVentas_Click(object sender, EventArgs e)
+        {
+            FormVentas frmVentas = new FormVentas();
+            frmVentas.TopLevel = false;
+            panelTrabajo.Controls.Add(frmVentas);
+            frmVentas.Show();
         }
     }
 }
