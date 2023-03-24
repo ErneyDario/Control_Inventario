@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Control_Inventario
@@ -34,7 +35,10 @@ namespace Control_Inventario
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                FormLogin form = new FormLogin();
+                form.Show();
+                this.Hide();
+
             }
 
         }
