@@ -21,3 +21,4 @@ C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\refint\Contro
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.pdb
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.genruntimeconfig.cache
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\ref\Control_Inventario.dll
+C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.FormVentas.resources

@@ -200,6 +200,7 @@
             this.iButtonInformes.TabIndex = 4;
             this.iButtonInformes.Text = "Informes";
             this.iButtonInformes.UseVisualStyleBackColor = false;
+            this.iButtonInformes.Click += new System.EventHandler(this.iButtonInformes_Click);
             // 
             // iconProveedores
             // 
@@ -260,6 +261,7 @@
             this.iButtonVentas.TabIndex = 0;
             this.iButtonVentas.Text = "Ventas";
             this.iButtonVentas.UseVisualStyleBackColor = false;
+            this.iButtonVentas.Click += new System.EventHandler(this.iButtonVentas_Click);
             // 
             // FormPrincipal
             // 
