@@ -50,10 +50,10 @@ namespace Control_Inventario
 
         private void iButtonUsuarios_Click(object sender, EventArgs e)
         {
-            FormUsuarios frm = new FormUsuarios();
-            frm.TopLevel = false;
-            panelTrabajo.Controls.Add(frm);
-            frm.Show();
+            FormUsuarios frmUsuarios = new FormUsuarios();
+            frmUsuarios.TopLevel = false;
+            panelTrabajo.Controls.Add(frmUsuarios);
+            frmUsuarios.Show();
 
         }
 
