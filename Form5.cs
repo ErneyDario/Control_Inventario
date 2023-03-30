@@ -24,8 +24,8 @@ namespace Control_Inventario
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -52,8 +52,8 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtcantidad.Text = "";
             this.txttotal.Text = "";
-            
-            rbtncodigo.Checked= false;
+
+            rbtncodigo.Checked = false;
             rbtnnombre.Checked = false;
             rbtndescripcion.Checked = false;
 
