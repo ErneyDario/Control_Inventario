@@ -1,10 +1,27 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "uidgXolU4yUuuzum3fmSbnUaqrc27QpAl0HleE5C/0rQO/XsGE+hZO02g4ssaTHvXYeO0h3WduBeNyhPt0skSQ==",
+=======
+  "dgSpecHash": "z/+EdR2IBy/V7FRi4uMYONYRRiA5dHWRdVWRLc1ewKoeM2dndtJxqqli7RSQS94wxPAKrv0gSRAoYn2nRF+B3g==",
+>>>>>>> e253407f410c1908dea2a7bfc9eaaa6600902e1e
   "success": true,
   "projectFilePath": "C:\\Users\\erney\\Desktop\\Control_Inventario\\Control_Inventario.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\erney\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+=======
+    "C:\\Users\\pc\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+>>>>>>> e253407f410c1908dea2a7bfc9eaaa6600902e1e
   ],
   "logs": []
 }
