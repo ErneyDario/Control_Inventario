@@ -28,260 +28,258 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTrabajo = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.iPicBoxPerfil = new FontAwesome.Sharp.IconPictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iButtonSalir = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.iButtonUsuarios = new FontAwesome.Sharp.IconButton();
-            this.iButtonInformes = new FontAwesome.Sharp.IconButton();
-            this.iconProveedores = new FontAwesome.Sharp.IconButton();
-            this.iButtonClientes = new FontAwesome.Sharp.IconButton();
-            this.iButtonInventario = new FontAwesome.Sharp.IconButton();
-            this.iButtonVentas = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iPicBoxPerfil)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            panelTrabajo = new Panel();
+            panel1 = new Panel();
+            iPicBoxPerfil = new FontAwesome.Sharp.IconPictureBox();
+            label2 = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
+            iButtonSalir = new FontAwesome.Sharp.IconButton();
+            panel3 = new Panel();
+            iButtonUsuarios = new FontAwesome.Sharp.IconButton();
+            iButtonInformes = new FontAwesome.Sharp.IconButton();
+            iconProveedores = new FontAwesome.Sharp.IconButton();
+            iButtonClientes = new FontAwesome.Sharp.IconButton();
+            iButtonInventario = new FontAwesome.Sharp.IconButton();
+            iButtonVentas = new FontAwesome.Sharp.IconButton();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iPicBoxPerfil).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // panelTrabajo
             // 
-            this.panelTrabajo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelTrabajo.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panelTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTrabajo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.panelTrabajo.ForeColor = System.Drawing.Color.Black;
-            this.panelTrabajo.Location = new System.Drawing.Point(200, 12);
-            this.panelTrabajo.Margin = new System.Windows.Forms.Padding(8);
-            this.panelTrabajo.Name = "panelTrabajo";
-            this.panelTrabajo.Padding = new System.Windows.Forms.Padding(6);
-            this.panelTrabajo.Size = new System.Drawing.Size(1053, 660);
-            this.panelTrabajo.TabIndex = 0;
-            this.panelTrabajo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTrabajo_Paint);
+            panelTrabajo.Anchor = AnchorStyles.None;
+            panelTrabajo.BackColor = Color.LavenderBlush;
+            panelTrabajo.BorderStyle = BorderStyle.FixedSingle;
+            panelTrabajo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            panelTrabajo.ForeColor = Color.Black;
+            panelTrabajo.Location = new Point(200, 12);
+            panelTrabajo.Margin = new Padding(8);
+            panelTrabajo.Name = "panelTrabajo";
+            panelTrabajo.Padding = new Padding(6);
+            panelTrabajo.Size = new Size(1053, 660);
+            panelTrabajo.TabIndex = 0;
+            panelTrabajo.Paint += panelTrabajo_Paint;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.iPicBoxPerfil);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(11, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 115);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.LavenderBlush;
+            panel1.BackgroundImageLayout = ImageLayout.Center;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(iPicBoxPerfil);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(11, 16);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(161, 115);
+            panel1.TabIndex = 0;
             // 
             // iPicBoxPerfil
             // 
-            this.iPicBoxPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iPicBoxPerfil.BackColor = System.Drawing.Color.LavenderBlush;
-            this.iPicBoxPerfil.ForeColor = System.Drawing.Color.Black;
-            this.iPicBoxPerfil.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iPicBoxPerfil.IconColor = System.Drawing.Color.Black;
-            this.iPicBoxPerfil.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.iPicBoxPerfil.IconSize = 62;
-            this.iPicBoxPerfil.Location = new System.Drawing.Point(51, 3);
-            this.iPicBoxPerfil.Name = "iPicBoxPerfil";
-            this.iPicBoxPerfil.Size = new System.Drawing.Size(62, 70);
-            this.iPicBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iPicBoxPerfil.TabIndex = 0;
-            this.iPicBoxPerfil.TabStop = false;
+            iPicBoxPerfil.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            iPicBoxPerfil.BackColor = Color.LavenderBlush;
+            iPicBoxPerfil.ForeColor = Color.Black;
+            iPicBoxPerfil.IconChar = FontAwesome.Sharp.IconChar.User;
+            iPicBoxPerfil.IconColor = Color.Black;
+            iPicBoxPerfil.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            iPicBoxPerfil.IconSize = 62;
+            iPicBoxPerfil.Location = new Point(51, 3);
+            iPicBoxPerfil.Name = "iPicBoxPerfil";
+            iPicBoxPerfil.Size = new Size(62, 70);
+            iPicBoxPerfil.SizeMode = PictureBoxSizeMode.CenterImage;
+            iPicBoxPerfil.TabIndex = 0;
+            iPicBoxPerfil.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(69, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Rol";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(64, 64, 64);
+            label2.Location = new Point(69, 94);
+            label2.Name = "label2";
+            label2.Size = new Size(27, 14);
+            label2.TabIndex = 1;
+            label2.Text = "Rol";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(41, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "UserName";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
+            label1.Location = new Point(41, 75);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 18);
+            label1.TabIndex = 0;
+            label1.Text = "UserName";
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.iButtonSalir);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.iconProveedores);
-            this.panel2.Controls.Add(this.iButtonClientes);
-            this.panel2.Controls.Add(this.iButtonInventario);
-            this.panel2.Controls.Add(this.iButtonVentas);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(12);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(182, 660);
-            this.panel2.TabIndex = 2;
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.LavenderBlush;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(iButtonSalir);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(iconProveedores);
+            panel2.Controls.Add(iButtonClientes);
+            panel2.Controls.Add(iButtonInventario);
+            panel2.Controls.Add(iButtonVentas);
+            panel2.Location = new Point(12, 12);
+            panel2.Margin = new Padding(12);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(3);
+            panel2.Size = new Size(182, 660);
+            panel2.TabIndex = 2;
             // 
             // iButtonSalir
             // 
-            this.iButtonSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iButtonSalir.BackColor = System.Drawing.Color.LavenderBlush;
-            this.iButtonSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iButtonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iButtonSalir.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
-            this.iButtonSalir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonSalir.Location = new System.Drawing.Point(58, 587);
-            this.iButtonSalir.Name = "iButtonSalir";
-            this.iButtonSalir.Size = new System.Drawing.Size(66, 63);
-            this.iButtonSalir.TabIndex = 0;
-            this.iButtonSalir.Text = "Salir";
-            this.iButtonSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iButtonSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iButtonSalir.UseVisualStyleBackColor = false;
-            this.iButtonSalir.Click += new System.EventHandler(this.iButtonSalir_Click);
+            iButtonSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iButtonSalir.BackColor = Color.LavenderBlush;
+            iButtonSalir.Cursor = Cursors.Hand;
+            iButtonSalir.FlatStyle = FlatStyle.Flat;
+            iButtonSalir.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonSalir.ForeColor = Color.FromArgb(64, 64, 64);
+            iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            iButtonSalir.IconColor = Color.FromArgb(64, 64, 64);
+            iButtonSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonSalir.Location = new Point(58, 587);
+            iButtonSalir.Name = "iButtonSalir";
+            iButtonSalir.Size = new Size(66, 63);
+            iButtonSalir.TabIndex = 0;
+            iButtonSalir.Text = "Salir";
+            iButtonSalir.TextAlign = ContentAlignment.BottomCenter;
+            iButtonSalir.TextImageRelation = TextImageRelation.ImageAboveText;
+            iButtonSalir.UseVisualStyleBackColor = false;
+            iButtonSalir.Click += iButtonSalir_Click;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.iButtonUsuarios);
-            this.panel3.Controls.Add(this.iButtonInformes);
-            this.panel3.Location = new System.Drawing.Point(11, 428);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 146);
-            this.panel3.TabIndex = 3;
+            panel3.BackColor = Color.LavenderBlush;
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(iButtonUsuarios);
+            panel3.Controls.Add(iButtonInformes);
+            panel3.Location = new Point(11, 428);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(161, 146);
+            panel3.TabIndex = 3;
             // 
             // iButtonUsuarios
             // 
-            this.iButtonUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonUsuarios.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonUsuarios.ForeColor = System.Drawing.Color.White;
-            this.iButtonUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iButtonUsuarios.IconColor = System.Drawing.Color.Black;
-            this.iButtonUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonUsuarios.Location = new System.Drawing.Point(34, 84);
-            this.iButtonUsuarios.Name = "iButtonUsuarios";
-            this.iButtonUsuarios.Size = new System.Drawing.Size(102, 44);
-            this.iButtonUsuarios.TabIndex = 5;
-            this.iButtonUsuarios.Text = "Usuarios";
-            this.iButtonUsuarios.UseVisualStyleBackColor = false;
-            this.iButtonUsuarios.Click += new System.EventHandler(this.iButtonUsuarios_Click);
+            iButtonUsuarios.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonUsuarios.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonUsuarios.ForeColor = Color.White;
+            iButtonUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonUsuarios.IconColor = Color.Black;
+            iButtonUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonUsuarios.Location = new Point(34, 84);
+            iButtonUsuarios.Name = "iButtonUsuarios";
+            iButtonUsuarios.Size = new Size(102, 44);
+            iButtonUsuarios.TabIndex = 5;
+            iButtonUsuarios.Text = "Usuarios";
+            iButtonUsuarios.UseVisualStyleBackColor = false;
+            iButtonUsuarios.Click += iButtonUsuarios_Click;
             // 
             // iButtonInformes
             // 
-            this.iButtonInformes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonInformes.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonInformes.ForeColor = System.Drawing.Color.White;
-            this.iButtonInformes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iButtonInformes.IconColor = System.Drawing.Color.Black;
-            this.iButtonInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonInformes.Location = new System.Drawing.Point(33, 14);
-            this.iButtonInformes.Name = "iButtonInformes";
-            this.iButtonInformes.Size = new System.Drawing.Size(102, 44);
-            this.iButtonInformes.TabIndex = 4;
-            this.iButtonInformes.Text = "Informes";
-            this.iButtonInformes.UseVisualStyleBackColor = false;
-            this.iButtonInformes.Click += new System.EventHandler(this.iButtonInformes_Click);
+            iButtonInformes.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonInformes.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonInformes.ForeColor = Color.White;
+            iButtonInformes.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonInformes.IconColor = Color.Black;
+            iButtonInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonInformes.Location = new Point(33, 14);
+            iButtonInformes.Name = "iButtonInformes";
+            iButtonInformes.Size = new Size(102, 44);
+            iButtonInformes.TabIndex = 4;
+            iButtonInformes.Text = "Informes";
+            iButtonInformes.UseVisualStyleBackColor = false;
+            iButtonInformes.Click += iButtonInformes_Click;
             // 
             // iconProveedores
             // 
-            this.iconProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconProveedores.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iconProveedores.ForeColor = System.Drawing.Color.White;
-            this.iconProveedores.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconProveedores.IconColor = System.Drawing.Color.Black;
-            this.iconProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconProveedores.Location = new System.Drawing.Point(44, 367);
-            this.iconProveedores.Name = "iconProveedores";
-            this.iconProveedores.Size = new System.Drawing.Size(102, 44);
-            this.iconProveedores.TabIndex = 3;
-            this.iconProveedores.Text = "Proveedores";
-            this.iconProveedores.UseVisualStyleBackColor = false;
+            iconProveedores.BackColor = Color.FromArgb(64, 64, 64);
+            iconProveedores.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iconProveedores.ForeColor = Color.White;
+            iconProveedores.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconProveedores.IconColor = Color.Black;
+            iconProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconProveedores.Location = new Point(44, 367);
+            iconProveedores.Name = "iconProveedores";
+            iconProveedores.Size = new Size(102, 44);
+            iconProveedores.TabIndex = 3;
+            iconProveedores.Text = "Proveedores";
+            iconProveedores.UseVisualStyleBackColor = false;
             // 
             // iButtonClientes
             // 
-            this.iButtonClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonClientes.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonClientes.ForeColor = System.Drawing.Color.White;
-            this.iButtonClientes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iButtonClientes.IconColor = System.Drawing.Color.Black;
-            this.iButtonClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonClientes.Location = new System.Drawing.Point(44, 296);
-            this.iButtonClientes.Name = "iButtonClientes";
-            this.iButtonClientes.Size = new System.Drawing.Size(102, 44);
-            this.iButtonClientes.TabIndex = 2;
-            this.iButtonClientes.Text = "Clientes";
-            this.iButtonClientes.UseVisualStyleBackColor = false;
+            iButtonClientes.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonClientes.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonClientes.ForeColor = Color.White;
+            iButtonClientes.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonClientes.IconColor = Color.Black;
+            iButtonClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonClientes.Location = new Point(44, 296);
+            iButtonClientes.Name = "iButtonClientes";
+            iButtonClientes.Size = new Size(102, 44);
+            iButtonClientes.TabIndex = 2;
+            iButtonClientes.Text = "Clientes";
+            iButtonClientes.UseVisualStyleBackColor = false;
             // 
             // iButtonInventario
             // 
-            this.iButtonInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonInventario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonInventario.ForeColor = System.Drawing.Color.White;
-            this.iButtonInventario.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iButtonInventario.IconColor = System.Drawing.Color.Black;
-            this.iButtonInventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonInventario.Location = new System.Drawing.Point(44, 222);
-            this.iButtonInventario.Name = "iButtonInventario";
-            this.iButtonInventario.Size = new System.Drawing.Size(102, 44);
-            this.iButtonInventario.TabIndex = 1;
-            this.iButtonInventario.Text = "Inventario";
-            this.iButtonInventario.UseVisualStyleBackColor = false;
+            iButtonInventario.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonInventario.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonInventario.ForeColor = Color.White;
+            iButtonInventario.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonInventario.IconColor = Color.Black;
+            iButtonInventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonInventario.Location = new Point(44, 222);
+            iButtonInventario.Name = "iButtonInventario";
+            iButtonInventario.Size = new Size(102, 44);
+            iButtonInventario.TabIndex = 1;
+            iButtonInventario.Text = "Inventario";
+            iButtonInventario.UseVisualStyleBackColor = false;
+            iButtonInventario.Click += iButtonInventario_Click;
             // 
             // iButtonVentas
             // 
-            this.iButtonVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iButtonVentas.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iButtonVentas.ForeColor = System.Drawing.Color.White;
-            this.iButtonVentas.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iButtonVentas.IconColor = System.Drawing.Color.Black;
-            this.iButtonVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonVentas.Location = new System.Drawing.Point(44, 148);
-            this.iButtonVentas.Name = "iButtonVentas";
-            this.iButtonVentas.Size = new System.Drawing.Size(102, 44);
-            this.iButtonVentas.TabIndex = 0;
-            this.iButtonVentas.Text = "Ventas";
-            this.iButtonVentas.UseVisualStyleBackColor = false;
-            this.iButtonVentas.Click += new System.EventHandler(this.iButtonVentas_Click);
+            iButtonVentas.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonVentas.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonVentas.ForeColor = Color.White;
+            iButtonVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonVentas.IconColor = Color.Black;
+            iButtonVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonVentas.Location = new Point(44, 148);
+            iButtonVentas.Name = "iButtonVentas";
+            iButtonVentas.Size = new Size(102, 44);
+            iButtonVentas.TabIndex = 0;
+            iButtonVentas.Text = "Ventas";
+            iButtonVentas.UseVisualStyleBackColor = false;
+            iButtonVentas.Click += iButtonVentas_Click;
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1270, 674);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelTrabajo);
-            this.Name = "FormPrincipal";
-            this.Text = "Control_Inventario [Principal]";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iPicBoxPerfil)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
+            ClientSize = new Size(1270, 674);
+            Controls.Add(panel2);
+            Controls.Add(panelTrabajo);
+            Name = "FormPrincipal";
+            Text = "Control_Inventario [Principal]";
+            WindowState = FormWindowState.Maximized;
+            Load += Form3_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iPicBoxPerfil).EndInit();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
