@@ -69,5 +69,13 @@ namespace Control_Inventario
             panelTrabajo.Controls.Add(frmVentas);
             frmVentas.Show();
         }
+
+        private void iButtonInventario_Click(object sender, EventArgs e)
+        {
+            FormInventario frmInventario = new FormInventario();
+            frmInventario.TopLevel = false;
+            panelTrabajo.Controls.Add(frmInventario);
+            frmInventario.Show();
+        }
     }
 }

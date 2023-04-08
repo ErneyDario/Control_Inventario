@@ -60,8 +60,8 @@ namespace Control_Inventario
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            
-            
+
+
 
         }
 
@@ -101,7 +101,12 @@ namespace Control_Inventario
 
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
+}
 
 

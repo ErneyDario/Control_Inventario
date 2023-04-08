@@ -47,7 +47,6 @@
             txtcantidad = new TextBox();
             label5 = new Label();
             txtvalor = new TextBox();
-            txtdescripcion = new TextBox();
             label4 = new Label();
             txtexistencias = new TextBox();
             txtarti = new TextBox();
@@ -63,6 +62,8 @@
             panel2 = new Panel();
             label7 = new Label();
             textBox1 = new TextBox();
+            button5 = new Button();
+            txtdescripcion = new TextBox();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -107,6 +108,7 @@
             rbtndescripcion.TabStop = true;
             rbtndescripcion.Text = "Descripción";
             rbtndescripcion.UseVisualStyleBackColor = true;
+            rbtndescripcion.CheckedChanged += rbtndescripcion_CheckedChanged;
             // 
             // rbtncodigo
             // 
@@ -128,6 +130,7 @@
             label2.Size = new Size(73, 19);
             label2.TabIndex = 4;
             label2.Text = "Articulo";
+            label2.Click += label2_Click;
             // 
             // rbtnnombre
             // 
@@ -188,6 +191,8 @@
             // 
             // panel1
             // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(txtdescripcion);
             panel1.Controls.Add(btnLimpiarCampos);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(txttotal);
@@ -195,7 +200,6 @@
             panel1.Controls.Add(txtcantidad);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(txtvalor);
-            panel1.Controls.Add(txtdescripcion);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtexistencias);
             panel1.Controls.Add(txtarti);
@@ -286,16 +290,6 @@
             txtvalor.Name = "txtvalor";
             txtvalor.Size = new Size(91, 23);
             txtvalor.TabIndex = 22;
-            // 
-            // txtdescripcion
-            // 
-            txtdescripcion.BackColor = Color.LavenderBlush;
-            txtdescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtdescripcion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtdescripcion.Location = new Point(116, 75);
-            txtdescripcion.Name = "txtdescripcion";
-            txtdescripcion.Size = new Size(311, 23);
-            txtdescripcion.TabIndex = 21;
             // 
             // label4
             // 
@@ -425,7 +419,7 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(475, 521);
+            button6.Location = new Point(12, 543);
             button6.Name = "button6";
             button6.RightToLeft = RightToLeft.No;
             button6.Size = new Size(100, 32);
@@ -462,12 +456,38 @@
             textBox1.Size = new Size(299, 23);
             textBox1.TabIndex = 5;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(64, 64, 64);
+            button5.Cursor = Cursors.Hand;
+            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(142, 543);
+            button5.Name = "button5";
+            button5.RightToLeft = RightToLeft.No;
+            button5.Size = new Size(100, 32);
+            button5.TabIndex = 33;
+            button5.Text = "Venta Dia";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click_1;
+            // 
+            // txtdescripcion
+            // 
+            txtdescripcion.BackColor = Color.LavenderBlush;
+            txtdescripcion.BorderStyle = BorderStyle.FixedSingle;
+            txtdescripcion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtdescripcion.Location = new Point(116, 75);
+            txtdescripcion.Name = "txtdescripcion";
+            txtdescripcion.Size = new Size(311, 23);
+            txtdescripcion.TabIndex = 29;
+            // 
             // FormVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(909, 587);
+            Controls.Add(button5);
             Controls.Add(panel2);
             Controls.Add(button6);
             Controls.Add(button3);
@@ -505,7 +525,6 @@
         private ListView listView1;
         private ListView listView2;
         private Panel panel1;
-        private TextBox txtdescripcion;
         private Label label4;
         private TextBox txtexistencias;
         private TextBox txtarti;
@@ -528,5 +547,7 @@
         private Panel panel2;
         private Label label7;
         private TextBox textBox1;
+        private Button button5;
+        private TextBox txtdescripcion;
     }
 }
