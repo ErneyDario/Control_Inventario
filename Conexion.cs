@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
+
 namespace Control_Inventario
 {
     internal class Conexion
@@ -18,6 +19,8 @@ namespace Control_Inventario
         SqlDataReader dr;
         SqlDataAdapter adaptador;
         DataSet ds;
+        SqlDataAdapter da;
+        DataTable dt;
 
         public Conexion()
         {
@@ -32,30 +35,82 @@ namespace Control_Inventario
                 MessageBox.Show("No se conecto con la base de datos:" + ex.ToString());
             }
         }
-        public String insertar(String IdUsuario, String PrimerNombreUsuar, String SegundoNombreUsuar, String PrimerApellidoUsuar, String SegundoApellidoUsuar, String DireccionUsuar, String CorreoUsuar, String Telefono, String NombreUsuario, String Contraseña, String Rol)
+        public String insertar(String IdUsuario, String PrimerNombreUsuar, String SegundoNombreUsuar, String PrimerApellidoUsuar, String SegundoApellidoUsuar, String DireccionUsuar, String CorreoUsuar, String Telefono, String NombreUsuario, String Contraseña, String Confirmar)
         {
             String Salida = "si se inserto";
             try
             {
-                cmd = new SqlCommand("Insert into Usuario(IdUsuario, PrimerNombreUsuar,SegundoNombreUsuar,PrimerApellidoUsuar,SegundoApellidoUsuar,DirrecionUsuar,CorreoUsuar,Telefono,NombreUsuario,Contraseña,Rol) values('" + IdUsuario + "','" + PrimerNombreUsuar + "','" + SegundoNombreUsuar + "','" + PrimerApellidoUsuar + "','" + SegundoApellidoUsuar + "','" + DireccionUsuar + "','" + CorreoUsuar + "','" + NombreUsuario + "','" + Contraseña + "','" + Rol + "')", conn);
+                cmd = new SqlCommand("Insert into Usuario(IdUsuario, PrimerNombreUsuar,SegundoNombreUsuar,PrimerApellidoUsuar,SegundoApellidoUsuar,DirrecionUsuar,CorreoUsuar,Telefono,NombreUsuario,Contraseña,Confirmar) values('" + IdUsuario + "','" + PrimerNombreUsuar + "','" + SegundoNombreUsuar + "','" + PrimerApellidoUsuar + "','" + SegundoApellidoUsuar + "','" + DireccionUsuar + "','" + CorreoUsuar + "','" + Telefono + "','" + NombreUsuario + "','" + Contraseña + "','" + Confirmar + "')", conn);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 Salida = "No se insertó intente nuevamente:" + ex.ToString();
             }
             return Salida;
-        }   
+        }
+        public int UsuarioRegistrado(String IdUsuario)
+        {
+            int contador = 0;
+            try
+            {
+                cmd = new SqlCommand("select * from Usuario where IdUsuario=" + IdUsuario + "", conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    contador++;
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar:" + ex.ToString());
+            }
+            return contador;
+        }
+
+        public void CargarVentas(DataGridView dgv)
+        {
+            try
+            {
+                da = new SqlDataAdapter("select * from Ventas", conn);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+            }
+        }
+
+        public void CargarUsuario(DataGridView dgv)
+        {
+            try
+            {
+                da = new SqlDataAdapter("select * from Usuario", conn);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
     }
-      
 
-
-
-
-
-
-
-
-
-}
+    }
 

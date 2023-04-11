@@ -42,7 +42,7 @@
             this.txt1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,38 +57,39 @@
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txt12 = new System.Windows.Forms.TextBox();
+            this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txt11 = new System.Windows.Forms.TextBox();
+            this.txtContrseña = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txt10 = new System.Windows.Forms.TextBox();
-            this.txt9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt8 = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtcorreoUsuar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt7 = new System.Windows.Forms.TextBox();
+            this.txtDireccionUsuar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txt5 = new System.Windows.Forms.TextBox();
+            this.txtSegundoApellidoUsuar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txt6 = new System.Windows.Forms.TextBox();
+            this.txtPrimerApellidoUsuar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.rbtn7 = new System.Windows.Forms.RadioButton();
-            this.rbtn4 = new System.Windows.Forms.RadioButton();
-            this.rbtn5 = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rbtn6 = new System.Windows.Forms.RadioButton();
-            this.txt2 = new System.Windows.Forms.TextBox();
+            this.rbtnPass = new System.Windows.Forms.RadioButton();
+            this.rbtnCEX = new System.Windows.Forms.RadioButton();
+            this.rbtnTI = new System.Windows.Forms.RadioButton();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.rbtnCC = new System.Windows.Forms.RadioButton();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txt4 = new System.Windows.Forms.TextBox();
+            this.txtsegundoNombreUsuar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt3 = new System.Windows.Forms.TextBox();
+            this.txtPrimerNombreUsuar = new System.Windows.Forms.TextBox();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -104,6 +105,7 @@
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,7 +119,7 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(28, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 196);
+            this.panel1.Size = new System.Drawing.Size(984, 170);
             this.panel1.TabIndex = 0;
             // 
             // label20
@@ -150,9 +152,9 @@
             // 
             this.listView1.BackColor = System.Drawing.Color.LavenderBlush;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Location = new System.Drawing.Point(31, 118);
+            this.listView1.Location = new System.Drawing.Point(31, 88);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(444, 69);
+            this.listView1.Size = new System.Drawing.Size(444, 70);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -178,9 +180,9 @@
             this.panel3.Controls.Add(this.rbtn1);
             this.panel3.Controls.Add(this.txt1);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(31, 35);
+            this.panel3.Location = new System.Drawing.Point(31, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(444, 75);
+            this.panel3.Size = new System.Drawing.Size(444, 70);
             this.panel3.TabIndex = 11;
             // 
             // iconButton1
@@ -262,28 +264,28 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btnCrear);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button2);
-            this.panel4.Location = new System.Drawing.Point(503, 80);
+            this.panel4.Location = new System.Drawing.Point(503, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(396, 78);
+            this.panel4.Size = new System.Drawing.Size(396, 116);
             this.panel4.TabIndex = 12;
             // 
-            // button1
+            // btnCrear
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 18);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(100, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Crear";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCrear.ForeColor = System.Drawing.Color.White;
+            this.btnCrear.Location = new System.Drawing.Point(16, 18);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCrear.Size = new System.Drawing.Size(100, 32);
+            this.btnCrear.TabIndex = 0;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -317,15 +319,16 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.Controls.Add(this.dgvUsuario);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.txt9);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.txt8);
+            this.panel2.Controls.Add(this.txttelefono);
+            this.panel2.Controls.Add(this.lblTelefono);
+            this.panel2.Controls.Add(this.txtcorreoUsuar);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.txt7);
+            this.panel2.Controls.Add(this.txtDireccionUsuar);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.panel7);
@@ -333,10 +336,11 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(28, 253);
+            this.panel2.Location = new System.Drawing.Point(28, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 313);
+            this.panel2.Size = new System.Drawing.Size(984, 382);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button5
             // 
@@ -387,11 +391,11 @@
             this.panel8.Controls.Add(this.iconPictureBox3);
             this.panel8.Controls.Add(this.iconPictureBox2);
             this.panel8.Controls.Add(this.label19);
-            this.panel8.Controls.Add(this.txt12);
+            this.panel8.Controls.Add(this.txtConfirmar);
             this.panel8.Controls.Add(this.label17);
-            this.panel8.Controls.Add(this.txt11);
+            this.panel8.Controls.Add(this.txtContrseña);
             this.panel8.Controls.Add(this.label16);
-            this.panel8.Controls.Add(this.txt10);
+            this.panel8.Controls.Add(this.txtNombreUsuario);
             this.panel8.Location = new System.Drawing.Point(445, 153);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(512, 100);
@@ -493,17 +497,17 @@
             this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(8, 72);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 16);
+            this.label19.Size = new System.Drawing.Size(75, 16);
             this.label19.TabIndex = 8;
-            this.label19.Text = "Confirmar";
+            this.label19.Text = "Confirmar:";
             // 
-            // txt12
+            // txtConfirmar
             // 
-            this.txt12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt12.Location = new System.Drawing.Point(107, 68);
-            this.txt12.Name = "txt12";
-            this.txt12.Size = new System.Drawing.Size(311, 23);
-            this.txt12.TabIndex = 9;
+            this.txtConfirmar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmar.Location = new System.Drawing.Point(107, 68);
+            this.txtConfirmar.Name = "txtConfirmar";
+            this.txtConfirmar.Size = new System.Drawing.Size(311, 23);
+            this.txtConfirmar.TabIndex = 9;
             // 
             // label17
             // 
@@ -511,17 +515,17 @@
             this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(8, 42);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 16);
+            this.label17.Size = new System.Drawing.Size(87, 16);
             this.label17.TabIndex = 6;
-            this.label17.Text = "Contraseña";
+            this.label17.Text = "Contraseña:";
             // 
-            // txt11
+            // txtContrseña
             // 
-            this.txt11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt11.Location = new System.Drawing.Point(107, 38);
-            this.txt11.Name = "txt11";
-            this.txt11.Size = new System.Drawing.Size(311, 23);
-            this.txt11.TabIndex = 7;
+            this.txtContrseña.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtContrseña.Location = new System.Drawing.Point(107, 38);
+            this.txtContrseña.Name = "txtContrseña";
+            this.txtContrseña.Size = new System.Drawing.Size(311, 23);
+            this.txtContrseña.TabIndex = 7;
             // 
             // label16
             // 
@@ -529,43 +533,44 @@
             this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(8, 11);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 16);
+            this.label16.Size = new System.Drawing.Size(60, 16);
             this.label16.TabIndex = 4;
-            this.label16.Text = "Usuario";
+            this.label16.Text = "Usuario:";
             // 
-            // txt10
+            // txtNombreUsuario
             // 
-            this.txt10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt10.Location = new System.Drawing.Point(107, 7);
-            this.txt10.Name = "txt10";
-            this.txt10.Size = new System.Drawing.Size(311, 23);
-            this.txt10.TabIndex = 5;
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(107, 7);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(311, 23);
+            this.txtNombreUsuario.TabIndex = 5;
             // 
-            // txt9
+            // txttelefono
             // 
-            this.txt9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt9.Location = new System.Drawing.Point(118, 182);
-            this.txt9.Name = "txt9";
-            this.txt9.Size = new System.Drawing.Size(271, 23);
-            this.txt9.TabIndex = 19;
+            this.txttelefono.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txttelefono.Location = new System.Drawing.Point(118, 182);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(271, 23);
+            this.txttelefono.TabIndex = 19;
             // 
-            // label15
+            // lblTelefono
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(31, 182);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 19);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Telefono";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTelefono.Location = new System.Drawing.Point(31, 182);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(87, 19);
+            this.lblTelefono.TabIndex = 20;
+            this.lblTelefono.Text = "Teléfono:";
+            this.lblTelefono.Click += new System.EventHandler(this.lblTelefono_Click);
             // 
-            // txt8
+            // txtcorreoUsuar
             // 
-            this.txt8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt8.Location = new System.Drawing.Point(118, 222);
-            this.txt8.Name = "txt8";
-            this.txt8.Size = new System.Drawing.Size(271, 23);
-            this.txt8.TabIndex = 17;
+            this.txtcorreoUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtcorreoUsuar.Location = new System.Drawing.Point(118, 222);
+            this.txtcorreoUsuar.Name = "txtcorreoUsuar";
+            this.txtcorreoUsuar.Size = new System.Drawing.Size(271, 23);
+            this.txtcorreoUsuar.TabIndex = 17;
             // 
             // label14
             // 
@@ -573,17 +578,17 @@
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(31, 222);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 19);
+            this.label14.Size = new System.Drawing.Size(70, 19);
             this.label14.TabIndex = 18;
-            this.label14.Text = "Correo ";
+            this.label14.Text = "Correo:";
             // 
-            // txt7
+            // txtDireccionUsuar
             // 
-            this.txt7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt7.Location = new System.Drawing.Point(118, 142);
-            this.txt7.Name = "txt7";
-            this.txt7.Size = new System.Drawing.Size(271, 23);
-            this.txt7.TabIndex = 11;
+            this.txtDireccionUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtDireccionUsuar.Location = new System.Drawing.Point(118, 142);
+            this.txtDireccionUsuar.Name = "txtDireccionUsuar";
+            this.txtDireccionUsuar.Size = new System.Drawing.Size(271, 23);
+            this.txtDireccionUsuar.TabIndex = 11;
             // 
             // label13
             // 
@@ -591,9 +596,9 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(31, 142);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 19);
+            this.label13.Size = new System.Drawing.Size(90, 19);
             this.label13.TabIndex = 16;
-            this.label13.Text = "Direccion";
+            this.label13.Text = "Dirección:";
             // 
             // label10
             // 
@@ -608,22 +613,22 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.txt5);
+            this.panel7.Controls.Add(this.txtSegundoApellidoUsuar);
             this.panel7.Controls.Add(this.label11);
             this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.txt6);
+            this.panel7.Controls.Add(this.txtPrimerApellidoUsuar);
             this.panel7.Location = new System.Drawing.Point(445, 89);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(512, 43);
             this.panel7.TabIndex = 15;
             // 
-            // txt5
+            // txtSegundoApellidoUsuar
             // 
-            this.txt5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt5.Location = new System.Drawing.Point(320, 7);
-            this.txt5.Name = "txt5";
-            this.txt5.Size = new System.Drawing.Size(168, 23);
-            this.txt5.TabIndex = 7;
+            this.txtSegundoApellidoUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSegundoApellidoUsuar.Location = new System.Drawing.Point(333, 7);
+            this.txtSegundoApellidoUsuar.Name = "txtSegundoApellidoUsuar";
+            this.txtSegundoApellidoUsuar.Size = new System.Drawing.Size(155, 23);
+            this.txtSegundoApellidoUsuar.TabIndex = 7;
             // 
             // label11
             // 
@@ -631,9 +636,9 @@
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(259, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.Size = new System.Drawing.Size(68, 16);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Segundo";
+            this.label11.Text = "Segundo:";
             // 
             // label12
             // 
@@ -641,17 +646,17 @@
             this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(8, 11);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 16);
+            this.label12.Size = new System.Drawing.Size(62, 16);
             this.label12.TabIndex = 4;
-            this.label12.Text = "Primero";
+            this.label12.Text = "Primero:";
             // 
-            // txt6
+            // txtPrimerApellidoUsuar
             // 
-            this.txt6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt6.Location = new System.Drawing.Point(85, 7);
-            this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(168, 23);
-            this.txt6.TabIndex = 5;
+            this.txtPrimerApellidoUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtPrimerApellidoUsuar.Location = new System.Drawing.Point(85, 7);
+            this.txtPrimerApellidoUsuar.Name = "txtPrimerApellidoUsuar";
+            this.txtPrimerApellidoUsuar.Size = new System.Drawing.Size(168, 23);
+            this.txtPrimerApellidoUsuar.TabIndex = 5;
             // 
             // label6
             // 
@@ -678,79 +683,80 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.rbtn7);
-            this.panel5.Controls.Add(this.rbtn4);
-            this.panel5.Controls.Add(this.rbtn5);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.rbtn6);
-            this.panel5.Controls.Add(this.txt2);
+            this.panel5.Controls.Add(this.rbtnPass);
+            this.panel5.Controls.Add(this.rbtnCEX);
+            this.panel5.Controls.Add(this.rbtnTI);
+            this.panel5.Controls.Add(this.lblNumero);
+            this.panel5.Controls.Add(this.rbtnCC);
+            this.panel5.Controls.Add(this.txtIdUsuario);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(31, 26);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(391, 106);
             this.panel5.TabIndex = 12;
             // 
-            // rbtn7
+            // rbtnPass
             // 
-            this.rbtn7.AutoSize = true;
-            this.rbtn7.Location = new System.Drawing.Point(323, 62);
-            this.rbtn7.Name = "rbtn7";
-            this.rbtn7.Size = new System.Drawing.Size(52, 18);
-            this.rbtn7.TabIndex = 10;
-            this.rbtn7.TabStop = true;
-            this.rbtn7.Text = "Pass";
-            this.rbtn7.UseVisualStyleBackColor = true;
+            this.rbtnPass.AutoSize = true;
+            this.rbtnPass.Location = new System.Drawing.Point(323, 62);
+            this.rbtnPass.Name = "rbtnPass";
+            this.rbtnPass.Size = new System.Drawing.Size(52, 18);
+            this.rbtnPass.TabIndex = 10;
+            this.rbtnPass.TabStop = true;
+            this.rbtnPass.Text = "Pass";
+            this.rbtnPass.UseVisualStyleBackColor = true;
             // 
-            // rbtn4
+            // rbtnCEX
             // 
-            this.rbtn4.AutoSize = true;
-            this.rbtn4.Location = new System.Drawing.Point(258, 62);
-            this.rbtn4.Name = "rbtn4";
-            this.rbtn4.Size = new System.Drawing.Size(55, 18);
-            this.rbtn4.TabIndex = 9;
-            this.rbtn4.TabStop = true;
-            this.rbtn4.Text = "C.Ex.";
-            this.rbtn4.UseVisualStyleBackColor = true;
+            this.rbtnCEX.AutoSize = true;
+            this.rbtnCEX.Location = new System.Drawing.Point(258, 62);
+            this.rbtnCEX.Name = "rbtnCEX";
+            this.rbtnCEX.Size = new System.Drawing.Size(55, 18);
+            this.rbtnCEX.TabIndex = 9;
+            this.rbtnCEX.TabStop = true;
+            this.rbtnCEX.Text = "C.Ex.";
+            this.rbtnCEX.UseVisualStyleBackColor = true;
             // 
-            // rbtn5
+            // rbtnTI
             // 
-            this.rbtn5.AutoSize = true;
-            this.rbtn5.Location = new System.Drawing.Point(144, 61);
-            this.rbtn5.Name = "rbtn5";
-            this.rbtn5.Size = new System.Drawing.Size(41, 18);
-            this.rbtn5.TabIndex = 8;
-            this.rbtn5.TabStop = true;
-            this.rbtn5.Text = "T.I";
-            this.rbtn5.UseVisualStyleBackColor = true;
+            this.rbtnTI.AutoSize = true;
+            this.rbtnTI.Location = new System.Drawing.Point(144, 61);
+            this.rbtnTI.Name = "rbtnTI";
+            this.rbtnTI.Size = new System.Drawing.Size(41, 18);
+            this.rbtnTI.TabIndex = 8;
+            this.rbtnTI.TabStop = true;
+            this.rbtnTI.Text = "T.I";
+            this.rbtnTI.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // lblNumero
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(8, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Numero";
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNumero.Location = new System.Drawing.Point(8, 32);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(61, 16);
+            this.lblNumero.TabIndex = 4;
+            this.lblNumero.Text = "Número:";
             // 
-            // rbtn6
+            // rbtnCC
             // 
-            this.rbtn6.AutoSize = true;
-            this.rbtn6.Location = new System.Drawing.Point(200, 61);
-            this.rbtn6.Name = "rbtn6";
-            this.rbtn6.Size = new System.Drawing.Size(49, 18);
-            this.rbtn6.TabIndex = 7;
-            this.rbtn6.TabStop = true;
-            this.rbtn6.Text = "C.C.";
-            this.rbtn6.UseVisualStyleBackColor = true;
+            this.rbtnCC.AutoSize = true;
+            this.rbtnCC.Location = new System.Drawing.Point(200, 61);
+            this.rbtnCC.Name = "rbtnCC";
+            this.rbtnCC.Size = new System.Drawing.Size(49, 18);
+            this.rbtnCC.TabIndex = 7;
+            this.rbtnCC.TabStop = true;
+            this.rbtnCC.Text = "C.C.";
+            this.rbtnCC.UseVisualStyleBackColor = true;
             // 
-            // txt2
+            // txtIdUsuario
             // 
-            this.txt2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt2.Location = new System.Drawing.Point(85, 28);
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(271, 23);
-            this.txt2.TabIndex = 5;
+            this.txtIdUsuario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtIdUsuario.Location = new System.Drawing.Point(85, 28);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(271, 23);
+            this.txtIdUsuario.TabIndex = 5;
+            this.txtIdUsuario.TextChanged += new System.EventHandler(this.IdUsuario_TextChanged);
             // 
             // label8
             // 
@@ -765,22 +771,22 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.txt4);
+            this.panel6.Controls.Add(this.txtsegundoNombreUsuar);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.txt3);
+            this.panel6.Controls.Add(this.txtPrimerNombreUsuar);
             this.panel6.Location = new System.Drawing.Point(445, 26);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(512, 43);
             this.panel6.TabIndex = 13;
             // 
-            // txt4
+            // txtsegundoNombreUsuar
             // 
-            this.txt4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt4.Location = new System.Drawing.Point(320, 7);
-            this.txt4.Name = "txt4";
-            this.txt4.Size = new System.Drawing.Size(168, 23);
-            this.txt4.TabIndex = 7;
+            this.txtsegundoNombreUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtsegundoNombreUsuar.Location = new System.Drawing.Point(333, 7);
+            this.txtsegundoNombreUsuar.Name = "txtsegundoNombreUsuar";
+            this.txtsegundoNombreUsuar.Size = new System.Drawing.Size(155, 23);
+            this.txtsegundoNombreUsuar.TabIndex = 7;
             // 
             // label9
             // 
@@ -788,9 +794,9 @@
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(259, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 16);
+            this.label9.Size = new System.Drawing.Size(68, 16);
             this.label9.TabIndex = 6;
-            this.label9.Text = "Segundo";
+            this.label9.Text = "Segundo:";
             // 
             // label5
             // 
@@ -798,17 +804,26 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(8, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
+            this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Primero";
+            this.label5.Text = "Primero:";
             // 
-            // txt3
+            // txtPrimerNombreUsuar
             // 
-            this.txt3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt3.Location = new System.Drawing.Point(85, 7);
-            this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(168, 23);
-            this.txt3.TabIndex = 5;
+            this.txtPrimerNombreUsuar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtPrimerNombreUsuar.Location = new System.Drawing.Point(85, 7);
+            this.txtPrimerNombreUsuar.Name = "txtPrimerNombreUsuar";
+            this.txtPrimerNombreUsuar.Size = new System.Drawing.Size(168, 23);
+            this.txtPrimerNombreUsuar.TabIndex = 5;
+            // 
+            // dgvUsuario
+            // 
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Location = new System.Drawing.Point(41, 258);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.RowTemplate.Height = 25;
+            this.dgvUsuario.Size = new System.Drawing.Size(381, 113);
+            this.dgvUsuario.TabIndex = 23;
             // 
             // FormUsuarios
             // 
@@ -821,6 +836,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormUsuarios";
             this.Text = "Control_Inventario [Usuarios]";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
@@ -843,6 +859,7 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -850,7 +867,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
+        private Button btnCrear;
         private Label label3;
         private TextBox txt1;
         private Label label2;
@@ -868,23 +885,23 @@
         private Label label6;
         private Label label4;
         private Panel panel5;
-        private RadioButton rbtn4;
-        private RadioButton rbtn5;
-        private Label label7;
-        private RadioButton rbtn6;
-        private TextBox txt2;
+        private RadioButton rbtnCEX;
+        private RadioButton rbtnTI;
+        private Label lblNumero;
+        private RadioButton rbtnCC;
+        private TextBox txtIdUsuario;
         private Label label8;
         private Label label10;
         private Panel panel7;
-        private TextBox txt5;
+        private TextBox txtSegundoApellidoUsuar;
         private Label label11;
         private Label label12;
-        private TextBox txt6;
+        private TextBox txtPrimerApellidoUsuar;
         private Panel panel6;
-        private TextBox txt4;
+        private TextBox txtsegundoNombreUsuar;
         private Label label9;
         private Label label5;
-        private TextBox txt3;
+        private TextBox txtPrimerNombreUsuar;
         private Label label20;
         private ListView listView1;
         private Button button5;
@@ -898,17 +915,18 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label19;
-        private TextBox txt12;
+        private TextBox txtConfirmar;
         private Label label17;
-        private TextBox txt11;
+        private TextBox txtContrseña;
         private Label label16;
-        private TextBox txt10;
-        private TextBox txt9;
-        private Label label15;
-        private TextBox txt8;
+        private TextBox txtNombreUsuario;
+        private TextBox txttelefono;
+        private Label lblTelefono;
+        private TextBox txtcorreoUsuar;
         private Label label14;
-        private TextBox txt7;
+        private TextBox txtDireccionUsuar;
         private Label label13;
-        private RadioButton rbtn7;
+        private RadioButton rbtnPass;
+        private DataGridView dgvUsuario;
     }
 }

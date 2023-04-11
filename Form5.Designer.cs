@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -60,8 +59,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -173,14 +176,7 @@
             this.listView1.Size = new System.Drawing.Size(444, 173);
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(475, 12);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(422, 503);
-            this.listView2.TabIndex = 15;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -430,18 +426,37 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(509, 597);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(69, 8);
+            this.dataGridView1.TabIndex = 33;
+            // 
+            // dgvVentas
+            // 
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(475, 26);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.RowTemplate.Height = 25;
+            this.dgvVentas.Size = new System.Drawing.Size(422, 489);
+            this.dgvVentas.TabIndex = 34;
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(909, 587);
+            this.ClientSize = new System.Drawing.Size(909, 600);
+            this.Controls.Add(this.dgvVentas);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listView2);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel3);
@@ -452,6 +467,8 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +486,6 @@
         private Label label3;
         private Label label20;
         private ListView listView1;
-        private ListView listView2;
         private Panel panel1;
         private TextBox txtdescripcion;
         private Label label4;
@@ -491,5 +507,7 @@
         private Button button2;
         private Button button3;
         private Button button6;
+        private DataGridView dataGridView1;
+        private DataGridView dgvVentas;
     }
 }

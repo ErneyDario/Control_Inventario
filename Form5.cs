@@ -19,7 +19,8 @@ namespace Control_Inventario
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
-
+            Conexion c = new Conexion();
+            c.CargarVentas(dgvVentas);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace Control_Inventario
             rbtncodigo.Checked= false;
             rbtnnombre.Checked = false;
             rbtndescripcion.Checked = false;
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
