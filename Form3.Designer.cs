@@ -214,6 +214,7 @@
             iconProveedores.TabIndex = 3;
             iconProveedores.Text = "Proveedores";
             iconProveedores.UseVisualStyleBackColor = false;
+            iconProveedores.Click += iconProveedores_Click;
             // 
             // iButtonClientes
             // 
@@ -229,6 +230,7 @@
             iButtonClientes.TabIndex = 2;
             iButtonClientes.Text = "Clientes";
             iButtonClientes.UseVisualStyleBackColor = false;
+            iButtonClientes.Click += iButtonClientes_Click;
             // 
             // iButtonInventario
             // 

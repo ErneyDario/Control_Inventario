@@ -67,8 +67,8 @@
             textBox4 = new TextBox();
             button1 = new Button();
             button3 = new Button();
-            button5 = new Button();
             button6 = new Button();
+            button5 = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -504,20 +504,6 @@
             button3.Text = "Eliminar Inventario";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(676, 547);
-            button5.Name = "button5";
-            button5.RightToLeft = RightToLeft.No;
-            button5.Size = new Size(100, 32);
-            button5.TabIndex = 39;
-            button5.Text = "Limpiar";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             button6.BackColor = Color.FromArgb(64, 64, 64);
@@ -527,10 +513,24 @@
             button6.Location = new Point(792, 547);
             button6.Name = "button6";
             button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(100, 32);
+            button6.Size = new Size(100, 34);
             button6.TabIndex = 40;
             button6.Text = "Guardar";
             button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(64, 64, 64);
+            button5.Cursor = Cursors.Hand;
+            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(676, 547);
+            button5.Name = "button5";
+            button5.RightToLeft = RightToLeft.No;
+            button5.Size = new Size(100, 34);
+            button5.TabIndex = 39;
+            button5.Text = "Limpiar";
+            button5.UseVisualStyleBackColor = false;
             // 
             // FormInventario
             // 
@@ -604,7 +604,7 @@
         private TextBox textBox4;
         private Button button1;
         private Button button3;
-        private Button button5;
         private Button button6;
+        private Button button5;
     }
 }
