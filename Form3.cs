@@ -20,7 +20,7 @@ namespace Control_Inventario
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            Conexion c= new Conexion();
+            Conexion c = new Conexion();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -68,6 +68,30 @@ namespace Control_Inventario
             frmVentas.TopLevel = false;
             panelTrabajo.Controls.Add(frmVentas);
             frmVentas.Show();
+        }
+
+        private void iButtonInventario_Click(object sender, EventArgs e)
+        {
+            FormInventario frmInventario = new FormInventario();
+            frmInventario.TopLevel = false;
+            panelTrabajo.Controls.Add(frmInventario);
+            frmInventario.Show();
+        }
+
+        private void iButtonClientes_Click(object sender, EventArgs e)
+        {
+            FormClientes frmClientes = new FormClientes();
+            frmClientes.TopLevel = false;
+            panelTrabajo.Controls.Add(frmClientes);
+            frmClientes.Show();
+        }
+
+        private void iconProveedores_Click(object sender, EventArgs e)
+        {
+            FormProveedores frmProveedores = new FormProveedores();
+            frmProveedores.TopLevel = false;
+            panelTrabajo.Controls.Add(frmProveedores);
+            frmProveedores.Show();
         }
     }
 }

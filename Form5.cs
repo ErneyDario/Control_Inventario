@@ -25,8 +25,8 @@ namespace Control_Inventario
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -53,14 +53,28 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtcantidad.Text = "";
             this.txttotal.Text = "";
-            
-            rbtncodigo.Checked= false;
+
+            rbtncodigo.Checked = false;
             rbtnnombre.Checked = false;
             rbtndescripcion.Checked = false;
 
         }
 
+<<<<<<< HEAD
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+=======
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtndescripcion_CheckedChanged(object sender, EventArgs e)
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
         {
 
         }
