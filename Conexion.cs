@@ -68,49 +68,70 @@ namespace Control_Inventario
             }
             return contador;
         }
-
-        public void CargarVentas(DataGridView dgv)
+        public int VentaRegistrada(String CodigoVenta)
         {
+            int contador = 0;
             try
             {
-                da = new SqlDataAdapter("select * from Ventas", conn);
-                dt = new DataTable();
-                da.Fill(dt);
-                dgv.DataSource = dt;
+                cmd = new SqlCommand("select * from Ventas where CodigoVenta=" + CodigoVenta + "", conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    contador++;
+                }
+                dr.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+                MessageBox.Show("No se pudo registrar la venta:" + ex.ToString());
             }
-        }
+            return contador;
+            }
 
-        public void CargarUsuario(DataGridView dgv)
-        {
-            try
+
+            public void CargarVentas(DataGridView dgv)
             {
-                da = new SqlDataAdapter("select * from Usuario", conn);
-                dt = new DataTable();
-                da.Fill(dt);
-                dgv.DataSource = dt;
+                try
+                {
+                    da = new SqlDataAdapter("select * from Ventas", conn);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+                }
             }
-            catch (Exception ex)
+
+            public void CargarUsuario(DataGridView dgv)
             {
-                MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+                try
+                {
+                    da = new SqlDataAdapter("select * from Usuario", conn);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo llenar el datagridview:" + ex.ToString());
+                }
+
+
+
+
             }
+
+
+
+
 
 
 
 
         }
-
-
-
-
-
-
-
 
     }
 
-    }
 

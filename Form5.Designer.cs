@@ -429,7 +429,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(509, 597);
+            this.dataGridView1.Location = new System.Drawing.Point(506, 594);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(69, 8);
@@ -437,6 +437,7 @@
             // 
             // dgvVentas
             // 
+            this.dgvVentas.BackgroundColor = System.Drawing.Color.LavenderBlush;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(475, 26);
             this.dgvVentas.Name = "dgvVentas";

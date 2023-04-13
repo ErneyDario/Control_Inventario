@@ -28,9 +28,9 @@ namespace Control_Inventario
         {
             if (c.UsuarioRegistrado(txtIdUsuario.Text) == 0)
             {
-                c.insertar(txtIdUsuario.Text,txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text,txtPrimerApellidoUsuar.Text,txtSegundoApellidoUsuar.Text,txtDireccionUsuar.Text,txtcorreoUsuar.Text,txtNombreUsuario.Text,txtContrseña.Text,txttelefono.Text,txtConfirmar.Text);
-                MessageBox.Show(c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text,txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text,txtConfirmar.Text));
-                
+                c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text);
+                MessageBox.Show(c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text));
+
             }
             else
             {
@@ -76,8 +76,8 @@ namespace Control_Inventario
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            
-            
+
+
 
         }
 
@@ -132,14 +132,31 @@ namespace Control_Inventario
         {
             Conexion c = new Conexion();
             c.CargarUsuario(dgvUsuario);
-            
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿desea salir y volver al menu principal?",
+                    "consulta",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormPrincipal Form = new FormPrincipal();
+                Form.Show();
+                this.Hide();
+            }
+
+
+
+
+        }
+
     }
-    }
+}
 
 
