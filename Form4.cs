@@ -13,6 +13,7 @@ namespace Control_Inventario
 {
     public partial class FormUsuarios : Form
     {
+        Conexion c = new Conexion();
         public FormUsuarios()
         {
             InitializeComponent();
@@ -25,7 +26,22 @@ namespace Control_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (c.UsuarioRegistrado(txtIdUsuario.Text) == 0)
+            {
+                c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text);
+                MessageBox.Show(c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text));
 
+            }
+            else
+            {
+                MessageBox.Show("no es posible registrar, el usuario ya existe");
+            }
+
+        }
+
+        private string String(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, string text9, string text10, string text11)
+        {
+            throw new NotImplementedException();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,25 +84,25 @@ namespace Control_Inventario
         private void button5_Click(object sender, EventArgs e)
         {
             this.txt1.Text = "";
-            this.txt2.Text = "";
-            this.txt3.Text = "";
-            this.txt4.Text = "";
-            this.txt5.Text = "";
-            this.txt6.Text = "";
-            this.txt7.Text = "";
-            this.txt8.Text = "";
-            this.txt9.Text = "";
-            this.txt10.Text = "";
-            this.txt11.Text = "";
-            this.txt12.Text = "";
+            this.txtIdUsuario.Text = "";
+            this.txtPrimerNombreUsuar.Text = "";
+            this.txtsegundoNombreUsuar.Text = "";
+            this.txtSegundoApellidoUsuar.Text = "";
+            this.txtPrimerApellidoUsuar.Text = "";
+            this.txtDireccionUsuar.Text = "";
+            this.txtcorreoUsuar.Text = "";
+            this.txttelefono.Text = "";
+            this.txtNombreUsuario.Text = "";
+            this.txtContrseña.Text = "";
+            this.txtConfirmar.Text = "";
 
             rbtn1.Checked = false;
             rbtn2.Checked = false;
             rbtn3.Checked = false;
-            rbtn4.Checked = false;
-            rbtn5.Checked = false;
-            rbtn6.Checked = false;
-            rbtn7.Checked = false;
+            rbtnCEX.Checked = false;
+            rbtnTI.Checked = false;
+            rbtnCC.Checked = false;
+            rbtnPass.Checked = false;
 
 
 
@@ -102,10 +118,48 @@ namespace Control_Inventario
 
         }
 
+<<<<<<< HEAD
+        private void IdUsuario_TextChanged(object sender, EventArgs e)
+=======
         private void panel3_Paint(object sender, PaintEventArgs e)
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
         {
 
         }
+
+        private void lblTelefono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+            Conexion c = new Conexion();
+            c.CargarUsuario(dgvUsuario);
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿desea salir y volver al menu principal?",
+                    "consulta",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormPrincipal Form = new FormPrincipal();
+                Form.Show();
+                this.Hide();
+            }
+
+
+
+
+        }
+
     }
 }
 

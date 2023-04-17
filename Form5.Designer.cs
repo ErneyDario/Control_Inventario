@@ -28,6 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.rbtndescripcion = new System.Windows.Forms.RadioButton();
+            this.rbtncodigo = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rbtnnombre = new System.Windows.Forms.RadioButton();
+            this.txtarticulo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txttotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtcantidad = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtvalor = new System.Windows.Forms.TextBox();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtexistencias = new System.Windows.Forms.TextBox();
+            this.txtarti = new System.Windows.Forms.TextBox();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
+            this.SuspendLayout();
+=======
             panel3 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             rbtndescripcion = new RadioButton();
@@ -68,6 +108,7 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
             // 
             // panel3
             // 
@@ -173,6 +214,16 @@
             // 
             // listView1
             // 
+<<<<<<< HEAD
+            this.listView1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView1.Location = new System.Drawing.Point(12, 93);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(444, 173);
+            this.listView1.TabIndex = 13;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+=======
             listView1.BackColor = Color.LavenderBlush;
             listView1.BorderStyle = BorderStyle.FixedSingle;
             listView1.Location = new Point(12, 93);
@@ -188,6 +239,7 @@
             listView2.Size = new Size(422, 503);
             listView2.TabIndex = 15;
             listView2.UseCompatibleStateImageBehavior = false;
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
             // 
             // panel1
             // 
@@ -481,8 +533,55 @@
             txtdescripcion.Size = new Size(311, 23);
             txtdescripcion.TabIndex = 29;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(506, 594);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(69, 8);
+            this.dataGridView1.TabIndex = 33;
+            // 
+            // dgvVentas
+            // 
+            this.dgvVentas.BackgroundColor = System.Drawing.Color.LavenderBlush;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(475, 26);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.RowTemplate.Height = 25;
+            this.dgvVentas.Size = new System.Drawing.Size(422, 489);
+            this.dgvVentas.TabIndex = 34;
+            // 
             // FormVentas
             // 
+<<<<<<< HEAD
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.ClientSize = new System.Drawing.Size(909, 600);
+            this.Controls.Add(this.dgvVentas);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.panel3);
+            this.Name = "FormVentas";
+            this.Text = "Control de Inventario [Ventas]";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+=======
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
@@ -509,6 +608,7 @@
             panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
         }
 
         #endregion
@@ -523,7 +623,6 @@
         private Label label3;
         private Label label20;
         private ListView listView1;
-        private ListView listView2;
         private Panel panel1;
         private Label label4;
         private TextBox txtexistencias;
@@ -544,10 +643,15 @@
         private Button button2;
         private Button button3;
         private Button button6;
+<<<<<<< HEAD
+        private DataGridView dataGridView1;
+        private DataGridView dgvVentas;
+=======
         private Panel panel2;
         private Label label7;
         private TextBox textBox1;
         private Button button5;
         private TextBox txtdescripcion;
+>>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
     }
 }
