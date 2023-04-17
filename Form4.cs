@@ -118,11 +118,7 @@ namespace Control_Inventario
 
         }
 
-<<<<<<< HEAD
-        private void IdUsuario_TextChanged(object sender, EventArgs e)
-=======
         private void panel3_Paint(object sender, PaintEventArgs e)
->>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
         {
 
         }
@@ -160,6 +156,15 @@ namespace Control_Inventario
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUsuarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

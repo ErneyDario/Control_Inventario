@@ -60,9 +60,6 @@ namespace Control_Inventario
 
         }
 
-<<<<<<< HEAD
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-=======
         private void button5_Click_1(object sender, EventArgs e)
         {
 
@@ -74,10 +71,11 @@ namespace Control_Inventario
         }
 
         private void rbtndescripcion_CheckedChanged(object sender, EventArgs e)
->>>>>>> 608f2022b22e793186fe772294f2f863f5dcc267
         {
 
         }
+
+      
     }
 }
 
