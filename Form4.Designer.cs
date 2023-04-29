@@ -31,23 +31,35 @@
             panel1 = new Panel();
             label20 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            label1 = new Label();
             panel3 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            rbtn3 = new RadioButton();
-            rbtn2 = new RadioButton();
+            iBtnBuscar = new FontAwesome.Sharp.IconButton();
+            rbtnUsuario = new RadioButton();
+            rbtnId = new RadioButton();
             label2 = new Label();
-            rbtn1 = new RadioButton();
-            txt1 = new TextBox();
+            rbtnNombre = new RadioButton();
+            txtBuscarUsuario = new TextBox();
             label3 = new Label();
+            dtgvEncontrados = new DataGridView();
             panel4 = new Panel();
+            btnCrearUsuario = new Button();
             button3 = new Button();
             button2 = new Button();
+            label1 = new Label();
             panel2 = new Panel();
-            button5 = new Button();
-            button4 = new Button();
+            txtCorreo = new TextBox();
+            label21 = new Label();
+            txtTelefono = new TextBox();
+            label15 = new Label();
+            txtDireccion = new TextBox();
+            btnLimpiar = new Button();
+            btnRegistrar = new Button();
             label18 = new Label();
             panel8 = new Panel();
+            cmbRol = new ComboBox();
+            label22 = new Label();
+            txtConfirmarContrasena = new TextBox();
+            txtContrasena = new TextBox();
+            txtUsuario = new TextBox();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
@@ -60,19 +72,29 @@
             label13 = new Label();
             label10 = new Label();
             panel7 = new Panel();
+            txtSegundoApellido = new TextBox();
+            txtPrimerApellido = new TextBox();
             label11 = new Label();
             label12 = new Label();
             label6 = new Label();
             label4 = new Label();
             panel5 = new Panel();
+            txtNumeroDoc = new TextBox();
+            label7 = new Label();
+            rbtnPasaporte = new RadioButton();
             label8 = new Label();
+            rbtnTipoCC = new RadioButton();
+            rbtnTipoCEx = new RadioButton();
             panel6 = new Panel();
+            txtSegundoNombre = new TextBox();
+            txtPrimerNombre = new TextBox();
             label9 = new Label();
             label5 = new Label();
             label14 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvEncontrados).BeginInit();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel8.SuspendLayout();
@@ -92,19 +114,19 @@
             panel1.BackColor = Color.LavenderBlush;
             panel1.Controls.Add(label20);
             panel1.Controls.Add(iconPictureBox1);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel4);
-            panel1.Location = new Point(28, 51);
+            panel1.Controls.Add(dtgvEncontrados);
+            panel1.Enabled = false;
+            panel1.Location = new Point(28, 34);
             panel1.Name = "panel1";
-            panel1.Size = new Size(984, 196);
+            panel1.Size = new Size(512, 213);
             panel1.TabIndex = 0;
             // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(38, 111);
+            label20.Location = new Point(38, 119);
             label20.Name = "label20";
             label20.Size = new Size(84, 14);
             label20.TabIndex = 11;
@@ -126,68 +148,56 @@
             iconPictureBox1.TabIndex = 13;
             iconPictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 23);
-            label1.TabIndex = 3;
-            label1.Text = "USUARIOS";
-            label1.Click += label1_Click_1;
-            // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(iconButton1);
-            panel3.Controls.Add(rbtn3);
-            panel3.Controls.Add(rbtn2);
+            panel3.Controls.Add(iBtnBuscar);
+            panel3.Controls.Add(rbtnUsuario);
+            panel3.Controls.Add(rbtnId);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(rbtn1);
-            panel3.Controls.Add(txt1);
+            panel3.Controls.Add(rbtnNombre);
+            panel3.Controls.Add(txtBuscarUsuario);
             panel3.Controls.Add(label3);
             panel3.Location = new Point(31, 35);
             panel3.Name = "panel3";
             panel3.Size = new Size(444, 75);
             panel3.TabIndex = 11;
             // 
-            // iconButton1
+            // iBtnBuscar
             // 
-            iconButton1.BackColor = Color.FromArgb(64, 64, 64);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(374, 12);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(51, 45);
-            iconButton1.TabIndex = 10;
-            iconButton1.UseVisualStyleBackColor = false;
+            iBtnBuscar.BackColor = Color.FromArgb(64, 64, 64);
+            iBtnBuscar.Cursor = Cursors.Hand;
+            iBtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iBtnBuscar.IconColor = Color.White;
+            iBtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iBtnBuscar.IconSize = 30;
+            iBtnBuscar.Location = new Point(374, 12);
+            iBtnBuscar.Name = "iBtnBuscar";
+            iBtnBuscar.Size = new Size(51, 45);
+            iBtnBuscar.TabIndex = 10;
+            iBtnBuscar.UseVisualStyleBackColor = false;
             // 
-            // rbtn3
+            // rbtnUsuario
             // 
-            rbtn3.AutoSize = true;
-            rbtn3.Location = new Point(298, 41);
-            rbtn3.Name = "rbtn3";
-            rbtn3.Size = new Size(70, 18);
-            rbtn3.TabIndex = 9;
-            rbtn3.TabStop = true;
-            rbtn3.Text = "Usuario";
-            rbtn3.UseVisualStyleBackColor = true;
+            rbtnUsuario.AutoSize = true;
+            rbtnUsuario.Location = new Point(298, 41);
+            rbtnUsuario.Name = "rbtnUsuario";
+            rbtnUsuario.Size = new Size(70, 18);
+            rbtnUsuario.TabIndex = 9;
+            rbtnUsuario.TabStop = true;
+            rbtnUsuario.Text = "Usuario";
+            rbtnUsuario.UseVisualStyleBackColor = true;
             // 
-            // rbtn2
+            // rbtnId
             // 
-            rbtn2.AutoSize = true;
-            rbtn2.Location = new Point(128, 41);
-            rbtn2.Name = "rbtn2";
-            rbtn2.Size = new Size(38, 18);
-            rbtn2.TabIndex = 8;
-            rbtn2.TabStop = true;
-            rbtn2.Text = "Id";
-            rbtn2.UseVisualStyleBackColor = true;
+            rbtnId.AutoSize = true;
+            rbtnId.Location = new Point(128, 41);
+            rbtnId.Name = "rbtnId";
+            rbtnId.Size = new Size(38, 18);
+            rbtnId.TabIndex = 8;
+            rbtnId.TabStop = true;
+            rbtnId.Text = "Id";
+            rbtnId.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -198,26 +208,25 @@
             label2.Size = new Size(71, 19);
             label2.TabIndex = 4;
             label2.Text = "Usuario";
-            label2.Click += label2_Click;
             // 
-            // rbtn1
+            // rbtnNombre
             // 
-            rbtn1.AutoSize = true;
-            rbtn1.Location = new Point(194, 41);
-            rbtn1.Name = "rbtn1";
-            rbtn1.Size = new Size(78, 18);
-            rbtn1.TabIndex = 7;
-            rbtn1.TabStop = true;
-            rbtn1.Text = "Nombres";
-            rbtn1.UseVisualStyleBackColor = true;
+            rbtnNombre.AutoSize = true;
+            rbtnNombre.Location = new Point(194, 41);
+            rbtnNombre.Name = "rbtnNombre";
+            rbtnNombre.Size = new Size(78, 18);
+            rbtnNombre.TabIndex = 7;
+            rbtnNombre.TabStop = true;
+            rbtnNombre.Text = "Nombres";
+            rbtnNombre.UseVisualStyleBackColor = true;
             // 
-            // txt1
+            // txtBuscarUsuario
             // 
-            txt1.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt1.Location = new Point(85, 7);
-            txt1.Name = "txt1";
-            txt1.Size = new Size(271, 23);
-            txt1.TabIndex = 5;
+            txtBuscarUsuario.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBuscarUsuario.Location = new Point(85, 7);
+            txtBuscarUsuario.Name = "txtBuscarUsuario";
+            txtBuscarUsuario.Size = new Size(271, 23);
+            txtBuscarUsuario.TabIndex = 5;
             // 
             // label3
             // 
@@ -228,17 +237,42 @@
             label3.Size = new Size(101, 19);
             label3.TabIndex = 6;
             label3.Text = "Buscar por:";
-            label3.Click += label3_Click;
+            // 
+            // dtgvEncontrados
+            // 
+            dtgvEncontrados.BackgroundColor = Color.LavenderBlush;
+            dtgvEncontrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvEncontrados.Location = new Point(31, 126);
+            dtgvEncontrados.Name = "dtgvEncontrados";
+            dtgvEncontrados.RowTemplate.Height = 25;
+            dtgvEncontrados.Size = new Size(444, 84);
+            dtgvEncontrados.TabIndex = 14;
             // 
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(btnCrearUsuario);
             panel4.Controls.Add(button3);
             panel4.Controls.Add(button2);
-            panel4.Location = new Point(503, 80);
+            panel4.Location = new Point(616, 110);
             panel4.Name = "panel4";
             panel4.Size = new Size(396, 78);
             panel4.TabIndex = 12;
+            // 
+            // btnCrearUsuario
+            // 
+            btnCrearUsuario.BackColor = Color.FromArgb(64, 64, 64);
+            btnCrearUsuario.Cursor = Cursors.Hand;
+            btnCrearUsuario.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCrearUsuario.ForeColor = Color.White;
+            btnCrearUsuario.Location = new Point(22, 18);
+            btnCrearUsuario.Name = "btnCrearUsuario";
+            btnCrearUsuario.RightToLeft = RightToLeft.No;
+            btnCrearUsuario.Size = new Size(100, 32);
+            btnCrearUsuario.TabIndex = 3;
+            btnCrearUsuario.Text = "Crear";
+            btnCrearUsuario.UseVisualStyleBackColor = false;
+            btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // button3
             // 
@@ -267,13 +301,28 @@
             button2.TabIndex = 1;
             button2.Text = "Actualizar";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(37, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 23);
+            label1.TabIndex = 3;
+            label1.Text = "USUARIOS";
             // 
             // panel2
             // 
             panel2.BackColor = Color.LavenderBlush;
-            panel2.Controls.Add(button5);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(txtCorreo);
+            panel2.Controls.Add(label21);
+            panel2.Controls.Add(txtTelefono);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(txtDireccion);
+            panel2.Controls.Add(btnLimpiar);
+            panel2.Controls.Add(btnRegistrar);
             panel2.Controls.Add(label18);
             panel2.Controls.Add(panel8);
             panel2.Controls.Add(label13);
@@ -283,39 +332,85 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
+            panel2.Enabled = false;
             panel2.Location = new Point(28, 253);
             panel2.Name = "panel2";
-            panel2.Size = new Size(984, 313);
+            panel2.Size = new Size(984, 340);
             panel2.TabIndex = 1;
             // 
-            // button5
+            // txtCorreo
             // 
-            button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(737, 266);
-            button5.Name = "button5";
-            button5.RightToLeft = RightToLeft.No;
-            button5.Size = new Size(100, 32);
-            button5.TabIndex = 22;
-            button5.Text = "Limpiar";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            txtCorreo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCorreo.Location = new Point(118, 262);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(271, 23);
+            txtCorreo.TabIndex = 25;
             // 
-            // button4
+            // label21
             // 
-            button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(853, 266);
-            button4.Name = "button4";
-            button4.RightToLeft = RightToLeft.No;
-            button4.Size = new Size(100, 32);
-            button4.TabIndex = 3;
-            button4.Text = "Aceptar";
-            button4.UseVisualStyleBackColor = false;
+            label21.AutoSize = true;
+            label21.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.Location = new Point(31, 266);
+            label21.Name = "label21";
+            label21.Size = new Size(64, 19);
+            label21.TabIndex = 26;
+            label21.Text = "Correo";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTelefono.Location = new Point(118, 205);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(271, 23);
+            txtTelefono.TabIndex = 23;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(31, 209);
+            label15.Name = "label15";
+            label15.Size = new Size(81, 19);
+            label15.TabIndex = 24;
+            label15.Text = "Telefono";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtDireccion.Location = new Point(118, 150);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(271, 23);
+            txtDireccion.TabIndex = 14;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiar.Cursor = Cursors.Hand;
+            btnLimpiar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(738, 293);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.RightToLeft = RightToLeft.No;
+            btnLimpiar.Size = new Size(100, 32);
+            btnLimpiar.TabIndex = 22;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click_1;
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.BackColor = Color.FromArgb(64, 64, 64);
+            btnRegistrar.Cursor = Cursors.Hand;
+            btnRegistrar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrar.ForeColor = Color.White;
+            btnRegistrar.Location = new Point(853, 293);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.RightToLeft = RightToLeft.No;
+            btnRegistrar.Size = new Size(100, 32);
+            btnRegistrar.TabIndex = 3;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // label18
             // 
@@ -330,6 +425,11 @@
             // panel8
             // 
             panel8.BorderStyle = BorderStyle.Fixed3D;
+            panel8.Controls.Add(cmbRol);
+            panel8.Controls.Add(label22);
+            panel8.Controls.Add(txtConfirmarContrasena);
+            panel8.Controls.Add(txtContrasena);
+            panel8.Controls.Add(txtUsuario);
             panel8.Controls.Add(iconPictureBox7);
             panel8.Controls.Add(iconPictureBox6);
             panel8.Controls.Add(iconPictureBox5);
@@ -341,8 +441,51 @@
             panel8.Controls.Add(label16);
             panel8.Location = new Point(445, 153);
             panel8.Name = "panel8";
-            panel8.Size = new Size(512, 100);
+            panel8.Size = new Size(512, 134);
             panel8.TabIndex = 13;
+            // 
+            // cmbRol
+            // 
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Items.AddRange(new object[] { "Administrador del Sistema", "Administrador", "Auxiliar" });
+            cmbRol.Location = new Point(153, 98);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(271, 22);
+            cmbRol.TabIndex = 31;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label22.Location = new Point(8, 99);
+            label22.Name = "label22";
+            label22.Size = new Size(27, 16);
+            label22.TabIndex = 30;
+            label22.Text = "Rol";
+            // 
+            // txtConfirmarContrasena
+            // 
+            txtConfirmarContrasena.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtConfirmarContrasena.Location = new Point(153, 69);
+            txtConfirmarContrasena.Name = "txtConfirmarContrasena";
+            txtConfirmarContrasena.Size = new Size(271, 23);
+            txtConfirmarContrasena.TabIndex = 29;
+            // 
+            // txtContrasena
+            // 
+            txtContrasena.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtContrasena.Location = new Point(153, 38);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.Size = new Size(271, 23);
+            txtContrasena.TabIndex = 28;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUsuario.Location = new Point(153, 7);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(271, 23);
+            txtUsuario.TabIndex = 27;
             // 
             // iconPictureBox7
             // 
@@ -468,7 +611,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(31, 142);
+            label13.Location = new Point(31, 154);
             label13.Name = "label13";
             label13.Size = new Size(84, 19);
             label13.TabIndex = 16;
@@ -487,12 +630,30 @@
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.Fixed3D;
+            panel7.Controls.Add(txtSegundoApellido);
+            panel7.Controls.Add(txtPrimerApellido);
             panel7.Controls.Add(label11);
             panel7.Controls.Add(label12);
             panel7.Location = new Point(445, 89);
             panel7.Name = "panel7";
             panel7.Size = new Size(512, 43);
             panel7.TabIndex = 15;
+            // 
+            // txtSegundoApellido
+            // 
+            txtSegundoApellido.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSegundoApellido.Location = new Point(323, 7);
+            txtSegundoApellido.Name = "txtSegundoApellido";
+            txtSegundoApellido.Size = new Size(182, 23);
+            txtSegundoApellido.TabIndex = 30;
+            // 
+            // txtPrimerApellido
+            // 
+            txtPrimerApellido.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPrimerApellido.Location = new Point(71, 8);
+            txtPrimerApellido.Name = "txtPrimerApellido";
+            txtPrimerApellido.Size = new Size(182, 23);
+            txtPrimerApellido.TabIndex = 29;
             // 
             // label11
             // 
@@ -523,7 +684,6 @@
             label6.Size = new Size(81, 19);
             label6.TabIndex = 13;
             label6.Text = "Nombres";
-            label6.Click += label6_Click;
             // 
             // label4
             // 
@@ -534,16 +694,49 @@
             label4.Size = new Size(101, 19);
             label4.TabIndex = 11;
             label4.Text = "Documento";
-            label4.Click += label4_Click;
             // 
             // panel5
             // 
             panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Controls.Add(txtNumeroDoc);
+            panel5.Controls.Add(label7);
+            panel5.Controls.Add(rbtnPasaporte);
             panel5.Controls.Add(label8);
+            panel5.Controls.Add(rbtnTipoCC);
+            panel5.Controls.Add(rbtnTipoCEx);
             panel5.Location = new Point(31, 26);
             panel5.Name = "panel5";
             panel5.Size = new Size(391, 106);
             panel5.TabIndex = 12;
+            // 
+            // txtNumeroDoc
+            // 
+            txtNumeroDoc.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNumeroDoc.Location = new Point(85, 22);
+            txtNumeroDoc.Name = "txtNumeroDoc";
+            txtNumeroDoc.Size = new Size(271, 23);
+            txtNumeroDoc.TabIndex = 11;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(11, 22);
+            label7.Name = "label7";
+            label7.Size = new Size(73, 19);
+            label7.TabIndex = 11;
+            label7.Text = "Numero";
+            // 
+            // rbtnPasaporte
+            // 
+            rbtnPasaporte.AutoSize = true;
+            rbtnPasaporte.Location = new Point(297, 62);
+            rbtnPasaporte.Name = "rbtnPasaporte";
+            rbtnPasaporte.Size = new Size(87, 18);
+            rbtnPasaporte.TabIndex = 13;
+            rbtnPasaporte.TabStop = true;
+            rbtnPasaporte.Text = "Pasaporte";
+            rbtnPasaporte.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -555,15 +748,55 @@
             label8.TabIndex = 6;
             label8.Text = "Tipo de Documento";
             // 
+            // rbtnTipoCC
+            // 
+            rbtnTipoCC.AutoSize = true;
+            rbtnTipoCC.Location = new Point(144, 62);
+            rbtnTipoCC.Name = "rbtnTipoCC";
+            rbtnTipoCC.Size = new Size(41, 18);
+            rbtnTipoCC.TabIndex = 12;
+            rbtnTipoCC.TabStop = true;
+            rbtnTipoCC.Text = "CC";
+            rbtnTipoCC.UseVisualStyleBackColor = true;
+            // 
+            // rbtnTipoCEx
+            // 
+            rbtnTipoCEx.AutoSize = true;
+            rbtnTipoCEx.Location = new Point(207, 60);
+            rbtnTipoCEx.Name = "rbtnTipoCEx";
+            rbtnTipoCEx.Size = new Size(65, 18);
+            rbtnTipoCEx.TabIndex = 11;
+            rbtnTipoCEx.TabStop = true;
+            rbtnTipoCEx.Text = "C. Ext.";
+            rbtnTipoCEx.UseVisualStyleBackColor = true;
+            // 
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Controls.Add(txtSegundoNombre);
+            panel6.Controls.Add(txtPrimerNombre);
             panel6.Controls.Add(label9);
             panel6.Controls.Add(label5);
             panel6.Location = new Point(445, 26);
             panel6.Name = "panel6";
             panel6.Size = new Size(512, 43);
             panel6.TabIndex = 13;
+            // 
+            // txtSegundoNombre
+            // 
+            txtSegundoNombre.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSegundoNombre.Location = new Point(324, 7);
+            txtSegundoNombre.Name = "txtSegundoNombre";
+            txtSegundoNombre.Size = new Size(182, 23);
+            txtSegundoNombre.TabIndex = 28;
+            // 
+            // txtPrimerNombre
+            // 
+            txtPrimerNombre.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPrimerNombre.Location = new Point(71, 7);
+            txtPrimerNombre.Name = "txtPrimerNombre";
+            txtPrimerNombre.Size = new Size(182, 23);
+            txtPrimerNombre.TabIndex = 27;
             // 
             // label9
             // 
@@ -601,17 +834,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(1037, 621);
+            Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel4);
             Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "FormUsuarios";
             Text = "Control_Inventario [Usuarios]";
-            Load += FormUsuarios_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvEncontrados).EndInit();
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -630,6 +865,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -637,17 +873,17 @@
         private Panel panel1;
         private Button btnCrear;
         private Label label3;
-        private TextBox txt1;
+        private TextBox txtBuscarUsuario;
         private Label label2;
         private Label label1;
         private Button button2;
         private Button button3;
         private Panel panel2;
-        private RadioButton rbtn3;
-        private RadioButton rbtn2;
-        private RadioButton rbtn1;
+        private RadioButton rbtnUsuario;
+        private RadioButton rbtnId;
+        private RadioButton rbtnNombre;
         private Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iBtnBuscar;
         private Panel panel4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label label6;
@@ -671,8 +907,8 @@
         private Label label5;
         private TextBox txtPrimerNombreUsuar;
         private Label label20;
-        private Button button5;
-        private Button button4;
+        private Button btnLimpiar;
+        private Button btnRegistrar;
         private Label label18;
         private Panel panel8;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
@@ -696,5 +932,26 @@
         private RadioButton rbtnPass;
         private DataGridView dgvUsuario;
         private Button btnSalir;
+        private DataGridView dtgvEncontrados;
+        private Button btnCrearUsuario;
+        private RadioButton rbtnPasaporte;
+        private RadioButton rbtnTipoCC;
+        private RadioButton rbtnTipoCEx;
+        private TextBox txtCorreo;
+        private Label label21;
+        private TextBox txtTelefono;
+        private Label label15;
+        private TextBox txtDireccion;
+        private TextBox txtConfirmarContrasena;
+        private TextBox txtContrasena;
+        private TextBox txtUsuario;
+        private TextBox txtSegundoApellido;
+        private TextBox txtPrimerApellido;
+        private TextBox txtNumeroDoc;
+        private Label label7;
+        private TextBox txtSegundoNombre;
+        private TextBox txtPrimerNombre;
+        private ComboBox cmbRol;
+        private Label label22;
     }
 }

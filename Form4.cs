@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,131 +14,10 @@ namespace Control_Inventario
 {
     public partial class FormUsuarios : Form
     {
-        Conexion c = new Conexion();
+        // Conexion c = new Conexion();
         public FormUsuarios()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (c.UsuarioRegistrado(txtIdUsuario.Text) == 0)
-            {
-                c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text);
-                MessageBox.Show(c.insertar(txtIdUsuario.Text, txtPrimerNombreUsuar.Text, txtsegundoNombreUsuar.Text, txtPrimerApellidoUsuar.Text, txtSegundoApellidoUsuar.Text, txtDireccionUsuar.Text, txtcorreoUsuar.Text, txtNombreUsuario.Text, txtContrseña.Text, txttelefono.Text, txtConfirmar.Text));
-
-            }
-            else
-            {
-                MessageBox.Show("no es posible registrar, el usuario ya existe");
-            }
-
-        }
-
-        private string String(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, string text9, string text10, string text11)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.txt1.Text = "";
-            this.txtIdUsuario.Text = "";
-            this.txtPrimerNombreUsuar.Text = "";
-            this.txtsegundoNombreUsuar.Text = "";
-            this.txtSegundoApellidoUsuar.Text = "";
-            this.txtPrimerApellidoUsuar.Text = "";
-            this.txtDireccionUsuar.Text = "";
-            this.txtcorreoUsuar.Text = "";
-            this.txttelefono.Text = "";
-            this.txtNombreUsuario.Text = "";
-            this.txtContrseña.Text = "";
-            this.txtConfirmar.Text = "";
-
-            rbtn1.Checked = false;
-            rbtn2.Checked = false;
-            rbtn3.Checked = false;
-            rbtnCEX.Checked = false;
-            rbtnTI.Checked = false;
-            rbtnCC.Checked = false;
-            rbtnPass.Checked = false;
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblTelefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormUsuarios_Load(object sender, EventArgs e)
-        {
-            Conexion c = new Conexion();
-            c.CargarUsuario(dgvUsuario);
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -151,21 +31,105 @@ namespace Control_Inventario
                 this.Hide();
             }
 
-
-
-
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
+            this.panel2.Enabled = true;
 
         }
-
-        private void FormUsuarios_Load_1(object sender, EventArgs e)
+        //limpiamos txt y rbtn
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
+            this.txtBuscarUsuario.Text = "";
+            this.txtNumeroDoc.Text = "";
+            this.txtDireccion.Text = "";
+            this.txtTelefono.Text = "";
+            this.txtCorreo.Text = "";
+            this.txtPrimerNombre.Text = "";
+            this.txtSegundoNombre.Text = "";
+            this.txtPrimerApellido.Text = "";
+            this.txtSegundoApellido.Text = "";
+            this.txtUsuario.Text = "";
+            this.txtContrasena.Text = "";
+            this.txtConfirmarContrasena.Text = "";
+            this.cmbRol.ResetText(); ; //Limpiamos combobox
+            this.rbtnId.Checked = false;
+            this.rbtnNombre.Checked = false;
+            this.rbtnUsuario.Checked = false;
+            this.rbtnTipoCC.Checked = false;
+            this.rbtnTipoCEx.Checked = false;
+            this.rbtnPasaporte.Checked = false;
 
+        }
+        
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+           //Instanaciamos conexion a DB
+            conexionDB conectar = new conexionDB();
+
+            //Creamos e inicializamos la variable que capturara el valor del radiobutton seleccionado
+            string tipoDocumento = "";
+
+            //Condicionamos la seleccion del radiobutton
+            if (rbtnTipoCC.Checked == true) 
+            {
+                tipoDocumento += rbtnTipoCC.Text;
+            }
+            else
+            {
+                if (rbtnTipoCEx.Checked == true)
+                {
+                    tipoDocumento += rbtnTipoCEx.Text;
+                }
+                else
+                {
+
+                    if (rbtnPasaporte.Checked == true)
+                    {
+                        tipoDocumento += rbtnPasaporte.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor seleccion un tipo de documento"); //condicionamos el radiobutton para que no este vacio
+                    }
+
+                }
+            }
+            //MessageBox.Show(tipoDocumento);
+
+            //abrimos la base de datos e insertamos el registro
+            conectar.abrirDB();
+            string crear = "Insert into Usuarios ([Id], [tipoDocumento], [primerNombre], [segundoNombre], [primerApellido], [segundoApellido], [direccion], [telefono], [correo], [usuario], [password], [rol])" +
+                   "values ('"+txtNumeroDoc.Text+"', '"+tipoDocumento+"', '"+txtPrimerNombre.Text+"', '"+txtSegundoNombre.Text+"', '"+txtPrimerApellido.Text+"', '"+txtSegundoApellido.Text+ "', '"+txtDireccion.Text+"', '"+txtTelefono.Text+"', '"+txtCorreo.Text+"', '"+txtUsuario.Text+"', '"+txtContrasena.Text+"', '"+cmbRol.GetItemText(cmbRol.SelectedItem)+"')";
+            SqlCommand comando = new SqlCommand(crear, conectar.conectarDB);
+            comando.ExecuteNonQuery();
+
+            MessageBox.Show("Registro agregado con exito");
+
+            this.txtNumeroDoc.Text = "";
+            this.txtDireccion.Text = "";
+            this.txtTelefono.Text = "";
+            this.txtCorreo.Text = "";
+            this.txtPrimerNombre.Text = "";
+            this.txtSegundoNombre.Text = "";
+            this.txtPrimerApellido.Text = "";
+            this.txtSegundoApellido.Text = "";
+            this.txtUsuario.Text = "";
+            this.txtContrasena.Text = "";
+            this.txtConfirmarContrasena.Text = "";
+            this.cmbRol.ResetText(); ; //Limpiamos combobox
+            this.rbtnId.Checked = false;
+            this.rbtnNombre.Checked = false;
+            this.rbtnUsuario.Checked = false;
+            this.rbtnTipoCC.Checked = false;
+            this.rbtnTipoCEx.Checked = false;
+            this.rbtnPasaporte.Checked = false;
+            conectar.cerrarDB();
         }
     }
 }
+
+
 
 

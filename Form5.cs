@@ -19,8 +19,8 @@ namespace Control_Inventario
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
-            Conexion c = new Conexion();
-            c.CargarVentas(dgvVentas);
+            /*Conexion c = new Conexion();
+            c.CargarVentas(dgvVentas);*/
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)

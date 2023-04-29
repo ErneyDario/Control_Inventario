@@ -20,7 +20,7 @@ namespace Control_Inventario
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            Conexion c = new Conexion();
+           // Conexion c = new Conexion();
         }
 
         private void label2_Click(object sender, EventArgs e)

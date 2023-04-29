@@ -28,171 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labUsuario = new System.Windows.Forms.Label();
-            this.labContraseña = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.iButtonEntrar = new FontAwesome.Sharp.IconButton();
-            this.labelSalir = new System.Windows.Forms.Label();
-            this.txtcontrasena = new System.Windows.Forms.TextBox();
-            this.labVersion = new System.Windows.Forms.Label();
-            this.labRecCont = new System.Windows.Forms.Label();
-            this.picBoxBannerInferior = new System.Windows.Forms.PictureBox();
-            this.picBoxBanerSup = new System.Windows.Forms.PictureBox();
-            this.txtusuario = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).BeginInit();
-            this.SuspendLayout();
+            labUsuario = new Label();
+            labContraseña = new Label();
+            panel1 = new Panel();
+            iButtonEntrar = new FontAwesome.Sharp.IconButton();
+            labelSalir = new Label();
+            txtcontrasena = new TextBox();
+            labVersion = new Label();
+            labRecCont = new Label();
+            picBoxBannerInferior = new PictureBox();
+            picBoxBanerSup = new PictureBox();
+            txtusuario = new TextBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBoxBannerInferior).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxBanerSup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            SuspendLayout();
             // 
             // labUsuario
             // 
-            this.labUsuario.AutoSize = true;
-            this.labUsuario.Location = new System.Drawing.Point(136, 146);
-            this.labUsuario.Name = "labUsuario";
-            this.labUsuario.Size = new System.Drawing.Size(71, 19);
-            this.labUsuario.TabIndex = 0;
-            this.labUsuario.Text = "Usuario";
+            labUsuario.AutoSize = true;
+            labUsuario.Location = new Point(136, 146);
+            labUsuario.Name = "labUsuario";
+            labUsuario.Size = new Size(71, 19);
+            labUsuario.TabIndex = 0;
+            labUsuario.Text = "Usuario";
             // 
             // labContraseña
             // 
-            this.labContraseña.AutoSize = true;
-            this.labContraseña.Location = new System.Drawing.Point(105, 177);
-            this.labContraseña.Name = "labContraseña";
-            this.labContraseña.Size = new System.Drawing.Size(102, 19);
-            this.labContraseña.TabIndex = 1;
-            this.labContraseña.Text = "Contraseña";
+            labContraseña.AutoSize = true;
+            labContraseña.Location = new Point(105, 177);
+            labContraseña.Name = "labContraseña";
+            labContraseña.Size = new Size(102, 19);
+            labContraseña.TabIndex = 1;
+            labContraseña.Text = "Contraseña";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.iButtonEntrar);
-            this.panel1.Controls.Add(this.labelSalir);
-            this.panel1.Controls.Add(this.txtcontrasena);
-            this.panel1.Controls.Add(this.labVersion);
-            this.panel1.Controls.Add(this.labRecCont);
-            this.panel1.Controls.Add(this.picBoxBannerInferior);
-            this.panel1.Controls.Add(this.picBoxBanerSup);
-            this.panel1.Controls.Add(this.txtusuario);
-            this.panel1.Controls.Add(this.labUsuario);
-            this.panel1.Controls.Add(this.labContraseña);
-            this.panel1.Location = new System.Drawing.Point(358, 178);
-            this.panel1.MaximumSize = new System.Drawing.Size(615, 382);
-            this.panel1.MinimumSize = new System.Drawing.Size(615, 382);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 382);
-            this.panel1.TabIndex = 2;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.LavenderBlush;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(iButtonEntrar);
+            panel1.Controls.Add(labelSalir);
+            panel1.Controls.Add(txtcontrasena);
+            panel1.Controls.Add(labVersion);
+            panel1.Controls.Add(labRecCont);
+            panel1.Controls.Add(picBoxBannerInferior);
+            panel1.Controls.Add(picBoxBanerSup);
+            panel1.Controls.Add(txtusuario);
+            panel1.Controls.Add(labUsuario);
+            panel1.Controls.Add(labContraseña);
+            panel1.Location = new Point(358, 178);
+            panel1.MaximumSize = new Size(615, 382);
+            panel1.MinimumSize = new Size(615, 382);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(615, 382);
+            panel1.TabIndex = 2;
             // 
             // iButtonEntrar
             // 
-            this.iButtonEntrar.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
-            this.iButtonEntrar.IconColor = System.Drawing.Color.Black;
-            this.iButtonEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iButtonEntrar.IconSize = 20;
-            this.iButtonEntrar.Location = new System.Drawing.Point(441, 150);
-            this.iButtonEntrar.Name = "iButtonEntrar";
-            this.iButtonEntrar.Size = new System.Drawing.Size(75, 38);
-            this.iButtonEntrar.TabIndex = 13;
-            this.iButtonEntrar.UseVisualStyleBackColor = true;
-            this.iButtonEntrar.Click += new System.EventHandler(this.iButtonEntrar_Click);
+            iButtonEntrar.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+            iButtonEntrar.IconColor = Color.Black;
+            iButtonEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonEntrar.IconSize = 20;
+            iButtonEntrar.Location = new Point(441, 150);
+            iButtonEntrar.Name = "iButtonEntrar";
+            iButtonEntrar.Size = new Size(75, 38);
+            iButtonEntrar.TabIndex = 13;
+            iButtonEntrar.UseVisualStyleBackColor = true;
+            iButtonEntrar.Click += iButtonEntrar_Click;
             // 
             // labelSalir
             // 
-            this.labelSalir.AutoSize = true;
-            this.labelSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSalir.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.labelSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelSalir.Location = new System.Drawing.Point(305, 227);
-            this.labelSalir.Name = "labelSalir";
-            this.labelSalir.Size = new System.Drawing.Size(33, 14);
-            this.labelSalir.TabIndex = 12;
-            this.labelSalir.Text = "Salir";
-            this.labelSalir.Click += new System.EventHandler(this.labelSalir_Click);
+            labelSalir.AutoSize = true;
+            labelSalir.Cursor = Cursors.Hand;
+            labelSalir.Font = new Font("Tahoma", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelSalir.ForeColor = SystemColors.HotTrack;
+            labelSalir.Location = new Point(305, 227);
+            labelSalir.Name = "labelSalir";
+            labelSalir.Size = new Size(33, 14);
+            labelSalir.TabIndex = 12;
+            labelSalir.Text = "Salir";
+            labelSalir.Click += labelSalir_Click;
             // 
             // txtcontrasena
             // 
-            this.txtcontrasena.Location = new System.Drawing.Point(224, 174);
-            this.txtcontrasena.Name = "txtcontrasena";
-            this.txtcontrasena.PasswordChar = '*';
-            this.txtcontrasena.Size = new System.Drawing.Size(203, 27);
-            this.txtcontrasena.TabIndex = 11;
-            this.txtcontrasena.UseSystemPasswordChar = true;
+            txtcontrasena.Location = new Point(224, 174);
+            txtcontrasena.Name = "txtcontrasena";
+            txtcontrasena.PasswordChar = '*';
+            txtcontrasena.Size = new Size(203, 27);
+            txtcontrasena.TabIndex = 11;
+            txtcontrasena.UseSystemPasswordChar = true;
             // 
             // labVersion
             // 
-            this.labVersion.AutoSize = true;
-            this.labVersion.BackColor = System.Drawing.Color.LightCyan;
-            this.labVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labVersion.ForeColor = System.Drawing.Color.Silver;
-            this.labVersion.Location = new System.Drawing.Point(449, 366);
-            this.labVersion.Name = "labVersion";
-            this.labVersion.Size = new System.Drawing.Size(164, 14);
-            this.labVersion.TabIndex = 9;
-            this.labVersion.Text = "Control de Inventario 1.0";
+            labVersion.AutoSize = true;
+            labVersion.BackColor = Color.LightCyan;
+            labVersion.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labVersion.ForeColor = Color.Silver;
+            labVersion.Location = new Point(449, 366);
+            labVersion.Name = "labVersion";
+            labVersion.Size = new Size(164, 14);
+            labVersion.TabIndex = 9;
+            labVersion.Text = "Control de Inventario 1.0";
             // 
             // labRecCont
             // 
-            this.labRecCont.AutoSize = true;
-            this.labRecCont.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labRecCont.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.labRecCont.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labRecCont.Location = new System.Drawing.Point(254, 204);
-            this.labRecCont.Name = "labRecCont";
-            this.labRecCont.Size = new System.Drawing.Size(143, 14);
-            this.labRecCont.TabIndex = 8;
-            this.labRecCont.Text = "Recuperar Contraseña";
-            this.labRecCont.Click += new System.EventHandler(this.labRecCont_Click);
+            labRecCont.AutoSize = true;
+            labRecCont.Cursor = Cursors.Hand;
+            labRecCont.Font = new Font("Tahoma", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labRecCont.ForeColor = SystemColors.HotTrack;
+            labRecCont.Location = new Point(254, 204);
+            labRecCont.Name = "labRecCont";
+            labRecCont.Size = new Size(143, 14);
+            labRecCont.TabIndex = 8;
+            labRecCont.Text = "Recuperar Contraseña";
+            labRecCont.Click += labRecCont_Click;
             // 
             // picBoxBannerInferior
             // 
-            this.picBoxBannerInferior.Image = global::Control_Inventario.Properties.Resources.Primero;
-            this.picBoxBannerInferior.Location = new System.Drawing.Point(0, 280);
-            this.picBoxBannerInferior.Name = "picBoxBannerInferior";
-            this.picBoxBannerInferior.Size = new System.Drawing.Size(615, 102);
-            this.picBoxBannerInferior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxBannerInferior.TabIndex = 5;
-            this.picBoxBannerInferior.TabStop = false;
+            picBoxBannerInferior.Image = Properties.Resources.Primero;
+            picBoxBannerInferior.Location = new Point(0, 280);
+            picBoxBannerInferior.Name = "picBoxBannerInferior";
+            picBoxBannerInferior.Size = new Size(615, 102);
+            picBoxBannerInferior.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxBannerInferior.TabIndex = 5;
+            picBoxBannerInferior.TabStop = false;
             // 
             // picBoxBanerSup
             // 
-            this.picBoxBanerSup.Image = global::Control_Inventario.Properties.Resources.Primero;
-            this.picBoxBanerSup.Location = new System.Drawing.Point(0, 0);
-            this.picBoxBanerSup.Name = "picBoxBanerSup";
-            this.picBoxBanerSup.Size = new System.Drawing.Size(615, 102);
-            this.picBoxBanerSup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxBanerSup.TabIndex = 4;
-            this.picBoxBanerSup.TabStop = false;
+            picBoxBanerSup.Image = Properties.Resources.Primero;
+            picBoxBanerSup.Location = new Point(0, 0);
+            picBoxBanerSup.Name = "picBoxBanerSup";
+            picBoxBanerSup.Size = new Size(615, 102);
+            picBoxBanerSup.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxBanerSup.TabIndex = 4;
+            picBoxBanerSup.TabStop = false;
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(224, 138);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(203, 27);
-            this.txtusuario.TabIndex = 2;
+            txtusuario.Location = new Point(224, 138);
+            txtusuario.Name = "txtusuario";
+            txtusuario.Size = new Size(203, 27);
+            txtusuario.TabIndex = 2;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.Gray;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.Location = new Point(0, 0);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.TabIndex = 3;
+            iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.Gray;
+            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.Location = new Point(0, 0);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(32, 32);
+            iconPictureBox2.TabIndex = 4;
+            iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.Gray;
+            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.Location = new Point(8, 8);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(32, 32);
+            iconPictureBox3.TabIndex = 5;
+            iconPictureBox3.TabStop = false;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1255, 589);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Control de Inventario [Login]";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBannerInferior)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanerSup)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(10F, 19F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
+            ClientSize = new Size(1255, 589);
+            Controls.Add(iconPictureBox3);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(panel1);
+            Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4);
+            Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Control de Inventario [Login]";
+            WindowState = FormWindowState.Maximized;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picBoxBannerInferior).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxBanerSup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -209,5 +256,8 @@
         private TextBox txtcontrasena;
         private Label labelSalir;
         private FontAwesome.Sharp.IconButton iButtonEntrar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
     }
 }
