@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             label20 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -41,9 +42,10 @@
             label3 = new Label();
             dtgvEncontrados = new DataGridView();
             panel4 = new Panel();
+            iButtonSalir = new FontAwesome.Sharp.IconButton();
             btnCrearUsuario = new Button();
             button3 = new Button();
-            button2 = new Button();
+            btnActualizar = new Button();
             label1 = new Label();
             panel2 = new Panel();
             txtCorreo = new TextBox();
@@ -61,11 +63,6 @@
             txtContrasena = new TextBox();
             txtUsuario = new TextBox();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label19 = new Label();
             label17 = new Label();
             label16 = new Label();
@@ -91,6 +88,7 @@
             label9 = new Label();
             label5 = new Label();
             label14 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -99,14 +97,10 @@
             panel2.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -120,7 +114,7 @@
             panel1.Location = new Point(28, 34);
             panel1.Name = "panel1";
             panel1.Size = new Size(512, 213);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 4;
             // 
             // label20
             // 
@@ -161,7 +155,7 @@
             panel3.Location = new Point(31, 35);
             panel3.Name = "panel3";
             panel3.Size = new Size(444, 75);
-            panel3.TabIndex = 11;
+            panel3.TabIndex = 5;
             // 
             // iBtnBuscar
             // 
@@ -176,6 +170,7 @@
             iBtnBuscar.Size = new Size(51, 45);
             iBtnBuscar.TabIndex = 10;
             iBtnBuscar.UseVisualStyleBackColor = false;
+            iBtnBuscar.Click += iBtnBuscar_Click;
             // 
             // rbtnUsuario
             // 
@@ -194,7 +189,7 @@
             rbtnId.Location = new Point(128, 41);
             rbtnId.Name = "rbtnId";
             rbtnId.Size = new Size(38, 18);
-            rbtnId.TabIndex = 8;
+            rbtnId.TabIndex = 7;
             rbtnId.TabStop = true;
             rbtnId.Text = "Id";
             rbtnId.UseVisualStyleBackColor = true;
@@ -215,7 +210,7 @@
             rbtnNombre.Location = new Point(194, 41);
             rbtnNombre.Name = "rbtnNombre";
             rbtnNombre.Size = new Size(78, 18);
-            rbtnNombre.TabIndex = 7;
+            rbtnNombre.TabIndex = 8;
             rbtnNombre.TabStop = true;
             rbtnNombre.Text = "Nombres";
             rbtnNombre.UseVisualStyleBackColor = true;
@@ -226,7 +221,7 @@
             txtBuscarUsuario.Location = new Point(85, 7);
             txtBuscarUsuario.Name = "txtBuscarUsuario";
             txtBuscarUsuario.Size = new Size(271, 23);
-            txtBuscarUsuario.TabIndex = 5;
+            txtBuscarUsuario.TabIndex = 6;
             // 
             // label3
             // 
@@ -244,20 +239,47 @@
             dtgvEncontrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvEncontrados.Location = new Point(31, 126);
             dtgvEncontrados.Name = "dtgvEncontrados";
+            dtgvEncontrados.ReadOnly = true;
             dtgvEncontrados.RowTemplate.Height = 25;
+            dtgvEncontrados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgvEncontrados.Size = new Size(444, 84);
-            dtgvEncontrados.TabIndex = 14;
+            dtgvEncontrados.TabIndex = 11;
+            dtgvEncontrados.CellClick += dtgvEncontrados_CellClick;
             // 
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(iButtonSalir);
             panel4.Controls.Add(btnCrearUsuario);
             panel4.Controls.Add(button3);
-            panel4.Controls.Add(button2);
-            panel4.Location = new Point(616, 110);
+            panel4.Controls.Add(btnActualizar);
+            panel4.Location = new Point(571, 110);
             panel4.Name = "panel4";
-            panel4.Size = new Size(396, 78);
-            panel4.TabIndex = 12;
+            panel4.Size = new Size(441, 78);
+            panel4.TabIndex = 0;
+            // 
+            // iButtonSalir
+            // 
+            iButtonSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iButtonSalir.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonSalir.Cursor = Cursors.Hand;
+            iButtonSalir.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonSalir.ForeColor = Color.White;
+            iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            iButtonSalir.IconColor = Color.White;
+            iButtonSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonSalir.IconSize = 20;
+            iButtonSalir.ImageAlign = ContentAlignment.BottomRight;
+            iButtonSalir.Location = new Point(344, 18);
+            iButtonSalir.Name = "iButtonSalir";
+            iButtonSalir.RightToLeft = RightToLeft.Yes;
+            iButtonSalir.Size = new Size(87, 32);
+            iButtonSalir.TabIndex = 13;
+            iButtonSalir.Text = "Salir";
+            iButtonSalir.TextAlign = ContentAlignment.MiddleLeft;
+            iButtonSalir.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iButtonSalir.UseVisualStyleBackColor = false;
+            iButtonSalir.Click += iButtonSalir_Click;
             // 
             // btnCrearUsuario
             // 
@@ -265,11 +287,11 @@
             btnCrearUsuario.Cursor = Cursors.Hand;
             btnCrearUsuario.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrearUsuario.ForeColor = Color.White;
-            btnCrearUsuario.Location = new Point(22, 18);
+            btnCrearUsuario.Location = new Point(6, 18);
             btnCrearUsuario.Name = "btnCrearUsuario";
             btnCrearUsuario.RightToLeft = RightToLeft.No;
             btnCrearUsuario.Size = new Size(100, 32);
-            btnCrearUsuario.TabIndex = 3;
+            btnCrearUsuario.TabIndex = 1;
             btnCrearUsuario.Text = "Crear";
             btnCrearUsuario.UseVisualStyleBackColor = false;
             btnCrearUsuario.Click += btnCrearUsuario_Click;
@@ -280,27 +302,28 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(275, 18);
+            button3.Location = new Point(233, 18);
             button3.Name = "button3";
             button3.RightToLeft = RightToLeft.No;
             button3.Size = new Size(100, 32);
-            button3.TabIndex = 2;
+            button3.TabIndex = 3;
             button3.Text = "Eliminar";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnActualizar
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(147, 18);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 1;
-            button2.Text = "Actualizar";
-            button2.UseVisualStyleBackColor = false;
+            btnActualizar.BackColor = Color.FromArgb(64, 64, 64);
+            btnActualizar.Cursor = Cursors.Hand;
+            btnActualizar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnActualizar.ForeColor = Color.White;
+            btnActualizar.Location = new Point(120, 18);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.RightToLeft = RightToLeft.No;
+            btnActualizar.Size = new Size(100, 32);
+            btnActualizar.TabIndex = 2;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // label1
             // 
@@ -336,7 +359,7 @@
             panel2.Location = new Point(28, 253);
             panel2.Name = "panel2";
             panel2.Size = new Size(984, 340);
-            panel2.TabIndex = 1;
+            panel2.TabIndex = 12;
             // 
             // txtCorreo
             // 
@@ -344,7 +367,8 @@
             txtCorreo.Location = new Point(118, 262);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(271, 23);
-            txtCorreo.TabIndex = 25;
+            txtCorreo.TabIndex = 23;
+            txtCorreo.Leave += txtCorreo_Leave;
             // 
             // label21
             // 
@@ -362,7 +386,7 @@
             txtTelefono.Location = new Point(118, 205);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(271, 23);
-            txtTelefono.TabIndex = 23;
+            txtTelefono.TabIndex = 22;
             // 
             // label15
             // 
@@ -380,7 +404,7 @@
             txtDireccion.Location = new Point(118, 150);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(271, 23);
-            txtDireccion.TabIndex = 14;
+            txtDireccion.TabIndex = 21;
             // 
             // btnLimpiar
             // 
@@ -392,7 +416,7 @@
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.RightToLeft = RightToLeft.No;
             btnLimpiar.Size = new Size(100, 32);
-            btnLimpiar.TabIndex = 22;
+            btnLimpiar.TabIndex = 28;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click_1;
@@ -407,7 +431,7 @@
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.RightToLeft = RightToLeft.No;
             btnRegistrar.Size = new Size(100, 32);
-            btnRegistrar.TabIndex = 3;
+            btnRegistrar.TabIndex = 29;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
@@ -431,27 +455,23 @@
             panel8.Controls.Add(txtContrasena);
             panel8.Controls.Add(txtUsuario);
             panel8.Controls.Add(iconPictureBox7);
-            panel8.Controls.Add(iconPictureBox6);
-            panel8.Controls.Add(iconPictureBox5);
-            panel8.Controls.Add(iconPictureBox4);
-            panel8.Controls.Add(iconPictureBox3);
-            panel8.Controls.Add(iconPictureBox2);
             panel8.Controls.Add(label19);
             panel8.Controls.Add(label17);
             panel8.Controls.Add(label16);
             panel8.Location = new Point(445, 153);
             panel8.Name = "panel8";
             panel8.Size = new Size(512, 134);
-            panel8.TabIndex = 13;
+            panel8.TabIndex = 24;
             // 
             // cmbRol
             // 
             cmbRol.FormattingEnabled = true;
+            cmbRol.ItemHeight = 14;
             cmbRol.Items.AddRange(new object[] { "Administrador del Sistema", "Administrador", "Auxiliar" });
             cmbRol.Location = new Point(153, 98);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(271, 22);
-            cmbRol.TabIndex = 31;
+            cmbRol.TabIndex = 28;
             // 
             // label22
             // 
@@ -469,7 +489,7 @@
             txtConfirmarContrasena.Location = new Point(153, 69);
             txtConfirmarContrasena.Name = "txtConfirmarContrasena";
             txtConfirmarContrasena.Size = new Size(271, 23);
-            txtConfirmarContrasena.TabIndex = 29;
+            txtConfirmarContrasena.TabIndex = 27;
             // 
             // txtContrasena
             // 
@@ -477,7 +497,7 @@
             txtContrasena.Location = new Point(153, 38);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(271, 23);
-            txtContrasena.TabIndex = 28;
+            txtContrasena.TabIndex = 26;
             // 
             // txtUsuario
             // 
@@ -485,7 +505,7 @@
             txtUsuario.Location = new Point(153, 7);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(271, 23);
-            txtUsuario.TabIndex = 27;
+            txtUsuario.TabIndex = 25;
             // 
             // iconPictureBox7
             // 
@@ -495,87 +515,12 @@
             iconPictureBox7.IconColor = Color.Red;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconPictureBox7.IconSize = 22;
-            iconPictureBox7.Location = new Point(472, 69);
+            iconPictureBox7.Location = new Point(469, 69);
             iconPictureBox7.Name = "iconPictureBox7";
             iconPictureBox7.Size = new Size(29, 22);
             iconPictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
             iconPictureBox7.TabIndex = 15;
             iconPictureBox7.TabStop = false;
-            // 
-            // iconPictureBox6
-            // 
-            iconPictureBox6.BackColor = Color.LavenderBlush;
-            iconPictureBox6.ForeColor = Color.Red;
-            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.XmarksLines;
-            iconPictureBox6.IconColor = Color.Red;
-            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox6.IconSize = 22;
-            iconPictureBox6.Location = new Point(472, 39);
-            iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(29, 22);
-            iconPictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
-            iconPictureBox6.TabIndex = 14;
-            iconPictureBox6.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.LavenderBlush;
-            iconPictureBox5.ForeColor = Color.Red;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            iconPictureBox5.IconColor = Color.Red;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox5.IconSize = 22;
-            iconPictureBox5.Location = new Point(472, 8);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(29, 22);
-            iconPictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
-            iconPictureBox5.TabIndex = 13;
-            iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            iconPictureBox4.BackColor = Color.LavenderBlush;
-            iconPictureBox4.ForeColor = Color.Lime;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Check;
-            iconPictureBox4.IconColor = Color.Lime;
-            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox4.IconSize = 22;
-            iconPictureBox4.Location = new Point(430, 69);
-            iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(29, 22);
-            iconPictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            iconPictureBox4.TabIndex = 12;
-            iconPictureBox4.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.LavenderBlush;
-            iconPictureBox3.ForeColor = Color.Lime;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Check;
-            iconPictureBox3.IconColor = Color.Lime;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox3.IconSize = 22;
-            iconPictureBox3.Location = new Point(430, 39);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(29, 22);
-            iconPictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
-            iconPictureBox3.TabIndex = 11;
-            iconPictureBox3.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.LavenderBlush;
-            iconPictureBox2.ForeColor = Color.Lime;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Check;
-            iconPictureBox2.IconColor = Color.Lime;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox2.IconSize = 22;
-            iconPictureBox2.Location = new Point(430, 8);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(29, 22);
-            iconPictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            iconPictureBox2.TabIndex = 10;
-            iconPictureBox2.TabStop = false;
             // 
             // label19
             // 
@@ -637,7 +582,7 @@
             panel7.Location = new Point(445, 89);
             panel7.Name = "panel7";
             panel7.Size = new Size(512, 43);
-            panel7.TabIndex = 15;
+            panel7.TabIndex = 19;
             // 
             // txtSegundoApellido
             // 
@@ -645,7 +590,7 @@
             txtSegundoApellido.Location = new Point(323, 7);
             txtSegundoApellido.Name = "txtSegundoApellido";
             txtSegundoApellido.Size = new Size(182, 23);
-            txtSegundoApellido.TabIndex = 30;
+            txtSegundoApellido.TabIndex = 21;
             // 
             // txtPrimerApellido
             // 
@@ -653,7 +598,7 @@
             txtPrimerApellido.Location = new Point(71, 8);
             txtPrimerApellido.Name = "txtPrimerApellido";
             txtPrimerApellido.Size = new Size(182, 23);
-            txtPrimerApellido.TabIndex = 29;
+            txtPrimerApellido.TabIndex = 20;
             // 
             // label11
             // 
@@ -707,7 +652,7 @@
             panel5.Location = new Point(31, 26);
             panel5.Name = "panel5";
             panel5.Size = new Size(391, 106);
-            panel5.TabIndex = 12;
+            panel5.TabIndex = 13;
             // 
             // txtNumeroDoc
             // 
@@ -715,7 +660,8 @@
             txtNumeroDoc.Location = new Point(85, 22);
             txtNumeroDoc.Name = "txtNumeroDoc";
             txtNumeroDoc.Size = new Size(271, 23);
-            txtNumeroDoc.TabIndex = 11;
+            txtNumeroDoc.TabIndex = 4;
+            txtNumeroDoc.KeyPress += txtNumeroDoc_KeyPress;
             // 
             // label7
             // 
@@ -733,7 +679,7 @@
             rbtnPasaporte.Location = new Point(297, 62);
             rbtnPasaporte.Name = "rbtnPasaporte";
             rbtnPasaporte.Size = new Size(87, 18);
-            rbtnPasaporte.TabIndex = 13;
+            rbtnPasaporte.TabIndex = 16;
             rbtnPasaporte.TabStop = true;
             rbtnPasaporte.Text = "Pasaporte";
             rbtnPasaporte.UseVisualStyleBackColor = true;
@@ -754,7 +700,7 @@
             rbtnTipoCC.Location = new Point(144, 62);
             rbtnTipoCC.Name = "rbtnTipoCC";
             rbtnTipoCC.Size = new Size(41, 18);
-            rbtnTipoCC.TabIndex = 12;
+            rbtnTipoCC.TabIndex = 14;
             rbtnTipoCC.TabStop = true;
             rbtnTipoCC.Text = "CC";
             rbtnTipoCC.UseVisualStyleBackColor = true;
@@ -765,7 +711,7 @@
             rbtnTipoCEx.Location = new Point(207, 60);
             rbtnTipoCEx.Name = "rbtnTipoCEx";
             rbtnTipoCEx.Size = new Size(65, 18);
-            rbtnTipoCEx.TabIndex = 11;
+            rbtnTipoCEx.TabIndex = 15;
             rbtnTipoCEx.TabStop = true;
             rbtnTipoCEx.Text = "C. Ext.";
             rbtnTipoCEx.UseVisualStyleBackColor = true;
@@ -780,7 +726,7 @@
             panel6.Location = new Point(445, 26);
             panel6.Name = "panel6";
             panel6.Size = new Size(512, 43);
-            panel6.TabIndex = 13;
+            panel6.TabIndex = 17;
             // 
             // txtSegundoNombre
             // 
@@ -788,7 +734,7 @@
             txtSegundoNombre.Location = new Point(324, 7);
             txtSegundoNombre.Name = "txtSegundoNombre";
             txtSegundoNombre.Size = new Size(182, 23);
-            txtSegundoNombre.TabIndex = 28;
+            txtSegundoNombre.TabIndex = 19;
             // 
             // txtPrimerNombre
             // 
@@ -796,7 +742,7 @@
             txtPrimerNombre.Location = new Point(71, 7);
             txtPrimerNombre.Name = "txtPrimerNombre";
             txtPrimerNombre.Size = new Size(182, 23);
-            txtPrimerNombre.TabIndex = 27;
+            txtPrimerNombre.TabIndex = 18;
             // 
             // label9
             // 
@@ -828,6 +774,10 @@
             label14.TabIndex = 18;
             label14.Text = "Correo ";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // FormUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 14F);
@@ -841,6 +791,7 @@
             Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "FormUsuarios";
             Text = "Control_Inventario [Usuarios]";
+            Load += FormUsuarios_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
@@ -853,17 +804,13 @@
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -876,7 +823,7 @@
         private TextBox txtBuscarUsuario;
         private Label label2;
         private Label label1;
-        private Button button2;
+        private Button btnActualizar;
         private Button button3;
         private Panel panel2;
         private RadioButton rbtnUsuario;
@@ -912,11 +859,6 @@
         private Label label18;
         private Panel panel8;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label19;
         private TextBox txtConfirmar;
         private Label label17;
@@ -944,7 +886,6 @@
         private TextBox txtDireccion;
         private TextBox txtConfirmarContrasena;
         private TextBox txtContrasena;
-        private TextBox txtUsuario;
         private TextBox txtSegundoApellido;
         private TextBox txtPrimerApellido;
         private TextBox txtNumeroDoc;
@@ -953,5 +894,8 @@
         private TextBox txtPrimerNombre;
         private ComboBox cmbRol;
         private Label label22;
+        private TextBox txtUsuario;
+        private ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton iButtonSalir;
     }
 }

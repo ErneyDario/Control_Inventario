@@ -30,9 +30,9 @@
         {
             panelTrabajo = new Panel();
             panel1 = new Panel();
+            lblRol = new Label();
             iPicBoxPerfil = new FontAwesome.Sharp.IconPictureBox();
-            label2 = new Label();
-            label1 = new Label();
+            lblNombreUsuario = new Label();
             panel2 = new Panel();
             iButtonSalir = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
@@ -61,20 +61,35 @@
             panelTrabajo.Padding = new Padding(6);
             panelTrabajo.Size = new Size(1053, 660);
             panelTrabajo.TabIndex = 0;
-            panelTrabajo.Paint += panelTrabajo_Paint;
             // 
             // panel1
             // 
             panel1.BackColor = Color.LavenderBlush;
             panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(lblRol);
             panel1.Controls.Add(iPicBoxPerfil);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblNombreUsuario);
             panel1.Location = new Point(11, 16);
             panel1.Name = "panel1";
             panel1.Size = new Size(161, 115);
             panel1.TabIndex = 0;
+            // 
+            // lblRol
+            // 
+            lblRol.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblRol.AutoSize = true;
+            lblRol.BackColor = Color.Transparent;
+            lblRol.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRol.ForeColor = Color.FromArgb(64, 64, 64);
+            lblRol.Location = new Point(71, 63);
+            lblRol.Name = "lblRol";
+            lblRol.Padding = new Padding(1, 0, 20, 0);
+            lblRol.RightToLeft = RightToLeft.Yes;
+            lblRol.Size = new Size(95, 14);
+            lblRol.TabIndex = 1;
+            lblRol.Text = "RolUSuario";
+            lblRol.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // iPicBoxPerfil
             // 
@@ -85,37 +100,25 @@
             iPicBoxPerfil.IconColor = Color.Black;
             iPicBoxPerfil.IconFont = FontAwesome.Sharp.IconFont.Regular;
             iPicBoxPerfil.IconSize = 62;
-            iPicBoxPerfil.Location = new Point(51, 3);
+            iPicBoxPerfil.Location = new Point(3, 20);
             iPicBoxPerfil.Name = "iPicBoxPerfil";
             iPicBoxPerfil.Size = new Size(62, 70);
             iPicBoxPerfil.SizeMode = PictureBoxSizeMode.CenterImage;
             iPicBoxPerfil.TabIndex = 0;
             iPicBoxPerfil.TabStop = false;
             // 
-            // label2
+            // lblNombreUsuario
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(64, 64, 64);
-            label2.Location = new Point(69, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(27, 14);
-            label2.TabIndex = 1;
-            label2.Text = "Rol";
-            label2.Click += label2_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(41, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 18);
-            label1.TabIndex = 0;
-            label1.Text = "UserName";
+            lblNombreUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblNombreUsuario.AutoSize = true;
+            lblNombreUsuario.BackColor = Color.Transparent;
+            lblNombreUsuario.Font = new Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNombreUsuario.ForeColor = Color.FromArgb(64, 64, 64);
+            lblNombreUsuario.Location = new Point(68, 45);
+            lblNombreUsuario.Name = "lblNombreUsuario";
+            lblNombreUsuario.Size = new Size(86, 18);
+            lblNombreUsuario.TabIndex = 0;
+            lblNombreUsuario.Text = "UserName";
             // 
             // panel2
             // 
@@ -198,7 +201,6 @@
             iButtonInformes.TabIndex = 4;
             iButtonInformes.Text = "Informes";
             iButtonInformes.UseVisualStyleBackColor = false;
-            iButtonInformes.Click += iButtonInformes_Click;
             // 
             // iconProveedores
             // 
@@ -288,8 +290,8 @@
 
         private Panel panelTrabajo;
         private Panel panel1;
-        private Label label2;
-        private Label label1;
+        private Label lblRol;
+        private Label lblNombreUsuario;
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconProveedores;
         private FontAwesome.Sharp.IconButton iButtonClientes;

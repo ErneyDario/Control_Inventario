@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,35 +19,20 @@ namespace Control_Inventario
         {
             InitializeComponent();
         }
+        // Instanciamos la conexión
+
+        conexionDB conectar = new conexionDB();
 
         private void Form3_Load(object sender, EventArgs e)
         {
-           // Conexion c = new Conexion();
-        }
+            this.lblNombreUsuario.Text = variablesGlobales.vNombreUsuario;
+            this.lblRol.Text = variablesGlobales.vRol;
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iButtonSalir_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Cerrar sesión?",
-                    "Consulta",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
+            if (variablesGlobales.vRol.Contains("Auxiliar", StringComparison.OrdinalIgnoreCase))
             {
-                FormLogin form = new FormLogin();
-                form.Show();
-                this.Hide();
-
+                this.iButtonInformes.Enabled = false;
+                this.iButtonUsuarios.Enabled = false;
             }
-
-        }
-
-        private void panelTrabajo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void iButtonUsuarios_Click(object sender, EventArgs e)
@@ -54,13 +41,8 @@ namespace Control_Inventario
             frmUsuarios.TopLevel = false;
             panelTrabajo.Controls.Add(frmUsuarios);
             frmUsuarios.Show();
-
         }
 
-        private void iButtonInformes_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void iButtonVentas_Click(object sender, EventArgs e)
         {
@@ -92,6 +74,24 @@ namespace Control_Inventario
             frmProveedores.TopLevel = false;
             panelTrabajo.Controls.Add(frmProveedores);
             frmProveedores.Show();
+        }
+
+        private void iButtonSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Cerrar sesión?",
+                    "Consulta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormLogin form = new FormLogin();
+                form.Show();
+                this.Hide();
+            }
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
