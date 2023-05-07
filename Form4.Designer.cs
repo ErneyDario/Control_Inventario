@@ -44,7 +44,7 @@
             panel4 = new Panel();
             iButtonSalir = new FontAwesome.Sharp.IconButton();
             btnCrearUsuario = new Button();
-            button3 = new Button();
+            btnEliminar = new Button();
             btnActualizar = new Button();
             label1 = new Label();
             panel2 = new Panel();
@@ -87,6 +87,8 @@
             txtPrimerNombre = new TextBox();
             label9 = new Label();
             label5 = new Label();
+            btnGuardarCambios = new Button();
+            btnEliminarRegistro = new Button();
             label14 = new Label();
             errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
@@ -251,7 +253,7 @@
             panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(iButtonSalir);
             panel4.Controls.Add(btnCrearUsuario);
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(btnEliminar);
             panel4.Controls.Add(btnActualizar);
             panel4.Location = new Point(571, 110);
             panel4.Name = "panel4";
@@ -296,19 +298,20 @@
             btnCrearUsuario.UseVisualStyleBackColor = false;
             btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Cursor = Cursors.Hand;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(233, 18);
-            button3.Name = "button3";
-            button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(100, 32);
-            button3.TabIndex = 3;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(64, 64, 64);
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(233, 18);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.RightToLeft = RightToLeft.No;
+            btnEliminar.Size = new Size(100, 32);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnActualizar
             // 
@@ -355,6 +358,8 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
+            panel2.Controls.Add(btnGuardarCambios);
+            panel2.Controls.Add(btnEliminarRegistro);
             panel2.Enabled = false;
             panel2.Location = new Point(28, 253);
             panel2.Name = "panel2";
@@ -412,7 +417,7 @@
             btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(738, 293);
+            btnLimpiar.Location = new Point(731, 293);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.RightToLeft = RightToLeft.No;
             btnLimpiar.Size = new Size(100, 32);
@@ -764,6 +769,37 @@
             label5.TabIndex = 4;
             label5.Text = "Primero";
             // 
+            // btnGuardarCambios
+            // 
+            btnGuardarCambios.BackColor = Color.FromArgb(64, 64, 64);
+            btnGuardarCambios.Cursor = Cursors.Hand;
+            btnGuardarCambios.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarCambios.ForeColor = Color.White;
+            btnGuardarCambios.Location = new Point(852, 287);
+            btnGuardarCambios.Name = "btnGuardarCambios";
+            btnGuardarCambios.RightToLeft = RightToLeft.No;
+            btnGuardarCambios.Size = new Size(100, 44);
+            btnGuardarCambios.TabIndex = 30;
+            btnGuardarCambios.Text = "Guardar Cambios";
+            btnGuardarCambios.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnGuardarCambios.UseVisualStyleBackColor = false;
+            btnGuardarCambios.Click += btnGuardarCambios_Click;
+            // 
+            // btnEliminarRegistro
+            // 
+            btnEliminarRegistro.BackColor = Color.Red;
+            btnEliminarRegistro.Cursor = Cursors.Hand;
+            btnEliminarRegistro.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarRegistro.ForeColor = Color.White;
+            btnEliminarRegistro.Location = new Point(845, 287);
+            btnEliminarRegistro.Name = "btnEliminarRegistro";
+            btnEliminarRegistro.RightToLeft = RightToLeft.No;
+            btnEliminarRegistro.Size = new Size(115, 44);
+            btnEliminarRegistro.TabIndex = 31;
+            btnEliminarRegistro.Text = "Eliminar Registro";
+            btnEliminarRegistro.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEliminarRegistro.UseVisualStyleBackColor = false;
+            // 
             // label14
             // 
             label14.AutoSize = true;
@@ -824,7 +860,7 @@
         private Label label2;
         private Label label1;
         private Button btnActualizar;
-        private Button button3;
+        private Button btnEliminar;
         private Panel panel2;
         private RadioButton rbtnUsuario;
         private RadioButton rbtnId;
@@ -897,5 +933,7 @@
         private TextBox txtUsuario;
         private ErrorProvider errorProvider1;
         private FontAwesome.Sharp.IconButton iButtonSalir;
+        private Button btnGuardarCambios;
+        private Button btnEliminarRegistro;
     }
 }

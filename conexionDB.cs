@@ -24,8 +24,7 @@ namespace Control_Inventario
         {
             try
             {
-                conectarDB.Open();
-                
+                conectarDB.Open();                
             }
             catch (Exception ex)
             {

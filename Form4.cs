@@ -27,6 +27,8 @@ namespace Control_Inventario
         bool ok;
         //Creamos e inicializamos la variable que capturara el valor del radiobutton seleccionado
         string tipoDocumento = "";
+        //Creamos e inicializamos la variable que captura el valor de Id a actualizar
+        string IdActualizar = "";
         //
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
@@ -35,6 +37,10 @@ namespace Control_Inventario
             {
                 this.iconPictureBox7.Visible = false;
             }
+            //gestionamos los botnes al iniciar el form usuarios
+            this.btnCrearUsuario.Visible = true;
+            this.btnGuardarCambios.Visible = false;
+            this.btnEliminarRegistro.Visible = false;
         }
         //Creamos un metodo para confirmar que los campos requeridos no esten vacios
         private bool confirmarTXT()
@@ -117,7 +123,7 @@ namespace Control_Inventario
             errorProvider1.SetError(txtConfirmarContrasena, "");
             errorProvider1.SetError(cmbRol, "");
         }
-        //Creamos un metodo para limpiar los cambios 
+        //Creamos un metodo para limpiar los campos 
         private void limpiarCampos()
         {
             this.txtBuscarUsuario.Text = "";
@@ -140,6 +146,7 @@ namespace Control_Inventario
             this.rbtnTipoCEx.Checked = false;
             this.rbtnPasaporte.Checked = false;
             this.dtgvEncontrados.DataSource = null;
+            limpiarConfirmarTXT();
         }
         //Creamos un metodo para insertar un nuevo registro
         private void nuevoRegistro()
@@ -153,7 +160,7 @@ namespace Control_Inventario
             if (!valorId.Read())
             {
                 conectar.cerrarDB();
-                // Condultamos el nombre de usruario, para evitar que hayan duplicados
+                // Consultamos el nombre de usuario, para evitar que hayan duplicados
                 conectar.abrirDB();
                 SqlCommand consultaUser = new SqlCommand("SELECT * FROM Usuarios WHERE usuario = @usuario", conectar.conectarDB);
                 consultaUser.Parameters.AddWithValue("@usuario", txtUsuario.Text);
@@ -179,6 +186,7 @@ namespace Control_Inventario
                        MessageBoxIcon.Question) == DialogResult.No)
                     {
                         this.panel2.Enabled = false;
+                        this.panel1.Enabled = false;
                     }
                 }
                 else
@@ -194,6 +202,37 @@ namespace Control_Inventario
             }
 
 
+        }
+        //Creamos un metodo para actualizar un registro
+        private void actualizarRegistro()
+        {
+            //creamos una variable para almacenar el paramatro a actualizar
+            string IdActualizar = txtNumeroDoc.Text;
+            //actualizamos el registro
+            conectar.abrirDB();
+            string cadena = "UPDATE Usuarios SET Id = '"+txtNumeroDoc.Text+"', tipoDocumento = '" + tipoDocumento + "', primerNombre = '" + txtPrimerNombre.Text + "', segundoNombre ='" + txtSegundoNombre.Text + "'," +
+                            " primerApellido = '" + txtPrimerApellido.Text + "', segundoApellido = '" + txtSegundoApellido.Text + "', direccion = '" + txtDireccion.Text + "' , telefono= '" + txtTelefono.Text + "'," +
+                            " correo = '" + txtCorreo.Text + "' , usuario =  '" + txtUsuario.Text + "', password = '" + txtContrasena.Text + "', rol= '" + cmbRol.GetItemText(cmbRol.SelectedItem) + "' WHERE Id = '"+IdActualizar+"'";
+            SqlCommand comando = new SqlCommand(cadena, conectar.conectarDB);
+            comando.ExecuteNonQuery();
+            //Invocamos el metodo para limpiarlos campos
+            limpiarCampos();
+
+            MessageBox.Show("Registro actualizado con Exito");
+            conectar.cerrarDB();
+            if (MessageBox.Show("¿desea Agregar otro registro?",
+               "Consulta",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.No)
+
+            {
+                        this.panel2.Enabled = false;
+                        this.panel1.Enabled = false;
+            }
+            else
+            {
+                this.panel2.Enabled = false;
+            }
         }
         // Condicionamos txtNumeroDoc para que reciba solo numeros
         private void txtNumeroDoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -217,6 +256,9 @@ namespace Control_Inventario
         {
             this.panel1.Enabled = false;
             this.panel2.Enabled = true;
+            this.btnRegistrar.Visible = true;
+            this.btnGuardarCambios.Visible = false;
+            this.btnEliminarRegistro.Visible = false;
         }
         //Configuramos el boton crear
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -273,6 +315,9 @@ namespace Control_Inventario
         {
             this.panel1.Enabled = true;
             this.panel2.Enabled = false;
+            this.btnGuardarCambios.Visible = true;
+            this.btnEliminarRegistro.Visible = false;
+            this.btnRegistrar.Visible = false;
         }
         //Configuramos el boton Buscar
         private void iBtnBuscar_Click(object sender, EventArgs e)
@@ -340,6 +385,102 @@ namespace Control_Inventario
                 }
             }
         }
+        //configuramos el btnGuardarCambios
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            limpiarConfirmarTXT();
+            if (confirmarTXT())
+            {
+                if (txtContrasena.Text == txtConfirmarContrasena.Text)
+                {
+                    this.iconPictureBox7.Visible = false;
+                    if (rbtnTipoCC.Checked == true)
+                    {
+                        tipoDocumento = rbtnTipoCC.Text;
+                        actualizarRegistro();
+                    }
+                    else
+                    {
+                        if (rbtnTipoCEx.Checked == true)
+                        {
+                            tipoDocumento += rbtnTipoCEx.Text;
+                            actualizarRegistro();
+                        }
+                        else
+                        {
+                            if (rbtnPasaporte.Checked == true)
+                            {
+                                tipoDocumento = rbtnPasaporte.Text;
+                                actualizarRegistro();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Seleccione un tipo de Documento");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    this.iconPictureBox7.Visible = true;
+                    MessageBox.Show("La contraseña ingresada y la confirmación de contraseña,  no coinciden");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique los espacios con error y diligencielos");
+            }
+        }
+        //configuramos el boton Eliminar
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            this.panel1.Enabled = true;
+            this.panel2.Enabled = false;
+            this.btnEliminarRegistro.Visible = true;
+            this.btnGuardarCambios.Visible = false;
+            this.btnRegistrar.Visible = false;
+        }
+        //tomamos el valor del drgv y lo enviamos a los txt del panel 2 para su edicion
+        private void dtgvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.panel2.Enabled = true;
+            txtNumeroDoc.Text = dtgvEncontrados.SelectedCells[0].Value.ToString();
+            tipoDocumento = dtgvEncontrados.SelectedCells[1].Value.ToString(); //asignamos valor a la variable tipoDocumento para obtener el valor del rbtn
+            txtPrimerNombre.Text = dtgvEncontrados.SelectedCells[2].Value.ToString();
+            txtSegundoNombre.Text = dtgvEncontrados.SelectedCells[3].Value.ToString();
+            txtPrimerApellido.Text = dtgvEncontrados.SelectedCells[4].Value.ToString();
+            txtSegundoApellido.Text = dtgvEncontrados.SelectedCells[5].Value.ToString();
+            txtDireccion.Text = dtgvEncontrados.SelectedCells[6].Value.ToString();
+            txtTelefono.Text = dtgvEncontrados.SelectedCells[7].Value.ToString();
+            txtCorreo.Text = dtgvEncontrados.SelectedCells[8].Value.ToString();
+            txtUsuario.Text = dtgvEncontrados.SelectedCells[9].Value.ToString();
+            txtContrasena.Text = dtgvEncontrados.SelectedCells[10].Value.ToString();
+            txtConfirmarContrasena.Text = txtContrasena.Text;
+            cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
+            //condicion para determinar el rbtn seleccionado
+            if (tipoDocumento.Contains("CC"))
+            {
+                rbtnTipoCC.Checked = true;
+            }
+            else
+            {
+                if (tipoDocumento.Contains("C. Ext."))
+                {
+                    rbtnTipoCEx.Checked = true;
+                }
+                else
+                {
+                    if (tipoDocumento.Contains("Pasaporte"))
+                    {
+                        rbtnPasaporte.Checked = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Verifique el tipo de Documento");
+                    }
+                }
+            }
+        }
         //limpiamos txt y rbtn
         private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
@@ -357,44 +498,6 @@ namespace Control_Inventario
                 this.Hide();
             }
         }
-
-        private void dtgvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.panel2.Enabled = true;
-            txtNumeroDoc.Text = dtgvEncontrados.SelectedCells[0].Value.ToString();
-            txtPrimerNombre.Text = dtgvEncontrados.SelectedCells[2].Value.ToString();
-            txtSegundoNombre.Text = dtgvEncontrados.SelectedCells[3].Value.ToString();
-            txtPrimerApellido.Text = dtgvEncontrados.SelectedCells[4].Value.ToString();
-            txtSegundoApellido.Text = dtgvEncontrados.SelectedCells[5].Value.ToString();
-            txtDireccion.Text = dtgvEncontrados.SelectedCells[6].Value.ToString();
-            txtTelefono.Text = dtgvEncontrados.SelectedCells[7].Value.ToString();
-            txtCorreo.Text = dtgvEncontrados.SelectedCells[8].Value.ToString();
-            txtUsuario.Text = dtgvEncontrados.SelectedCells[9].Value.ToString();
-            txtContrasena.Text = dtgvEncontrados.SelectedCells[10].Value.ToString();
-            txtConfirmarContrasena.Text = txtContrasena.Text;
-            cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
-            /*if (dtgvEncontrados.SelectedCells[1].Value.ToString() == rbtnCC.Text)
-            {
-                rbtnCC.Checked = true;
-            }
-            else
-            {
-                if (dtgvEncontrados.SelectedCells[1].Value.ToString() == rbtnCEX.Text)
-                {
-                    rbtnCEX.Checked = true;
-                }
-                else
-                {
-                    if (dtgvEncontrados.SelectedCells[1].Value.ToString() == rbtnPasaporte.Text)
-                    {
-                        rbtnPasaporte.Checked = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Verifique el tipo de Documento");
-                    }
-                }
-            }*/
-        }
+      
     }
 }
