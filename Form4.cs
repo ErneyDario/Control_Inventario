@@ -210,9 +210,9 @@ namespace Control_Inventario
             string IdActualizar = txtNumeroDoc.Text;
             //actualizamos el registro
             conectar.abrirDB();
-            string cadena = "UPDATE Usuarios SET Id = '"+txtNumeroDoc.Text+"', tipoDocumento = '" + tipoDocumento + "', primerNombre = '" + txtPrimerNombre.Text + "', segundoNombre ='" + txtSegundoNombre.Text + "'," +
+            string cadena = "UPDATE Usuarios SET Id = '" + txtNumeroDoc.Text + "', tipoDocumento = '" + tipoDocumento + "', primerNombre = '" + txtPrimerNombre.Text + "', segundoNombre ='" + txtSegundoNombre.Text + "'," +
                             " primerApellido = '" + txtPrimerApellido.Text + "', segundoApellido = '" + txtSegundoApellido.Text + "', direccion = '" + txtDireccion.Text + "' , telefono= '" + txtTelefono.Text + "'," +
-                            " correo = '" + txtCorreo.Text + "' , usuario =  '" + txtUsuario.Text + "', password = '" + txtContrasena.Text + "', rol= '" + cmbRol.GetItemText(cmbRol.SelectedItem) + "' WHERE Id = '"+IdActualizar+"'";
+                            " correo = '" + txtCorreo.Text + "' , usuario =  '" + txtUsuario.Text + "', password = '" + txtContrasena.Text + "', rol= '" + cmbRol.GetItemText(cmbRol.SelectedItem) + "' WHERE Id = '" + IdActualizar + "'";
             SqlCommand comando = new SqlCommand(cadena, conectar.conectarDB);
             comando.ExecuteNonQuery();
             //Invocamos el metodo para limpiarlos campos
@@ -226,8 +226,8 @@ namespace Control_Inventario
                MessageBoxIcon.Question) == DialogResult.No)
 
             {
-                        this.panel2.Enabled = false;
-                        this.panel1.Enabled = false;
+                this.panel2.Enabled = false;
+                this.panel1.Enabled = false;
             }
             else
             {
@@ -456,7 +456,25 @@ namespace Control_Inventario
             txtUsuario.Text = dtgvEncontrados.SelectedCells[9].Value.ToString();
             txtContrasena.Text = dtgvEncontrados.SelectedCells[10].Value.ToString();
             txtConfirmarContrasena.Text = txtContrasena.Text;
-            cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
+            // Condicionamos el valor retornado del dtgv en el campo rol para seleccionar el cmbRol
+            if (dtgvEncontrados.SelectedCells[11].Value.ToString().Contains("Auxiliar"))
+            {
+                cmbRol.SelectedIndex = 1;
+            }
+            else
+            {
+                if (dtgvEncontrados.SelectedCells[11].Value.ToString() == "Administrador")
+                {
+                    cmbRol.SelectedIndex = 0;
+                }
+                else
+                    {
+                        MessageBox.Show("Verifique y seleccione un rol para el usuario");
+                    }
+
+                
+            }
+            //cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
             //condicion para determinar el rbtn seleccionado
             if (tipoDocumento.Contains("CC"))
             {
@@ -498,6 +516,6 @@ namespace Control_Inventario
                 this.Hide();
             }
         }
-      
+
     }
 }

@@ -472,7 +472,7 @@
             // 
             cmbRol.FormattingEnabled = true;
             cmbRol.ItemHeight = 14;
-            cmbRol.Items.AddRange(new object[] { "Administrador del Sistema", "Administrador", "Auxiliar" });
+            cmbRol.Items.AddRange(new object[] { "Administrador", "Auxiliar" });
             cmbRol.Location = new Point(153, 98);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(271, 22);
