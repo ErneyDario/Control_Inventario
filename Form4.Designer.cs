@@ -195,6 +195,7 @@
             rbtnId.TabStop = true;
             rbtnId.Text = "Id";
             rbtnId.UseVisualStyleBackColor = true;
+            rbtnId.Click += rbtnId_Click;
             // 
             // label2
             // 
@@ -224,6 +225,7 @@
             txtBuscarUsuario.Name = "txtBuscarUsuario";
             txtBuscarUsuario.Size = new Size(271, 23);
             txtBuscarUsuario.TabIndex = 6;
+            txtBuscarUsuario.KeyPress += txtBuscarUsuario_KeyPress;
             // 
             // label3
             // 
@@ -663,6 +665,7 @@
             // 
             txtNumeroDoc.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             txtNumeroDoc.Location = new Point(85, 22);
+            txtNumeroDoc.MaxLength = 10;
             txtNumeroDoc.Name = "txtNumeroDoc";
             txtNumeroDoc.Size = new Size(271, 23);
             txtNumeroDoc.TabIndex = 4;
@@ -799,6 +802,7 @@
             btnEliminarRegistro.Text = "Eliminar Registro";
             btnEliminarRegistro.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnEliminarRegistro.UseVisualStyleBackColor = false;
+            btnEliminarRegistro.Click += btnEliminarRegistro_Click;
             // 
             // label14
             // 

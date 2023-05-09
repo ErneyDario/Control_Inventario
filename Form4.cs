@@ -27,8 +27,9 @@ namespace Control_Inventario
         bool ok;
         //Creamos e inicializamos la variable que capturara el valor del radiobutton seleccionado
         string tipoDocumento = "";
-        //Creamos e inicializamos la variable que captura el valor de Id a actualizar
+        //Creamos e inicializamos las variables que captura el valor de Id a actualizar y a eliminar
         string IdActualizar = "";
+        string IdEliminar = "";
         //
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
@@ -207,7 +208,7 @@ namespace Control_Inventario
         private void actualizarRegistro()
         {
             //creamos una variable para almacenar el paramatro a actualizar
-            string IdActualizar = txtNumeroDoc.Text;
+            IdActualizar = txtNumeroDoc.Text;
             //actualizamos el registro
             conectar.abrirDB();
             string cadena = "UPDATE Usuarios SET Id = '" + txtNumeroDoc.Text + "', tipoDocumento = '" + tipoDocumento + "', primerNombre = '" + txtPrimerNombre.Text + "', segundoNombre ='" + txtSegundoNombre.Text + "'," +
@@ -220,7 +221,7 @@ namespace Control_Inventario
 
             MessageBox.Show("Registro actualizado con Exito");
             conectar.cerrarDB();
-            if (MessageBox.Show("¿desea Agregar otro registro?",
+            if (MessageBox.Show("¿desea Actualizar otro registro?",
                "Consulta",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) == DialogResult.No)
@@ -234,6 +235,37 @@ namespace Control_Inventario
                 this.panel2.Enabled = false;
             }
         }
+        //Creamos un metodo para Eliminar un registro
+        private void EliminarRegistros()
+        {
+            IdEliminar = txtNumeroDoc.Text;
+            conectar.abrirDB();
+            string cadena = "Delete from Usuarios Where  Id = " + IdEliminar + "";
+            SqlCommand comando = new SqlCommand(cadena, conectar.conectarDB);
+            comando.ExecuteNonQuery();
+            conectar.cerrarDB();
+            MessageBox.Show("Registro Eliminado correctamente");
+            // Invocamos el metodo para limpiar campos
+            limpiarCampos();
+
+            if (MessageBox.Show("¿desea Eliminar otro registro?",
+               "Consulta",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.No)
+
+            {
+                this.panel2.Enabled = false;
+                this.panel1.Enabled = false;
+            }
+            else
+            {
+                this.panel2.Enabled = false;
+
+
+            }
+
+
+        }
         // Condicionamos txtNumeroDoc para que reciba solo numeros
         private void txtNumeroDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -243,6 +275,28 @@ namespace Control_Inventario
             else
                 errorProvider1.SetError(txtNumeroDoc, "");
         }
+        // Condicionamos txtBuscarUsuario para que reciba solo numeros
+        private void txtBuscarUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (rbtnId.Checked == true)
+            {
+                bool validar = CondicionandoTxt.soloNum(e);
+                if (!validar)
+                    errorProvider1.SetError(txtBuscarUsuario, "Ingrese solo numeros");
+                else
+                    errorProvider1.SetError(txtBuscarUsuario, "");
+            }
+            else
+            {
+                bool validar = CondicionandoTxt.soloTex(e);
+                if (!validar)
+                    errorProvider1.SetError(txtBuscarUsuario, "Ingrese solo Texto");
+                else
+                    errorProvider1.SetError(txtBuscarUsuario, "");
+            }
+
+        }
         // Condicionamos el txtCorreo para que reciba formatos de correo solamente
         private void txtCorreo_Leave(object sender, EventArgs e)
         {
@@ -250,6 +304,152 @@ namespace Control_Inventario
                 errorProvider1.SetError(txtCorreo, "Ingrese un correo valido");
             else
                 errorProvider1.SetError(txtCorreo, "");
+        }
+        //Controlamos el rbtnId para evitar errores en la busqueda
+        private void rbtnId_Click(object sender, EventArgs e)
+        {
+            txtBuscarUsuario.Text = "";
+        }
+        //tomamos el valor del drgv y lo enviamos a los txt del panel 2 para su edicion
+        private void dtgvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.panel2.Enabled = true;
+            txtNumeroDoc.Text = dtgvEncontrados.SelectedCells[0].Value.ToString();
+            tipoDocumento = dtgvEncontrados.SelectedCells[1].Value.ToString(); //asignamos valor a la variable tipoDocumento para obtener el valor del rbtn
+            txtPrimerNombre.Text = dtgvEncontrados.SelectedCells[2].Value.ToString();
+            txtSegundoNombre.Text = dtgvEncontrados.SelectedCells[3].Value.ToString();
+            txtPrimerApellido.Text = dtgvEncontrados.SelectedCells[4].Value.ToString();
+            txtSegundoApellido.Text = dtgvEncontrados.SelectedCells[5].Value.ToString();
+            txtDireccion.Text = dtgvEncontrados.SelectedCells[6].Value.ToString();
+            txtTelefono.Text = dtgvEncontrados.SelectedCells[7].Value.ToString();
+            txtCorreo.Text = dtgvEncontrados.SelectedCells[8].Value.ToString();
+            txtUsuario.Text = dtgvEncontrados.SelectedCells[9].Value.ToString();
+            txtContrasena.Text = dtgvEncontrados.SelectedCells[10].Value.ToString();
+            txtConfirmarContrasena.Text = txtContrasena.Text;
+            // Condicionamos el valor retornado del dtgv en el campo rol para seleccionar el cmbRol
+            if (dtgvEncontrados.SelectedCells[11].Value.ToString().Contains("Auxiliar"))
+            {
+                cmbRol.SelectedIndex = 1;
+            }
+            else
+            {
+                if (dtgvEncontrados.SelectedCells[11].Value.ToString().Contains("Administrador"))
+                {
+                    cmbRol.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Verifique y seleccione un rol para el usuario");
+                }
+
+
+            }
+            //cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
+            //condicion para determinar el rbtn seleccionado
+            if (tipoDocumento.Contains("CC"))
+            {
+                rbtnTipoCC.Checked = true;
+            }
+            else
+            {
+                if (tipoDocumento.Contains("C. Ext."))
+                {
+                    rbtnTipoCEx.Checked = true;
+                }
+                else
+                {
+                    if (tipoDocumento.Contains("Pasaporte"))
+                    {
+                        rbtnPasaporte.Checked = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Verifique el tipo de Documento");
+                    }
+                }
+            }
+        }
+        //Configuramos el boton Buscar
+        private void iBtnBuscar_Click(object sender, EventArgs e)
+        {
+            //Condicionamos el txtBuscarUsuario para que no este vacio al momento de realizar la consulta
+            bool ConfirmarParametro = true;
+
+            if (txtBuscarUsuario.Text == "")
+            {
+                ConfirmarParametro = false;
+                errorProvider1.SetError(txtBuscarUsuario, "Ingrese un parametro de busqueda");
+            }
+            else
+            {
+
+
+                errorProvider1.SetError(txtBuscarUsuario, "");
+
+                //Condicionamos la busqueda segun el tipo
+                if (rbtnId.Checked == true)
+                {
+
+                    string consulta = " select * from Usuarios where Id= " + txtBuscarUsuario.Text + "";
+                    SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
+                    {
+                        dtgvEncontrados.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
+                        limpiarCampos();
+                    }
+                }
+                else
+                {
+                    if (rbtnNombre.Checked == true)
+                    {
+                        string consulta = " select * from Usuarios where primerNombre = '" + txtBuscarUsuario.Text + "' OR segundoNombre = '" + txtBuscarUsuario.Text + "' OR primerApellido = '" + txtBuscarUsuario.Text + "' OR segundoApellido = '" + txtBuscarUsuario.Text + "' ";
+                        SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
+                        SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
+                        DataTable dt = new DataTable();
+                        adaptador.Fill(dt);
+                        if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
+                        {
+                            dtgvEncontrados.DataSource = dt;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
+                            limpiarCampos();
+                        }
+                    }
+                    else
+                    {
+                        if (rbtnUsuario.Checked == true)
+                        {
+                            string consulta = " select * from Usuarios where usuario= '" + txtBuscarUsuario.Text + "' ";
+                            SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
+                            SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
+                            DataTable dt = new DataTable();
+                            adaptador.Fill(dt);
+                            if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
+                            {
+                                dtgvEncontrados.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
+                                limpiarCampos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor seleccion un tipo de busqueda");
+                        }
+                    }
+                }
+            }
         }
         //configuramos el boton Crear 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
@@ -319,72 +519,6 @@ namespace Control_Inventario
             this.btnEliminarRegistro.Visible = false;
             this.btnRegistrar.Visible = false;
         }
-        //Configuramos el boton Buscar
-        private void iBtnBuscar_Click(object sender, EventArgs e)
-        {
-            //Condicionamos la busqueda segun el tipo
-            if (rbtnId.Checked == true)
-            {
-                string consulta = " select * from Usuarios where Id= " + txtBuscarUsuario.Text + " ";
-                SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
-                SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
-                DataTable dt = new DataTable();
-                adaptador.Fill(dt);
-                if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
-                {
-                    dtgvEncontrados.DataSource = dt;
-                }
-                else
-                {
-                    MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
-                    limpiarCampos();
-                }
-            }
-            else
-            {
-                if (rbtnNombre.Checked == true)
-                {
-                    string consulta = " select * from Usuarios where primerNombre = '" + txtBuscarUsuario.Text + "' OR segundoNombre = '" + txtBuscarUsuario.Text + "' OR primerApellido = '" + txtBuscarUsuario.Text + "' OR segundoApellido = '" + txtBuscarUsuario.Text + "' ";
-                    SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
-                    SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-                    if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
-                    {
-                        dtgvEncontrados.DataSource = dt;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
-                        limpiarCampos();
-                    }
-                }
-                else
-                {
-                    if (rbtnUsuario.Checked == true)
-                    {
-                        string consulta = " select * from Usuarios where usuario= '" + txtBuscarUsuario.Text + "' ";
-                        SqlCommand Comando = new SqlCommand(consulta, conectar.conectarDB);
-                        SqlDataAdapter adaptador = new SqlDataAdapter(Comando);
-                        DataTable dt = new DataTable();
-                        adaptador.Fill(dt);
-                        if (dt.Rows.Count != 0)// validamos que la busqueda sea efectiva
-                        {
-                            dtgvEncontrados.DataSource = dt;
-                        }
-                        else
-                        {
-                            MessageBox.Show("No hay datos para esta consulta, verique sus datos e intente nuevamente");
-                            limpiarCampos();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Por favor seleccion un tipo de busqueda");
-                    }
-                }
-            }
-        }
         //configuramos el btnGuardarCambios
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
@@ -440,63 +574,18 @@ namespace Control_Inventario
             this.btnGuardarCambios.Visible = false;
             this.btnRegistrar.Visible = false;
         }
-        //tomamos el valor del drgv y lo enviamos a los txt del panel 2 para su edicion
-        private void dtgvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        //Configuramos el boton EliminarRegistro 
+        private void btnEliminarRegistro_Click(object sender, EventArgs e)
         {
-            this.panel2.Enabled = true;
-            txtNumeroDoc.Text = dtgvEncontrados.SelectedCells[0].Value.ToString();
-            tipoDocumento = dtgvEncontrados.SelectedCells[1].Value.ToString(); //asignamos valor a la variable tipoDocumento para obtener el valor del rbtn
-            txtPrimerNombre.Text = dtgvEncontrados.SelectedCells[2].Value.ToString();
-            txtSegundoNombre.Text = dtgvEncontrados.SelectedCells[3].Value.ToString();
-            txtPrimerApellido.Text = dtgvEncontrados.SelectedCells[4].Value.ToString();
-            txtSegundoApellido.Text = dtgvEncontrados.SelectedCells[5].Value.ToString();
-            txtDireccion.Text = dtgvEncontrados.SelectedCells[6].Value.ToString();
-            txtTelefono.Text = dtgvEncontrados.SelectedCells[7].Value.ToString();
-            txtCorreo.Text = dtgvEncontrados.SelectedCells[8].Value.ToString();
-            txtUsuario.Text = dtgvEncontrados.SelectedCells[9].Value.ToString();
-            txtContrasena.Text = dtgvEncontrados.SelectedCells[10].Value.ToString();
-            txtConfirmarContrasena.Text = txtContrasena.Text;
-            // Condicionamos el valor retornado del dtgv en el campo rol para seleccionar el cmbRol
-            if (dtgvEncontrados.SelectedCells[11].Value.ToString().Contains("Auxiliar"))
+            limpiarConfirmarTXT();
+            if (confirmarTXT())
             {
-                cmbRol.SelectedIndex = 1;
+                //llamamos al metodo
+                EliminarRegistros();
             }
             else
             {
-                if (dtgvEncontrados.SelectedCells[11].Value.ToString() == "Administrador")
-                {
-                    cmbRol.SelectedIndex = 0;
-                }
-                else
-                    {
-                        MessageBox.Show("Verifique y seleccione un rol para el usuario");
-                    }
-
-                
-            }
-            //cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
-            //condicion para determinar el rbtn seleccionado
-            if (tipoDocumento.Contains("CC"))
-            {
-                rbtnTipoCC.Checked = true;
-            }
-            else
-            {
-                if (tipoDocumento.Contains("C. Ext."))
-                {
-                    rbtnTipoCEx.Checked = true;
-                }
-                else
-                {
-                    if (tipoDocumento.Contains("Pasaporte"))
-                    {
-                        rbtnPasaporte.Checked = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Verifique el tipo de Documento");
-                    }
-                }
+                MessageBox.Show("Verifique los espacios con error y diligencielos");
             }
         }
         //limpiamos txt y rbtn
@@ -517,5 +606,7 @@ namespace Control_Inventario
             }
         }
 
+       
     }
 }
+

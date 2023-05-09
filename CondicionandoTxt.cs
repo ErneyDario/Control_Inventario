@@ -27,6 +27,25 @@ namespace Control_Inventario
                 return false;
             }
         }
+        public static bool soloTex(KeyPressEventArgs e) 
+        { 
+        if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }else
+            {
+                e.Handled = true;
+                return false;
+            }
+            
+             
+        }
         public static bool soloEmail (String sCorreo)
         {
             return sCorreo != null && Regex.IsMatch(sCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
