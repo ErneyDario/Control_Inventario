@@ -16,11 +16,11 @@ namespace Control_Inventario
 {
     public partial class FormUsuarios : Form
     {
+       
         public FormUsuarios()
         {
             InitializeComponent();
         }
-
         //Instanaciamos conexion a DB
         conexionDB conectar = new conexionDB();
         // Creamos varible para condicionar los campos vacios
@@ -33,7 +33,7 @@ namespace Control_Inventario
         //
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
-            //Ocultamos el Icono que nos indican si la contraseña y la confirmacion sondiferentes
+            //Ocultamos el Icono que nos indican si la contraseña y la confirmacion son diferentes
             if (txtContrasena.Text == "")
             {
                 this.iconPictureBox7.Visible = false;
@@ -287,14 +287,14 @@ namespace Control_Inventario
                 else
                     errorProvider1.SetError(txtBuscarUsuario, "");
             }
-            else
-            {
+            /*else
+           {
                 bool validar = CondicionandoTxt.soloTex(e);
                 if (!validar)
                     errorProvider1.SetError(txtBuscarUsuario, "Ingrese solo Texto");
                 else
                     errorProvider1.SetError(txtBuscarUsuario, "");
-            }
+            }*/
 
         }
         // Condicionamos el txtCorreo para que reciba formatos de correo solamente
@@ -344,7 +344,7 @@ namespace Control_Inventario
 
 
             }
-            //cmbRol.SelectedText = dtgvEncontrados.SelectedCells[11].Value.ToString();
+            
             //condicion para determinar el rbtn seleccionado
             if (tipoDocumento.Contains("CC"))
             {
@@ -382,8 +382,6 @@ namespace Control_Inventario
             }
             else
             {
-
-
                 errorProvider1.SetError(txtBuscarUsuario, "");
 
                 //Condicionamos la busqueda segun el tipo
@@ -601,12 +599,12 @@ namespace Control_Inventario
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FormPrincipal Form = new FormPrincipal();
-                Form.Show();
-                this.Hide();
+                Form.habilitarBotones();
+                this.Close();
             }
         }
 
-       
+
     }
 }
 

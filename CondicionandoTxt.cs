@@ -27,7 +27,7 @@ namespace Control_Inventario
                 return false;
             }
         }
-        public static bool soloTex(KeyPressEventArgs e) 
+        /*public static bool soloTex(KeyPressEventArgs e) 
         { 
         if (char.IsLetter(e.KeyChar))
             {
@@ -45,7 +45,7 @@ namespace Control_Inventario
             }
             
              
-        }
+        }*/
         public static bool soloEmail (String sCorreo)
         {
             return sCorreo != null && Regex.IsMatch(sCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");

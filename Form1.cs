@@ -9,7 +9,7 @@ namespace Control_Inventario
             InitializeComponent();
         }
         //Instanciamos la clase conexion
-        conexionDB conectar = new conexionDB(); 
+        conexionDB conectar = new conexionDB();
 
         private void labRecCont_Click(object sender, EventArgs e)
         {
@@ -37,12 +37,12 @@ namespace Control_Inventario
             comando.Parameters.AddWithValue("@vusuario", txtusuario.Text);
             comando.Parameters.AddWithValue("@vpassword", txtcontrasena.Text);
             SqlDataReader valores = comando.ExecuteReader();
-            
+
             if (valores.Read())
             {
                 variablesGlobales.vRol = valores["rol"].ToString();
                 variablesGlobales.vNombreUsuario = valores["usuario"].ToString();
-                FormPrincipal frm = new FormPrincipal(); 
+                FormPrincipal frm = new FormPrincipal();
                 frm.Show();
                 this.Hide();
             }

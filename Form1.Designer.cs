@@ -39,15 +39,9 @@
             picBoxBannerInferior = new PictureBox();
             picBoxBanerSup = new PictureBox();
             txtusuario = new TextBox();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxBannerInferior).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBoxBanerSup).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             SuspendLayout();
             // 
             // labUsuario
@@ -177,54 +171,12 @@
             txtusuario.Size = new Size(203, 27);
             txtusuario.TabIndex = 2;
             // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.Gray;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.Location = new Point(0, 0);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(32, 32);
-            iconPictureBox1.TabIndex = 3;
-            iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.Gray;
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.Location = new Point(0, 0);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(32, 32);
-            iconPictureBox2.TabIndex = 4;
-            iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.Gray;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.Location = new Point(8, 8);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(32, 32);
-            iconPictureBox3.TabIndex = 5;
-            iconPictureBox3.TabStop = false;
-            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1255, 589);
-            Controls.Add(iconPictureBox3);
-            Controls.Add(iconPictureBox2);
-            Controls.Add(iconPictureBox1);
             Controls.Add(panel1);
             Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4);
@@ -236,9 +188,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxBannerInferior).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBoxBanerSup).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -256,8 +205,5 @@
         private TextBox txtcontrasena;
         private Label labelSalir;
         private FontAwesome.Sharp.IconButton iButtonEntrar;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
     }
 }

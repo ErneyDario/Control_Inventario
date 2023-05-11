@@ -267,6 +267,7 @@
             iButtonSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iButtonSalir.BackColor = Color.FromArgb(64, 64, 64);
             iButtonSalir.Cursor = Cursors.Hand;
+            iButtonSalir.DialogResult = DialogResult.OK;
             iButtonSalir.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             iButtonSalir.ForeColor = Color.White;
             iButtonSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;

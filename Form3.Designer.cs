@@ -38,7 +38,7 @@
             panel3 = new Panel();
             iButtonUsuarios = new FontAwesome.Sharp.IconButton();
             iButtonInformes = new FontAwesome.Sharp.IconButton();
-            iconProveedores = new FontAwesome.Sharp.IconButton();
+            iButtonProveedores = new FontAwesome.Sharp.IconButton();
             iButtonClientes = new FontAwesome.Sharp.IconButton();
             iButtonInventario = new FontAwesome.Sharp.IconButton();
             iButtonVentas = new FontAwesome.Sharp.IconButton();
@@ -128,11 +128,11 @@
             panel2.Controls.Add(iButtonSalir);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(panel1);
-            panel2.Controls.Add(iconProveedores);
+            panel2.Controls.Add(iButtonProveedores);
             panel2.Controls.Add(iButtonClientes);
             panel2.Controls.Add(iButtonInventario);
             panel2.Controls.Add(iButtonVentas);
-            panel2.Location = new Point(12, 12);
+            panel2.Location = new Point(12, 16);
             panel2.Margin = new Padding(12);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(3);
@@ -202,21 +202,21 @@
             iButtonInformes.Text = "Informes";
             iButtonInformes.UseVisualStyleBackColor = false;
             // 
-            // iconProveedores
+            // iButtonProveedores
             // 
-            iconProveedores.BackColor = Color.FromArgb(64, 64, 64);
-            iconProveedores.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            iconProveedores.ForeColor = Color.White;
-            iconProveedores.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconProveedores.IconColor = Color.Black;
-            iconProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconProveedores.Location = new Point(44, 367);
-            iconProveedores.Name = "iconProveedores";
-            iconProveedores.Size = new Size(102, 44);
-            iconProveedores.TabIndex = 3;
-            iconProveedores.Text = "Proveedores";
-            iconProveedores.UseVisualStyleBackColor = false;
-            iconProveedores.Click += iconProveedores_Click;
+            iButtonProveedores.BackColor = Color.FromArgb(64, 64, 64);
+            iButtonProveedores.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iButtonProveedores.ForeColor = Color.White;
+            iButtonProveedores.IconChar = FontAwesome.Sharp.IconChar.None;
+            iButtonProveedores.IconColor = Color.Black;
+            iButtonProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iButtonProveedores.Location = new Point(44, 367);
+            iButtonProveedores.Name = "iButtonProveedores";
+            iButtonProveedores.Size = new Size(102, 44);
+            iButtonProveedores.TabIndex = 3;
+            iButtonProveedores.Text = "Proveedores";
+            iButtonProveedores.UseVisualStyleBackColor = false;
+            iButtonProveedores.Click += iButtonProveedores_Click_1;
             // 
             // iButtonClientes
             // 
@@ -293,7 +293,7 @@
         private Label lblRol;
         private Label lblNombreUsuario;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconProveedores;
+        private FontAwesome.Sharp.IconButton iButtonProveedores;
         private FontAwesome.Sharp.IconButton iButtonClientes;
         private FontAwesome.Sharp.IconButton iButtonInventario;
         private FontAwesome.Sharp.IconButton iButtonVentas;
