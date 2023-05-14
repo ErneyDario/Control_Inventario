@@ -349,18 +349,21 @@ namespace Control_Inventario
             if (tipoDocumento.Contains("CC"))
             {
                 rbtnTipoCC.Checked = true;
+                tipoDocumento = "";
             }
             else
             {
                 if (tipoDocumento.Contains("C. Ext."))
                 {
                     rbtnTipoCEx.Checked = true;
+                    tipoDocumento = "";
                 }
                 else
                 {
                     if (tipoDocumento.Contains("Pasaporte"))
                     {
                         rbtnPasaporte.Checked = true;
+                        tipoDocumento = "";
                     }
                     else
                     {
@@ -473,7 +476,7 @@ namespace Control_Inventario
                     {
                         tipoDocumento += rbtnTipoCC.Text;
                         nuevoRegistro();
-
+                        tipoDocumento = "";
                     }
                     else
                     {
@@ -481,6 +484,7 @@ namespace Control_Inventario
                         {
                             tipoDocumento += rbtnTipoCEx.Text;
                             nuevoRegistro();
+                            tipoDocumento = "";
                         }
                         else
                         {
@@ -488,6 +492,7 @@ namespace Control_Inventario
                             {
                                 tipoDocumento += rbtnPasaporte.Text;
                                 nuevoRegistro();
+                                tipoDocumento = "";
                             }
                             else
                             {
@@ -603,8 +608,6 @@ namespace Control_Inventario
                 this.Close();
             }
         }
-
-
     }
 }
 

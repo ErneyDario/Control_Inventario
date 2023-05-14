@@ -140,7 +140,5 @@ namespace Control_Inventario
                 this.Hide();
             }
         }
-
-      
     }
 }

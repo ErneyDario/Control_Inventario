@@ -28,100 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel3 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            rbtn2 = new RadioButton();
+            iconButtonBuscarClientes = new FontAwesome.Sharp.IconButton();
+            rbtnBuscarId = new RadioButton();
             label2 = new Label();
-            rbtn1 = new RadioButton();
-            txt1 = new TextBox();
+            rbtnBuscarNombre = new RadioButton();
+            txtBuscarClientes = new TextBox();
             label3 = new Label();
-            listView1 = new ListView();
             label20 = new Label();
             label1 = new Label();
             panel4 = new Panel();
-            button1 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            btnCrearClientes = new Button();
+            btnEliminarClientes = new Button();
+            btnActualizarClientes = new Button();
+            iconPictureSalir = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             button5 = new Button();
             button4 = new Button();
-            txt9 = new TextBox();
+            txtTelefono = new TextBox();
             label15 = new Label();
-            txt8 = new TextBox();
+            txtCorreo = new TextBox();
             label14 = new Label();
-            txt7 = new TextBox();
+            txtDireccion = new TextBox();
             label13 = new Label();
             label10 = new Label();
             panel7 = new Panel();
-            txt5 = new TextBox();
+            txtSegundoApellido = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            txt6 = new TextBox();
+            txtPrimerApellido = new TextBox();
             label6 = new Label();
             label4 = new Label();
             panel5 = new Panel();
-            rbtn7 = new RadioButton();
-            rbtn4 = new RadioButton();
-            rbtn5 = new RadioButton();
+            rbtnPass = new RadioButton();
+            rbtnCEx = new RadioButton();
+            rbtnTi = new RadioButton();
             label7 = new Label();
-            rbtn6 = new RadioButton();
-            txt2 = new TextBox();
+            rbtnCC = new RadioButton();
+            txtNumeroDoc = new TextBox();
             label8 = new Label();
             panel6 = new Panel();
-            txt4 = new TextBox();
+            txtSegundoNombre = new TextBox();
             label9 = new Label();
             label5 = new Label();
-            txt3 = new TextBox();
-            button6 = new Button();
-            button7 = new Button();
+            txtPrimerNombre = new TextBox();
+            btnLimpiar = new Button();
+            btnRegistar = new Button();
+            dtgvEncontrados = new DataGridView();
+            panel1 = new Panel();
+            btnGuardarCambios = new Button();
+            btnEliminarRegistro = new Button();
+            errorProvider1 = new ErrorProvider(components);
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureSalir).BeginInit();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvEncontrados).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(iconButton1);
-            panel3.Controls.Add(rbtn2);
+            panel3.Controls.Add(iconButtonBuscarClientes);
+            panel3.Controls.Add(rbtnBuscarId);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(rbtn1);
-            panel3.Controls.Add(txt1);
+            panel3.Controls.Add(rbtnBuscarNombre);
+            panel3.Controls.Add(txtBuscarClientes);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(12, 34);
+            panel3.Location = new Point(5, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(432, 75);
-            panel3.TabIndex = 12;
+            panel3.Size = new Size(427, 75);
+            panel3.TabIndex = 4;
             // 
-            // iconButton1
+            // iconButtonBuscarClientes
             // 
-            iconButton1.BackColor = Color.FromArgb(64, 64, 64);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(374, 12);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(51, 45);
-            iconButton1.TabIndex = 10;
-            iconButton1.UseVisualStyleBackColor = false;
+            iconButtonBuscarClientes.BackColor = Color.FromArgb(64, 64, 64);
+            iconButtonBuscarClientes.Cursor = Cursors.Hand;
+            iconButtonBuscarClientes.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconButtonBuscarClientes.IconColor = Color.White;
+            iconButtonBuscarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonBuscarClientes.IconSize = 30;
+            iconButtonBuscarClientes.Location = new Point(364, 11);
+            iconButtonBuscarClientes.Name = "iconButtonBuscarClientes";
+            iconButtonBuscarClientes.Size = new Size(51, 45);
+            iconButtonBuscarClientes.TabIndex = 8;
+            iconButtonBuscarClientes.UseVisualStyleBackColor = false;
+            iconButtonBuscarClientes.Click += iconButtonBuscarClientes_Click;
             // 
-            // rbtn2
+            // rbtnBuscarId
             // 
-            rbtn2.AutoSize = true;
-            rbtn2.Location = new Point(133, 41);
-            rbtn2.Name = "rbtn2";
-            rbtn2.Size = new Size(35, 19);
-            rbtn2.TabIndex = 8;
-            rbtn2.TabStop = true;
-            rbtn2.Text = "Id";
-            rbtn2.UseVisualStyleBackColor = true;
+            rbtnBuscarId.AutoSize = true;
+            rbtnBuscarId.Location = new Point(133, 41);
+            rbtnBuscarId.Name = "rbtnBuscarId";
+            rbtnBuscarId.Size = new Size(35, 19);
+            rbtnBuscarId.TabIndex = 6;
+            rbtnBuscarId.TabStop = true;
+            rbtnBuscarId.Text = "Id";
+            rbtnBuscarId.UseVisualStyleBackColor = true;
+            rbtnBuscarId.Click += rbtnBuscarId_Click;
             // 
             // label2
             // 
@@ -133,24 +143,25 @@
             label2.TabIndex = 4;
             label2.Text = "Cliente";
             // 
-            // rbtn1
+            // rbtnBuscarNombre
             // 
-            rbtn1.AutoSize = true;
-            rbtn1.Location = new Point(246, 41);
-            rbtn1.Name = "rbtn1";
-            rbtn1.Size = new Size(74, 19);
-            rbtn1.TabIndex = 7;
-            rbtn1.TabStop = true;
-            rbtn1.Text = "Nombres";
-            rbtn1.UseVisualStyleBackColor = true;
+            rbtnBuscarNombre.AutoSize = true;
+            rbtnBuscarNombre.Location = new Point(246, 41);
+            rbtnBuscarNombre.Name = "rbtnBuscarNombre";
+            rbtnBuscarNombre.Size = new Size(74, 19);
+            rbtnBuscarNombre.TabIndex = 7;
+            rbtnBuscarNombre.TabStop = true;
+            rbtnBuscarNombre.Text = "Nombres";
+            rbtnBuscarNombre.UseVisualStyleBackColor = true;
             // 
-            // txt1
+            // txtBuscarClientes
             // 
-            txt1.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt1.Location = new Point(85, 7);
-            txt1.Name = "txt1";
-            txt1.Size = new Size(271, 23);
-            txt1.TabIndex = 5;
+            txtBuscarClientes.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBuscarClientes.Location = new Point(85, 7);
+            txtBuscarClientes.Name = "txtBuscarClientes";
+            txtBuscarClientes.Size = new Size(271, 23);
+            txtBuscarClientes.TabIndex = 5;
+            txtBuscarClientes.KeyPress += txtBuscarClientes_KeyPress;
             // 
             // label3
             // 
@@ -162,21 +173,11 @@
             label3.TabIndex = 6;
             label3.Text = "Buscar por:";
             // 
-            // listView1
-            // 
-            listView1.BackColor = Color.LavenderBlush;
-            listView1.BorderStyle = BorderStyle.FixedSingle;
-            listView1.Location = new Point(12, 115);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(432, 69);
-            listView1.TabIndex = 13;
-            listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(22, 112);
+            label20.Location = new Point(14, 83);
             label20.Name = "label20";
             label20.Size = new Size(84, 14);
             label20.TabIndex = 14;
@@ -196,83 +197,86 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Controls.Add(button1);
-            panel4.Controls.Add(button3);
-            panel4.Controls.Add(button2);
+            panel4.Controls.Add(btnCrearClientes);
+            panel4.Controls.Add(btnEliminarClientes);
+            panel4.Controls.Add(btnActualizarClientes);
             panel4.Location = new Point(450, 77);
             panel4.Name = "panel4";
             panel4.Size = new Size(396, 78);
-            panel4.TabIndex = 16;
+            panel4.TabIndex = 0;
             // 
-            // button1
+            // btnCrearClientes
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(16, 18);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(100, 32);
-            button1.TabIndex = 0;
-            button1.Text = "Crear";
-            button1.UseVisualStyleBackColor = false;
+            btnCrearClientes.BackColor = Color.FromArgb(64, 64, 64);
+            btnCrearClientes.Cursor = Cursors.Hand;
+            btnCrearClientes.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCrearClientes.ForeColor = Color.White;
+            btnCrearClientes.Location = new Point(16, 18);
+            btnCrearClientes.Name = "btnCrearClientes";
+            btnCrearClientes.RightToLeft = RightToLeft.No;
+            btnCrearClientes.Size = new Size(100, 32);
+            btnCrearClientes.TabIndex = 1;
+            btnCrearClientes.Text = "Crear";
+            btnCrearClientes.UseVisualStyleBackColor = false;
+            btnCrearClientes.Click += btnCrearClientes_Click;
             // 
-            // button3
+            // btnEliminarClientes
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Cursor = Cursors.Hand;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(275, 18);
-            button3.Name = "button3";
-            button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(100, 32);
-            button3.TabIndex = 2;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = false;
+            btnEliminarClientes.BackColor = Color.FromArgb(64, 64, 64);
+            btnEliminarClientes.Cursor = Cursors.Hand;
+            btnEliminarClientes.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarClientes.ForeColor = Color.White;
+            btnEliminarClientes.Location = new Point(275, 18);
+            btnEliminarClientes.Name = "btnEliminarClientes";
+            btnEliminarClientes.RightToLeft = RightToLeft.No;
+            btnEliminarClientes.Size = new Size(100, 32);
+            btnEliminarClientes.TabIndex = 3;
+            btnEliminarClientes.Text = "Eliminar";
+            btnEliminarClientes.UseVisualStyleBackColor = false;
+            btnEliminarClientes.Click += btnEliminarClientes_Click;
             // 
-            // button2
+            // btnActualizarClientes
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(147, 18);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 1;
-            button2.Text = "Actualizar";
-            button2.UseVisualStyleBackColor = false;
+            btnActualizarClientes.BackColor = Color.FromArgb(64, 64, 64);
+            btnActualizarClientes.Cursor = Cursors.Hand;
+            btnActualizarClientes.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnActualizarClientes.ForeColor = Color.White;
+            btnActualizarClientes.Location = new Point(147, 18);
+            btnActualizarClientes.Name = "btnActualizarClientes";
+            btnActualizarClientes.RightToLeft = RightToLeft.No;
+            btnActualizarClientes.Size = new Size(100, 32);
+            btnActualizarClientes.TabIndex = 2;
+            btnActualizarClientes.Text = "Actualizar";
+            btnActualizarClientes.UseVisualStyleBackColor = false;
+            btnActualizarClientes.Click += btnActualizarClientes_Click;
             // 
-            // iconPictureBox1
+            // iconPictureSalir
             // 
-            iconPictureBox1.BackColor = Color.LavenderBlush;
-            iconPictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            iconPictureBox1.Cursor = Cursors.Hand;
-            iconPictureBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
-            iconPictureBox1.IconColor = Color.FromArgb(64, 64, 64);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox1.IconSize = 39;
-            iconPictureBox1.Location = new Point(858, 99);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(43, 39);
-            iconPictureBox1.TabIndex = 17;
-            iconPictureBox1.TabStop = false;
-            iconPictureBox1.Click += iconPictureBox1_Click;
+            iconPictureSalir.BackColor = Color.LavenderBlush;
+            iconPictureSalir.BackgroundImageLayout = ImageLayout.Center;
+            iconPictureSalir.Cursor = Cursors.Hand;
+            iconPictureSalir.ForeColor = Color.FromArgb(64, 64, 64);
+            iconPictureSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            iconPictureSalir.IconColor = Color.FromArgb(64, 64, 64);
+            iconPictureSalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconPictureSalir.IconSize = 39;
+            iconPictureSalir.Location = new Point(858, 99);
+            iconPictureSalir.Name = "iconPictureSalir";
+            iconPictureSalir.Size = new Size(43, 39);
+            iconPictureSalir.TabIndex = 17;
+            iconPictureSalir.TabStop = false;
+            iconPictureSalir.Click += iconPictureSalir_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.LavenderBlush;
             panel2.Controls.Add(button5);
             panel2.Controls.Add(button4);
-            panel2.Controls.Add(txt9);
+            panel2.Controls.Add(txtTelefono);
             panel2.Controls.Add(label15);
-            panel2.Controls.Add(txt8);
+            panel2.Controls.Add(txtCorreo);
             panel2.Controls.Add(label14);
-            panel2.Controls.Add(txt7);
+            panel2.Controls.Add(txtDireccion);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(panel7);
@@ -280,11 +284,11 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
+            panel2.Enabled = false;
             panel2.Location = new Point(12, 207);
             panel2.Name = "panel2";
             panel2.Size = new Size(889, 268);
-            panel2.TabIndex = 18;
-            panel2.Paint += panel2_Paint;
+            panel2.TabIndex = 10;
             // 
             // button5
             // 
@@ -314,13 +318,13 @@
             button4.Text = "Aceptar";
             button4.UseVisualStyleBackColor = false;
             // 
-            // txt9
+            // txtTelefono
             // 
-            txt9.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt9.Location = new Point(101, 182);
-            txt9.Name = "txt9";
-            txt9.Size = new Size(271, 23);
-            txt9.TabIndex = 19;
+            txtTelefono.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTelefono.Location = new Point(101, 182);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(271, 23);
+            txtTelefono.TabIndex = 24;
             // 
             // label15
             // 
@@ -332,13 +336,13 @@
             label15.TabIndex = 20;
             label15.Text = "Telefono";
             // 
-            // txt8
+            // txtCorreo
             // 
-            txt8.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt8.Location = new Point(101, 222);
-            txt8.Name = "txt8";
-            txt8.Size = new Size(271, 23);
-            txt8.TabIndex = 17;
+            txtCorreo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCorreo.Location = new Point(101, 222);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(271, 23);
+            txtCorreo.TabIndex = 25;
             // 
             // label14
             // 
@@ -350,13 +354,13 @@
             label14.TabIndex = 18;
             label14.Text = "Correo ";
             // 
-            // txt7
+            // txtDireccion
             // 
-            txt7.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt7.Location = new Point(101, 142);
-            txt7.Name = "txt7";
-            txt7.Size = new Size(271, 23);
-            txt7.TabIndex = 11;
+            txtDireccion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtDireccion.Location = new Point(101, 142);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(271, 23);
+            txtDireccion.TabIndex = 23;
             // 
             // label13
             // 
@@ -381,23 +385,22 @@
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.Fixed3D;
-            panel7.Controls.Add(txt5);
+            panel7.Controls.Add(txtSegundoApellido);
             panel7.Controls.Add(label11);
             panel7.Controls.Add(label12);
-            panel7.Controls.Add(txt6);
+            panel7.Controls.Add(txtPrimerApellido);
             panel7.Location = new Point(413, 158);
             panel7.Name = "panel7";
             panel7.Size = new Size(462, 69);
-            panel7.TabIndex = 15;
-            panel7.Paint += panel7_Paint;
+            panel7.TabIndex = 20;
             // 
-            // txt5
+            // txtSegundoApellido
             // 
-            txt5.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt5.Location = new Point(85, 36);
-            txt5.Name = "txt5";
-            txt5.Size = new Size(359, 23);
-            txt5.TabIndex = 7;
+            txtSegundoApellido.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSegundoApellido.Location = new Point(85, 36);
+            txtSegundoApellido.Name = "txtSegundoApellido";
+            txtSegundoApellido.Size = new Size(359, 23);
+            txtSegundoApellido.TabIndex = 22;
             // 
             // label11
             // 
@@ -419,13 +422,13 @@
             label12.TabIndex = 4;
             label12.Text = "Primero";
             // 
-            // txt6
+            // txtPrimerApellido
             // 
-            txt6.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt6.Location = new Point(85, 7);
-            txt6.Name = "txt6";
-            txt6.Size = new Size(359, 23);
-            txt6.TabIndex = 5;
+            txtPrimerApellido.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPrimerApellido.Location = new Point(85, 7);
+            txtPrimerApellido.Name = "txtPrimerApellido";
+            txtPrimerApellido.Size = new Size(359, 23);
+            txtPrimerApellido.TabIndex = 21;
             // 
             // label6
             // 
@@ -450,50 +453,50 @@
             // panel5
             // 
             panel5.BorderStyle = BorderStyle.Fixed3D;
-            panel5.Controls.Add(rbtn7);
-            panel5.Controls.Add(rbtn4);
-            panel5.Controls.Add(rbtn5);
+            panel5.Controls.Add(rbtnPass);
+            panel5.Controls.Add(rbtnCEx);
+            panel5.Controls.Add(rbtnTi);
             panel5.Controls.Add(label7);
-            panel5.Controls.Add(rbtn6);
-            panel5.Controls.Add(txt2);
+            panel5.Controls.Add(rbtnCC);
+            panel5.Controls.Add(txtNumeroDoc);
             panel5.Controls.Add(label8);
             panel5.Location = new Point(14, 26);
             panel5.Name = "panel5";
             panel5.Size = new Size(391, 106);
-            panel5.TabIndex = 12;
+            panel5.TabIndex = 11;
             // 
-            // rbtn7
+            // rbtnPass
             // 
-            rbtn7.AutoSize = true;
-            rbtn7.Location = new Point(323, 62);
-            rbtn7.Name = "rbtn7";
-            rbtn7.Size = new Size(48, 19);
-            rbtn7.TabIndex = 10;
-            rbtn7.TabStop = true;
-            rbtn7.Text = "Pass";
-            rbtn7.UseVisualStyleBackColor = true;
+            rbtnPass.AutoSize = true;
+            rbtnPass.Location = new Point(323, 62);
+            rbtnPass.Name = "rbtnPass";
+            rbtnPass.Size = new Size(48, 19);
+            rbtnPass.TabIndex = 16;
+            rbtnPass.TabStop = true;
+            rbtnPass.Text = "Pass";
+            rbtnPass.UseVisualStyleBackColor = true;
             // 
-            // rbtn4
+            // rbtnCEx
             // 
-            rbtn4.AutoSize = true;
-            rbtn4.Location = new Point(258, 62);
-            rbtn4.Name = "rbtn4";
-            rbtn4.Size = new Size(51, 19);
-            rbtn4.TabIndex = 9;
-            rbtn4.TabStop = true;
-            rbtn4.Text = "C.Ex.";
-            rbtn4.UseVisualStyleBackColor = true;
+            rbtnCEx.AutoSize = true;
+            rbtnCEx.Location = new Point(258, 62);
+            rbtnCEx.Name = "rbtnCEx";
+            rbtnCEx.Size = new Size(51, 19);
+            rbtnCEx.TabIndex = 15;
+            rbtnCEx.TabStop = true;
+            rbtnCEx.Text = "C.Ex.";
+            rbtnCEx.UseVisualStyleBackColor = true;
             // 
-            // rbtn5
+            // rbtnTi
             // 
-            rbtn5.AutoSize = true;
-            rbtn5.Location = new Point(144, 61);
-            rbtn5.Name = "rbtn5";
-            rbtn5.Size = new Size(37, 19);
-            rbtn5.TabIndex = 8;
-            rbtn5.TabStop = true;
-            rbtn5.Text = "T.I";
-            rbtn5.UseVisualStyleBackColor = true;
+            rbtnTi.AutoSize = true;
+            rbtnTi.Location = new Point(144, 61);
+            rbtnTi.Name = "rbtnTi";
+            rbtnTi.Size = new Size(37, 19);
+            rbtnTi.TabIndex = 13;
+            rbtnTi.TabStop = true;
+            rbtnTi.Text = "T.I";
+            rbtnTi.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -505,24 +508,26 @@
             label7.TabIndex = 4;
             label7.Text = "Numero";
             // 
-            // rbtn6
+            // rbtnCC
             // 
-            rbtn6.AutoSize = true;
-            rbtn6.Location = new Point(200, 61);
-            rbtn6.Name = "rbtn6";
-            rbtn6.Size = new Size(47, 19);
-            rbtn6.TabIndex = 7;
-            rbtn6.TabStop = true;
-            rbtn6.Text = "C.C.";
-            rbtn6.UseVisualStyleBackColor = true;
+            rbtnCC.AutoSize = true;
+            rbtnCC.Location = new Point(200, 61);
+            rbtnCC.Name = "rbtnCC";
+            rbtnCC.Size = new Size(47, 19);
+            rbtnCC.TabIndex = 14;
+            rbtnCC.TabStop = true;
+            rbtnCC.Text = "C.C.";
+            rbtnCC.UseVisualStyleBackColor = true;
             // 
-            // txt2
+            // txtNumeroDoc
             // 
-            txt2.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt2.Location = new Point(85, 28);
-            txt2.Name = "txt2";
-            txt2.Size = new Size(271, 23);
-            txt2.TabIndex = 5;
+            txtNumeroDoc.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNumeroDoc.Location = new Point(85, 28);
+            txtNumeroDoc.MaxLength = 10;
+            txtNumeroDoc.Name = "txtNumeroDoc";
+            txtNumeroDoc.Size = new Size(271, 23);
+            txtNumeroDoc.TabIndex = 12;
+            txtNumeroDoc.KeyPress += txtNumeroDoc_KeyPress;
             // 
             // label8
             // 
@@ -537,23 +542,22 @@
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Controls.Add(txt4);
+            panel6.Controls.Add(txtSegundoNombre);
             panel6.Controls.Add(label9);
             panel6.Controls.Add(label5);
-            panel6.Controls.Add(txt3);
+            panel6.Controls.Add(txtPrimerNombre);
             panel6.Location = new Point(413, 26);
             panel6.Name = "panel6";
             panel6.Size = new Size(462, 71);
-            panel6.TabIndex = 13;
-            panel6.Paint += panel6_Paint;
+            panel6.TabIndex = 17;
             // 
-            // txt4
+            // txtSegundoNombre
             // 
-            txt4.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt4.Location = new Point(85, 36);
-            txt4.Name = "txt4";
-            txt4.Size = new Size(359, 23);
-            txt4.TabIndex = 7;
+            txtSegundoNombre.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSegundoNombre.Location = new Point(85, 36);
+            txtSegundoNombre.Name = "txtSegundoNombre";
+            txtSegundoNombre.Size = new Size(359, 23);
+            txtSegundoNombre.TabIndex = 19;
             // 
             // label9
             // 
@@ -564,7 +568,6 @@
             label9.Size = new Size(63, 16);
             label9.TabIndex = 6;
             label9.Text = "Segundo";
-            label9.Click += label9_Click;
             // 
             // label5
             // 
@@ -576,41 +579,101 @@
             label5.TabIndex = 4;
             label5.Text = "Primero";
             // 
-            // txt3
+            // txtPrimerNombre
             // 
-            txt3.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txt3.Location = new Point(85, 7);
-            txt3.Name = "txt3";
-            txt3.Size = new Size(359, 23);
-            txt3.TabIndex = 5;
+            txtPrimerNombre.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPrimerNombre.Location = new Point(85, 7);
+            txtPrimerNombre.Name = "txtPrimerNombre";
+            txtPrimerNombre.Size = new Size(359, 23);
+            txtPrimerNombre.TabIndex = 18;
             // 
-            // button6
+            // btnLimpiar
             // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(685, 491);
-            button6.Name = "button6";
-            button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(100, 32);
-            button6.TabIndex = 24;
-            button6.Text = "Limpiar";
-            button6.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiar.Cursor = Cursors.Hand;
+            btnLimpiar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(685, 491);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.RightToLeft = RightToLeft.No;
+            btnLimpiar.Size = new Size(100, 32);
+            btnLimpiar.TabIndex = 24;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnRegistar
             // 
-            button7.BackColor = Color.FromArgb(64, 64, 64);
-            button7.Cursor = Cursors.Hand;
-            button7.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(801, 491);
-            button7.Name = "button7";
-            button7.RightToLeft = RightToLeft.No;
-            button7.Size = new Size(100, 32);
-            button7.TabIndex = 23;
-            button7.Text = "Aceptar";
-            button7.UseVisualStyleBackColor = false;
+            btnRegistar.BackColor = Color.FromArgb(64, 64, 64);
+            btnRegistar.Cursor = Cursors.Hand;
+            btnRegistar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistar.ForeColor = Color.White;
+            btnRegistar.Location = new Point(801, 491);
+            btnRegistar.Name = "btnRegistar";
+            btnRegistar.RightToLeft = RightToLeft.No;
+            btnRegistar.Size = new Size(100, 32);
+            btnRegistar.TabIndex = 23;
+            btnRegistar.Text = "Aceptar";
+            btnRegistar.UseVisualStyleBackColor = false;
+            btnRegistar.Click += btnRegistar_Click;
+            // 
+            // dtgvEncontrados
+            // 
+            dtgvEncontrados.BackgroundColor = Color.LavenderBlush;
+            dtgvEncontrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvEncontrados.Location = new Point(5, 92);
+            dtgvEncontrados.Name = "dtgvEncontrados";
+            dtgvEncontrados.RowTemplate.Height = 25;
+            dtgvEncontrados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgvEncontrados.Size = new Size(427, 86);
+            dtgvEncontrados.TabIndex = 9;
+            dtgvEncontrados.CellContentClick += dtgvEncontrados_CellContentClick;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label20);
+            panel1.Controls.Add(dtgvEncontrados);
+            panel1.Enabled = false;
+            panel1.Location = new Point(9, 17);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(435, 184);
+            panel1.TabIndex = 4;
+            // 
+            // btnGuardarCambios
+            // 
+            btnGuardarCambios.BackColor = Color.FromArgb(64, 64, 64);
+            btnGuardarCambios.Cursor = Cursors.Hand;
+            btnGuardarCambios.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarCambios.ForeColor = Color.White;
+            btnGuardarCambios.Location = new Point(801, 485);
+            btnGuardarCambios.Name = "btnGuardarCambios";
+            btnGuardarCambios.RightToLeft = RightToLeft.No;
+            btnGuardarCambios.Size = new Size(100, 44);
+            btnGuardarCambios.TabIndex = 24;
+            btnGuardarCambios.Text = "Guardar Cambios";
+            btnGuardarCambios.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnGuardarCambios.UseVisualStyleBackColor = false;
+            btnGuardarCambios.Click += btnGuardarCambios_Click;
+            // 
+            // btnEliminarRegistro
+            // 
+            btnEliminarRegistro.BackColor = Color.Red;
+            btnEliminarRegistro.Cursor = Cursors.Hand;
+            btnEliminarRegistro.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarRegistro.ForeColor = Color.White;
+            btnEliminarRegistro.Location = new Point(791, 485);
+            btnEliminarRegistro.Name = "btnEliminarRegistro";
+            btnEliminarRegistro.RightToLeft = RightToLeft.No;
+            btnEliminarRegistro.Size = new Size(115, 44);
+            btnEliminarRegistro.TabIndex = 25;
+            btnEliminarRegistro.Text = "Eliminar Registro";
+            btnEliminarRegistro.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEliminarRegistro.UseVisualStyleBackColor = false;
+            btnEliminarRegistro.Click += btnEliminarRegistro_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FormClientes
             // 
@@ -618,21 +681,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(909, 581);
-            Controls.Add(button6);
-            Controls.Add(button7);
+            Controls.Add(panel1);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnRegistar);
             Controls.Add(panel2);
-            Controls.Add(iconPictureBox1);
+            Controls.Add(iconPictureSalir);
             Controls.Add(label1);
             Controls.Add(panel4);
-            Controls.Add(label20);
-            Controls.Add(listView1);
-            Controls.Add(panel3);
+            Controls.Add(btnGuardarCambios);
+            Controls.Add(btnEliminarRegistro);
             Name = "FormClientes";
             Text = "Control_Inventario [Clientes]";
+            Load += FormClientes_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureSalir).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel7.ResumeLayout(false);
@@ -641,6 +705,10 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvEncontrados).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -648,51 +716,55 @@
         #endregion
 
         private Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private RadioButton rbtn2;
+        private FontAwesome.Sharp.IconButton iconButtonBuscarClientes;
+        private RadioButton rbtnBuscarId;
         private Label label2;
-        private RadioButton rbtn1;
-        private TextBox txt1;
+        private RadioButton rbtnBuscarNombre;
+        private TextBox txtBuscarClientes;
         private Label label3;
-        private ListView listView1;
         private Label label20;
         private Label label1;
         private Panel panel4;
-        private Button button1;
-        private Button button3;
-        private Button button2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Button btnCrearClientes;
+        private Button btnEliminarClientes;
+        private Button btnActualizarClientes;
+        private FontAwesome.Sharp.IconPictureBox iconPictureSalir;
         private Panel panel2;
         private Button button5;
         private Button button4;
-        private TextBox txt9;
+        private TextBox txtTelefono;
         private Label label15;
-        private TextBox txt8;
+        private TextBox txtCorreo;
         private Label label14;
-        private TextBox txt7;
+        private TextBox txtDireccion;
         private Label label13;
         private Label label10;
         private Panel panel7;
-        private TextBox txt5;
+        private TextBox txtSegundoApellido;
         private Label label11;
         private Label label12;
-        private TextBox txt6;
+        private TextBox txtPrimerApellido;
         private Label label6;
         private Label label4;
         private Panel panel5;
-        private RadioButton rbtn7;
-        private RadioButton rbtn4;
-        private RadioButton rbtn5;
+        private RadioButton rbtnPass;
+        private RadioButton rbtnCEx;
+        private RadioButton rbtnTi;
         private Label label7;
-        private RadioButton rbtn6;
-        private TextBox txt2;
+        private RadioButton rbtnCC;
+        private TextBox txtNumeroDoc;
         private Label label8;
         private Panel panel6;
-        private TextBox txt4;
+        private TextBox txtSegundoNombre;
         private Label label9;
         private Label label5;
-        private TextBox txt3;
-        private Button button6;
-        private Button button7;
+        private TextBox txtPrimerNombre;
+        private Button btnLimpiar;
+        private Button btnRegistar;
+        private DataGridView dtgvEncontrados;
+        private Panel panel1;
+        private Button btnGuardarCambios;
+        private Button btnEliminarRegistro;
+        private ErrorProvider errorProvider1;
     }
 }

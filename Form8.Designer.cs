@@ -427,6 +427,7 @@
             // 
             txtIdProveedor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             txtIdProveedor.Location = new Point(85, 28);
+            txtIdProveedor.MaxLength = 10;
             txtIdProveedor.Name = "txtIdProveedor";
             txtIdProveedor.Size = new Size(271, 23);
             txtIdProveedor.TabIndex = 12;

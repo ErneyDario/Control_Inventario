@@ -31,7 +31,7 @@ namespace Control_Inventario
         private void RegistrarProveedor()//Metodo crear un nuevo registro
         {
             conectar.abrirDB();
-            SqlCommand consultaId = new SqlCommand("SELECT * FROM Proveedores WHERE IdProveedor =  @Id", conectar.conectarDB);
+            SqlCommand consultaId = new SqlCommand("SELECT * FROM Proveedores WHERE IdProveedor  =  @Id", conectar.conectarDB);
             consultaId.Parameters.AddWithValue("@Id", txtIdProveedor.Text);
             SqlDataReader valorId = consultaId.ExecuteReader();
 
@@ -55,7 +55,11 @@ namespace Control_Inventario
                     this.panel2.Enabled = false;
                     this.panel1.Enabled = false;
                 }
-
+            }
+            else
+            {
+                conectar.cerrarDB();
+                MessageBox.Show("el Documento ingresado ya se encuentra en la Base de Datos");
             }
         }
         private void ActualizarProveedor()//Metodo para actualizar registro
@@ -241,42 +245,24 @@ namespace Control_Inventario
             this.btnGuardarCambiosProveedores.Visible = false;
             this.btnEliminarRegistroProveedores.Visible = false;
         }//Configuramos el boton CrearProveedor
-        private void btnActualizarProveedor_Click(object sender, EventArgs e)
-        {
-            this.panel1.Enabled = true;
-            this.panel2.Enabled = false;
-            this.btnRegistrar.Visible = false;
-            this.btnGuardarCambiosProveedores.Visible = true;
-            this.btnEliminarRegistroProveedores.Visible = false;
-        }//Configuramos el boton actualizar proveedor
-        private void btnEliminarProveedor_Click(object sender, EventArgs e)
-        {
-            this.panel1.Enabled = true;
-            this.panel2.Enabled = false;
-            this.btnRegistrar.Visible = false;
-            this.btnGuardarCambiosProveedores.Visible = false;
-            this.btnEliminarRegistroProveedores.Visible = true;
-        }// Configurar el boton EliminarProveedor
-        private void btnLimpiarCampos_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-        }//Configuramos el boton limpiarCampos
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             limpiarConfirmarTXT();
             if (confirmarTXT())
             {
-                if (rbtnCCProveedor.Checked)
+                if (rbtnCCProveedor.Checked == true)
                 {
                     tipoId = rbtnCCProveedor.Text;
                     RegistrarProveedor();
+                    tipoId = "";
                 }
                 else
                 {
-                    if (rbtnNitProveedor.Checked)
+                    if (rbtnNitProveedor.Checked == true)
                     {
                         tipoId = rbtnNitProveedor.Text;
                         RegistrarProveedor();
+                        tipoId = "";
                     }
                     else
                     {
@@ -289,33 +275,6 @@ namespace Control_Inventario
                 MessageBox.Show("Por favor verifique los campos marcados e ingrese la información");
             }
         }//configuramos el boton Registrar
-        private void dtvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.panel2.Enabled = true;
-            txtIdProveedor.Text = dtvEncontrados.SelectedCells[0].Value.ToString();
-            tipoId = dtvEncontrados.SelectedCells[1].Value.ToString();
-            txtNombreProveedor.Text = dtvEncontrados.SelectedCells[2].Value.ToString();
-            txtDireccionProveedor.Text = dtvEncontrados.SelectedCells[3].Value.ToString();
-            txtTelefonoProveedor.Text = dtvEncontrados.SelectedCells[4].Value.ToString();
-            txtCorreoProveedor.Text = dtvEncontrados.SelectedCells[5].Value.ToString();
-            if (tipoId.Contains("C.C."))
-            {
-                rbtnCCProveedor.Checked = true;
-            }
-            else
-            {
-                if (tipoId.Contains("NIT"))
-                {
-                    rbtnNitProveedor.Checked = true;
-                }
-                else
-                {
-                    MessageBox.Show("Verifique el tipo de Documento");
-                }
-
-
-            }
-        }//Capturamos el dtvEncontrados en los txt
         private void iconButtonBuscarProveedor_Click(object sender, EventArgs e)
         {
             bool ConfirmarParametro = true;
@@ -372,6 +331,43 @@ namespace Control_Inventario
                 }
             }
         }//Configuramos el boton Buscar proveedor
+        private void dtvEncontrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.panel2.Enabled = true;
+            txtIdProveedor.Text = dtvEncontrados.SelectedCells[0].Value.ToString();
+            tipoId = dtvEncontrados.SelectedCells[1].Value.ToString();
+            txtNombreProveedor.Text = dtvEncontrados.SelectedCells[2].Value.ToString();
+            txtDireccionProveedor.Text = dtvEncontrados.SelectedCells[3].Value.ToString();
+            txtTelefonoProveedor.Text = dtvEncontrados.SelectedCells[4].Value.ToString();
+            txtCorreoProveedor.Text = dtvEncontrados.SelectedCells[5].Value.ToString();
+            if (tipoId.Contains("C.C."))
+            {
+                rbtnCCProveedor.Checked = true;
+                tipoId = "";
+            }
+            else
+            {
+                if (tipoId.Contains("NIT"))
+                {
+                    rbtnNitProveedor.Checked = true;
+                    tipoId = "";
+                }
+                else
+                {
+                    MessageBox.Show("Verifique el tipo de Documento");
+                }
+
+
+            }
+        }//Capturamos el dtvEncontrados en los txt
+        private void btnActualizarProveedor_Click(object sender, EventArgs e)
+        {
+            this.panel1.Enabled = true;
+            this.panel2.Enabled = false;
+            this.btnRegistrar.Visible = false;
+            this.btnGuardarCambiosProveedores.Visible = true;
+            this.btnEliminarRegistroProveedores.Visible = false;
+        }//Configuramos el boton actualizar proveedor
         private void btnGuardarCambiosProveedores_Click(object sender, EventArgs e)
         {
             limpiarConfirmarTXT();
@@ -381,6 +377,7 @@ namespace Control_Inventario
                 {
                     tipoId = rbtnCCProveedor.Text;
                     ActualizarProveedor();
+                    tipoId = "";
                 }
                 else
                 {
@@ -388,6 +385,7 @@ namespace Control_Inventario
                     {
                         tipoId += rbtnNitProveedor.Text;
                         ActualizarProveedor();
+                        tipoId = "";
                     }
                     else
                     {
@@ -400,6 +398,14 @@ namespace Control_Inventario
                 MessageBox.Show("Verifique los espacios con error y diligencielos");
             }
         }//Configurar el boton GuardarCambiosProveedores
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            this.panel1.Enabled = true;
+            this.panel2.Enabled = false;
+            this.btnRegistrar.Visible = false;
+            this.btnGuardarCambiosProveedores.Visible = false;
+            this.btnEliminarRegistroProveedores.Visible = true;
+        }// Configurar el boton EliminarProveedor
         private void btnEliminarRegistroProveedores_Click(object sender, EventArgs e)
         {
             limpiarConfirmarTXT();
@@ -413,6 +419,10 @@ namespace Control_Inventario
                 MessageBox.Show("Verifique los espacios con error y diligencielos");
             }
         }//configuramos el boton eliminarRegistroProveedores
+        private void btnLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }//Configuramos el boton limpiarCampos
     }
 }
 
