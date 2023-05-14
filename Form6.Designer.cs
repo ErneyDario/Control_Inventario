@@ -60,15 +60,16 @@
             button2 = new Button();
             button4 = new Button();
             panel2 = new Panel();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            NombreProveedor = new TextBox();
+            txtIdProveedor = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
+            txtFactura = new TextBox();
             button1 = new Button();
             button3 = new Button();
             button6 = new Button();
             button5 = new Button();
+            btnGestionArticulos = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -81,14 +82,13 @@
             btnLimpiarCampos.Cursor = Cursors.Hand;
             btnLimpiarCampos.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiarCampos.ForeColor = Color.White;
-            btnLimpiarCampos.Location = new Point(418, 21);
+            btnLimpiarCampos.Location = new Point(530, 5);
             btnLimpiarCampos.Name = "btnLimpiarCampos";
             btnLimpiarCampos.RightToLeft = RightToLeft.No;
             btnLimpiarCampos.Size = new Size(100, 40);
-            btnLimpiarCampos.TabIndex = 30;
-            btnLimpiarCampos.Text = "Ver Inventario";
+            btnLimpiarCampos.TabIndex = 21;
+            btnLimpiarCampos.Text = "Ingresar Inventario";
             btnLimpiarCampos.UseVisualStyleBackColor = false;
-            btnLimpiarCampos.Click += btnLimpiarCampos_Click;
             // 
             // panel3
             // 
@@ -105,11 +105,10 @@
             panel3.Controls.Add(comboBox1);
             panel3.Controls.Add(iconButton1);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(418, 80);
+            panel3.Location = new Point(419, 49);
             panel3.Name = "panel3";
             panel3.Size = new Size(474, 155);
-            panel3.TabIndex = 31;
-            panel3.Paint += panel3_Paint;
+            panel3.TabIndex = 12;
             // 
             // textBox2
             // 
@@ -117,7 +116,7 @@
             textBox2.Location = new Point(285, 121);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(54, 23);
-            textBox2.TabIndex = 20;
+            textBox2.TabIndex = 17;
             // 
             // textBox1
             // 
@@ -125,7 +124,7 @@
             textBox1.Location = new Point(285, 90);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(54, 23);
-            textBox1.TabIndex = 19;
+            textBox1.TabIndex = 16;
             // 
             // label5
             // 
@@ -153,7 +152,7 @@
             dateTimePicker2.Location = new Point(138, 121);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(103, 23);
-            dateTimePicker2.TabIndex = 16;
+            dateTimePicker2.TabIndex = 15;
             // 
             // label2
             // 
@@ -181,7 +180,7 @@
             dateTimePicker1.Location = new Point(138, 90);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(103, 23);
-            dateTimePicker1.TabIndex = 13;
+            dateTimePicker1.TabIndex = 15;
             // 
             // txtarticulo
             // 
@@ -189,7 +188,7 @@
             txtarticulo.Location = new Point(85, 61);
             txtarticulo.Name = "txtarticulo";
             txtarticulo.Size = new Size(254, 23);
-            txtarticulo.TabIndex = 12;
+            txtarticulo.TabIndex = 14;
             // 
             // comboBox1
             // 
@@ -198,7 +197,7 @@
             comboBox1.Location = new Point(85, 21);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(254, 23);
-            comboBox1.TabIndex = 11;
+            comboBox1.TabIndex = 13;
             // 
             // iconButton1
             // 
@@ -234,7 +233,7 @@
             iconPictureBox1.IconColor = Color.FromArgb(64, 64, 64);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconPictureBox1.IconSize = 38;
-            iconPictureBox1.Location = new Point(854, 21);
+            iconPictureBox1.Location = new Point(855, 5);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(38, 40);
             iconPictureBox1.TabIndex = 33;
@@ -245,7 +244,7 @@
             listView1.Location = new Point(5, 276);
             listView1.Name = "listView1";
             listView1.Size = new Size(888, 265);
-            listView1.TabIndex = 34;
+            listView1.TabIndex = 18;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // panel1
@@ -266,7 +265,7 @@
             panel1.Location = new Point(5, 80);
             panel1.Name = "panel1";
             panel1.Size = new Size(408, 155);
-            panel1.TabIndex = 35;
+            panel1.TabIndex = 4;
             // 
             // textBox3
             // 
@@ -276,7 +275,7 @@
             textBox3.Location = new Point(296, 93);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(91, 23);
-            textBox3.TabIndex = 31;
+            textBox3.TabIndex = 9;
             // 
             // label10
             // 
@@ -296,7 +295,7 @@
             txtdescripcion.Location = new Point(101, 63);
             txtdescripcion.Name = "txtdescripcion";
             txtdescripcion.Size = new Size(287, 23);
-            txtdescripcion.TabIndex = 29;
+            txtdescripcion.TabIndex = 7;
             // 
             // txtvalor
             // 
@@ -306,7 +305,7 @@
             txtvalor.Location = new Point(101, 93);
             txtvalor.Name = "txtvalor";
             txtvalor.Size = new Size(91, 23);
-            txtvalor.TabIndex = 22;
+            txtvalor.TabIndex = 8;
             // 
             // label8
             // 
@@ -326,7 +325,7 @@
             txtexistencias.Location = new Point(101, 122);
             txtexistencias.Name = "txtexistencias";
             txtexistencias.Size = new Size(91, 23);
-            txtexistencias.TabIndex = 19;
+            txtexistencias.TabIndex = 10;
             // 
             // txtarti
             // 
@@ -336,7 +335,7 @@
             txtarti.Location = new Point(101, 35);
             txtarti.Name = "txtarti";
             txtarti.Size = new Size(287, 23);
-            txtarti.TabIndex = 18;
+            txtarti.TabIndex = 6;
             // 
             // txtcodigo
             // 
@@ -346,7 +345,7 @@
             txtcodigo.Location = new Point(101, 8);
             txtcodigo.Name = "txtcodigo";
             txtcodigo.Size = new Size(162, 23);
-            txtcodigo.TabIndex = 17;
+            txtcodigo.TabIndex = 5;
             // 
             // label9
             // 
@@ -377,7 +376,6 @@
             label17.Size = new Size(81, 16);
             label17.TabIndex = 12;
             label17.Text = "Descripción";
-            label17.Click += label17_Click;
             // 
             // label16
             // 
@@ -399,10 +397,9 @@
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
             button2.Size = new Size(100, 32);
-            button2.TabIndex = 28;
+            button2.TabIndex = 12;
             button2.Text = "Limpiar";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -414,39 +411,39 @@
             button4.Name = "button4";
             button4.RightToLeft = RightToLeft.No;
             button4.Size = new Size(100, 32);
-            button4.TabIndex = 27;
+            button4.TabIndex = 11;
             button4.Text = "Agregar";
             button4.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(textBox6);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(NombreProveedor);
+            panel2.Controls.Add(txtIdProveedor);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(txtFactura);
             panel2.Location = new Point(5, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(408, 65);
-            panel2.TabIndex = 36;
+            panel2.TabIndex = 0;
             // 
-            // textBox6
+            // NombreProveedor
             // 
-            textBox6.BackColor = Color.LavenderBlush;
-            textBox6.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox6.Location = new Point(64, 35);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(322, 23);
-            textBox6.TabIndex = 8;
+            NombreProveedor.BackColor = Color.LavenderBlush;
+            NombreProveedor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            NombreProveedor.Location = new Point(64, 35);
+            NombreProveedor.Name = "NombreProveedor";
+            NombreProveedor.Size = new Size(322, 23);
+            NombreProveedor.TabIndex = 3;
             // 
-            // textBox5
+            // txtIdProveedor
             // 
-            textBox5.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.Location = new Point(272, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(114, 23);
-            textBox5.TabIndex = 7;
+            txtIdProveedor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtIdProveedor.Location = new Point(272, 4);
+            txtIdProveedor.Name = "txtIdProveedor";
+            txtIdProveedor.Size = new Size(114, 23);
+            txtIdProveedor.TabIndex = 2;
             // 
             // label6
             // 
@@ -468,13 +465,13 @@
             label7.TabIndex = 4;
             label7.Text = "Factura";
             // 
-            // textBox4
+            // txtFactura
             // 
-            textBox4.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(64, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(99, 23);
-            textBox4.TabIndex = 5;
+            txtFactura.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtFactura.Location = new Point(64, 4);
+            txtFactura.Name = "txtFactura";
+            txtFactura.Size = new Size(99, 23);
+            txtFactura.TabIndex = 1;
             // 
             // button1
             // 
@@ -482,11 +479,11 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(536, 21);
+            button1.Location = new Point(636, 5);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(100, 40);
-            button1.TabIndex = 37;
+            button1.TabIndex = 22;
             button1.Text = "Editar Inventario";
             button1.UseVisualStyleBackColor = false;
             // 
@@ -496,11 +493,11 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(659, 21);
+            button3.Location = new Point(743, 5);
             button3.Name = "button3";
             button3.RightToLeft = RightToLeft.No;
             button3.Size = new Size(100, 40);
-            button3.TabIndex = 38;
+            button3.TabIndex = 23;
             button3.Text = "Eliminar Inventario";
             button3.UseVisualStyleBackColor = false;
             // 
@@ -510,11 +507,11 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(792, 547);
+            button6.Location = new Point(550, 547);
             button6.Name = "button6";
             button6.RightToLeft = RightToLeft.No;
             button6.Size = new Size(100, 34);
-            button6.TabIndex = 40;
+            button6.TabIndex = 20;
             button6.Text = "Guardar";
             button6.UseVisualStyleBackColor = false;
             // 
@@ -528,9 +525,24 @@
             button5.Name = "button5";
             button5.RightToLeft = RightToLeft.No;
             button5.Size = new Size(100, 34);
-            button5.TabIndex = 39;
+            button5.TabIndex = 19;
             button5.Text = "Limpiar";
             button5.UseVisualStyleBackColor = false;
+            // 
+            // btnGestionArticulos
+            // 
+            btnGestionArticulos.BackColor = Color.FromArgb(64, 64, 64);
+            btnGestionArticulos.Cursor = Cursors.Hand;
+            btnGestionArticulos.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGestionArticulos.ForeColor = Color.White;
+            btnGestionArticulos.Location = new Point(424, 5);
+            btnGestionArticulos.Name = "btnGestionArticulos";
+            btnGestionArticulos.RightToLeft = RightToLeft.No;
+            btnGestionArticulos.Size = new Size(100, 40);
+            btnGestionArticulos.TabIndex = 34;
+            btnGestionArticulos.Text = "Gestionar Articulos";
+            btnGestionArticulos.UseVisualStyleBackColor = false;
+            btnGestionArticulos.Click += btnGestionArticulos_Click;
             // 
             // FormInventario
             // 
@@ -538,6 +550,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(910, 593);
+            Controls.Add(btnGestionArticulos);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button3);
@@ -552,7 +565,6 @@
             Controls.Add(btnLimpiarCampos);
             Name = "FormInventario";
             Text = "Control_Inventario [Inventario]";
-            Load += FormInventario_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
@@ -597,14 +609,15 @@
         private TextBox textBox3;
         private Label label10;
         private Panel panel2;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox NombreProveedor;
+        private TextBox txtIdProveedor;
         private Label label6;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox txtFactura;
         private Button button1;
         private Button button3;
         private Button button6;
         private Button button5;
+        private Button btnGestionArticulos;
     }
 }

@@ -535,6 +535,7 @@ namespace Control_Inventario
                     {
                         tipoDocumento = rbtnTipoCC.Text;
                         actualizarRegistro();
+                        tipoDocumento = "";
                     }
                     else
                     {
@@ -542,6 +543,7 @@ namespace Control_Inventario
                         {
                             tipoDocumento += rbtnTipoCEx.Text;
                             actualizarRegistro();
+                            tipoDocumento = "";
                         }
                         else
                         {
@@ -549,6 +551,7 @@ namespace Control_Inventario
                             {
                                 tipoDocumento = rbtnPasaporte.Text;
                                 actualizarRegistro();
+                                tipoDocumento = "";
                             }
                             else
                             {
@@ -604,7 +607,6 @@ namespace Control_Inventario
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FormPrincipal Form = new FormPrincipal();
-                Form.habilitarBotones();
                 this.Close();
             }
         }

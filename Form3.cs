@@ -36,29 +36,6 @@ namespace Control_Inventario
                 this.iButtonUsuarios.Enabled = false;  
             }  
         }
-         public void habilitarBotones()
-
-        {
-            this.iButtonVentas.Enabled = true;
-           /* if (variablesGlobales.vRol.Contains("Auxiliar", StringComparison.OrdinalIgnoreCase))
-            {
-                this.iButtonInformes.Enabled = false;
-                this.iButtonUsuarios.Enabled = false;
-                this.iButtonVentas.Enabled = true;
-                this.iButtonInventario.Enabled = true;
-                this.iButtonClientes.Enabled = true;
-                this.iButtonProveedores.Enabled = true;
-            }
-            else
-            {
-                this.iButtonInformes.Enabled = true;
-                this.iButtonUsuarios.Enabled = true;
-                this.iButtonVentas.Enabled = true;
-                this.iButtonInventario.Enabled = true;
-                this.iButtonClientes.Enabled = true;
-                this.iButtonProveedores.Enabled = true;
-            }*/
-        }
 
         public void iButtonUsuarios_Click(object sender, EventArgs e)
         {
@@ -66,68 +43,36 @@ namespace Control_Inventario
             frmUsuarios.TopLevel = false;
             panelTrabajo.Controls.Add(frmUsuarios);
             frmUsuarios.Show();
-            this.iButtonVentas.Enabled = false;
-            this.iButtonInventario.Enabled = false;
-            this.iButtonClientes.Enabled = false;
-            this.iButtonProveedores.Enabled = false;
-            this.iButtonInformes.Enabled = false;
+            
         }
-
-
         public void iButtonVentas_Click(object sender, EventArgs e)
         {
             FormVentas frmVentas = new FormVentas();
             frmVentas.TopLevel = false;
             panelTrabajo.Controls.Add(frmVentas);
             frmVentas.Show();
-            this.iButtonInventario.Enabled = false;
-            this.iButtonClientes.Enabled = false;
-            this.iButtonProveedores.Enabled = false;
-            this.iButtonInformes.Enabled = false;
-            this.iButtonUsuarios.Enabled = false;
         }
-
         private void iButtonInventario_Click(object sender, EventArgs e)
         {
             FormInventario frmInventario = new FormInventario();
             frmInventario.TopLevel = false;
             panelTrabajo.Controls.Add(frmInventario);
             frmInventario.Show();
-            this.iButtonVentas.Enabled = false;
-            this.iButtonClientes.Enabled = false;
-            this.iButtonProveedores.Enabled = false;
-            this.iButtonInformes.Enabled = false;
-            this.iButtonUsuarios.Enabled = false;
-
         }
-
         private void iButtonClientes_Click(object sender, EventArgs e)
         {
             FormClientes frmClientes = new FormClientes();
             frmClientes.TopLevel = false;
             panelTrabajo.Controls.Add(frmClientes);
-            frmClientes.Show();
-            this.iButtonVentas.Enabled = false;
-            this.iButtonInventario.Enabled = false;
-            this.iButtonUsuarios.Enabled = false;
-            this.iButtonProveedores.Enabled = false;
-            this.iButtonInformes.Enabled = false;
+            frmClientes.Show();   
         }
-
         private void iButtonProveedores_Click_1(object sender, EventArgs e)
         {
             FormProveedores frmProveedores = new FormProveedores();
             frmProveedores.TopLevel = false;
             panelTrabajo.Controls.Add(frmProveedores);
             frmProveedores.Show();
-            this.iButtonVentas.Enabled = false;
-            this.iButtonInventario.Enabled = false;
-            this.iButtonClientes.Enabled = false;
-            this.iButtonUsuarios.Enabled = false;
-            this.iButtonInformes.Enabled = false;
         }
-
-
         private void iButtonSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Cerrar sesión?",

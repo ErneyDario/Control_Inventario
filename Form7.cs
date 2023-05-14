@@ -470,8 +470,6 @@ namespace Control_Inventario
                    "consulta",
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                FormPrincipal Form = new FormPrincipal();
-                Form.habilitarBotones();
                 this.Close();
             }
         }
