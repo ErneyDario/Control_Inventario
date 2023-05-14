@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnLimpiarCampos = new Button();
             panel3 = new Panel();
             textBox2 = new TextBox();
@@ -38,42 +39,44 @@
             label2 = new Label();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            txtarticulo = new TextBox();
             comboBox1 = new ComboBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            listView1 = new ListView();
+            iconPictureBoxSalir = new FontAwesome.Sharp.IconPictureBox();
             panel1 = new Panel();
-            textBox3 = new TextBox();
+            txtValorVenta = new TextBox();
             label10 = new Label();
             txtdescripcion = new TextBox();
             txtvalor = new TextBox();
             label8 = new Label();
-            txtexistencias = new TextBox();
-            txtarti = new TextBox();
+            txtExistencias = new TextBox();
+            txtArticulo = new TextBox();
             txtcodigo = new TextBox();
             label9 = new Label();
             label19 = new Label();
             label17 = new Label();
             label16 = new Label();
-            button2 = new Button();
-            button4 = new Button();
+            btnLimpiar = new Button();
+            btnAgregarEntrada = new Button();
             panel2 = new Panel();
-            NombreProveedor = new TextBox();
+            txtNombreProveedor = new TextBox();
             txtIdProveedor = new TextBox();
             label6 = new Label();
             label7 = new Label();
             txtFactura = new TextBox();
             button1 = new Button();
             button3 = new Button();
-            button6 = new Button();
+            btnRegistrar = new Button();
             button5 = new Button();
             btnGestionArticulos = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            dtgvEntradas = new DataGridView();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBoxSalir).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvEntradas).BeginInit();
             SuspendLayout();
             // 
             // btnLimpiarCampos
@@ -101,7 +104,6 @@
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(txtarticulo);
             panel3.Controls.Add(comboBox1);
             panel3.Controls.Add(iconButton1);
             panel3.Controls.Add(label3);
@@ -182,14 +184,6 @@
             dateTimePicker1.Size = new Size(103, 23);
             dateTimePicker1.TabIndex = 15;
             // 
-            // txtarticulo
-            // 
-            txtarticulo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtarticulo.Location = new Point(85, 61);
-            txtarticulo.Name = "txtarticulo";
-            txtarticulo.Size = new Size(254, 23);
-            txtarticulo.TabIndex = 14;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -223,40 +217,32 @@
             label3.TabIndex = 6;
             label3.Text = "Buscar por:";
             // 
-            // iconPictureBox1
+            // iconPictureBoxSalir
             // 
-            iconPictureBox1.BackColor = Color.LavenderBlush;
-            iconPictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            iconPictureBox1.Cursor = Cursors.Hand;
-            iconPictureBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
-            iconPictureBox1.IconColor = Color.FromArgb(64, 64, 64);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox1.IconSize = 38;
-            iconPictureBox1.Location = new Point(855, 5);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(38, 40);
-            iconPictureBox1.TabIndex = 33;
-            iconPictureBox1.TabStop = false;
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(5, 276);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(888, 265);
-            listView1.TabIndex = 18;
-            listView1.UseCompatibleStateImageBehavior = false;
+            iconPictureBoxSalir.BackColor = Color.LavenderBlush;
+            iconPictureBoxSalir.BackgroundImageLayout = ImageLayout.Center;
+            iconPictureBoxSalir.Cursor = Cursors.Hand;
+            iconPictureBoxSalir.ForeColor = Color.FromArgb(64, 64, 64);
+            iconPictureBoxSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            iconPictureBoxSalir.IconColor = Color.FromArgb(64, 64, 64);
+            iconPictureBoxSalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconPictureBoxSalir.IconSize = 38;
+            iconPictureBoxSalir.Location = new Point(855, 5);
+            iconPictureBoxSalir.Name = "iconPictureBoxSalir";
+            iconPictureBoxSalir.Size = new Size(38, 40);
+            iconPictureBoxSalir.TabIndex = 33;
+            iconPictureBoxSalir.TabStop = false;
             // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtValorVenta);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(txtdescripcion);
             panel1.Controls.Add(txtvalor);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(txtexistencias);
-            panel1.Controls.Add(txtarti);
+            panel1.Controls.Add(txtExistencias);
+            panel1.Controls.Add(txtArticulo);
             panel1.Controls.Add(txtcodigo);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label19);
@@ -264,18 +250,18 @@
             panel1.Controls.Add(label16);
             panel1.Location = new Point(5, 80);
             panel1.Name = "panel1";
-            panel1.Size = new Size(408, 155);
+            panel1.Size = new Size(408, 153);
             panel1.TabIndex = 4;
             // 
-            // textBox3
+            // txtValorVenta
             // 
-            textBox3.BackColor = SystemColors.Window;
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(296, 93);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(91, 23);
-            textBox3.TabIndex = 9;
+            txtValorVenta.BackColor = SystemColors.Window;
+            txtValorVenta.BorderStyle = BorderStyle.FixedSingle;
+            txtValorVenta.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtValorVenta.Location = new Point(296, 93);
+            txtValorVenta.Name = "txtValorVenta";
+            txtValorVenta.Size = new Size(91, 23);
+            txtValorVenta.TabIndex = 9;
             // 
             // label10
             // 
@@ -294,6 +280,7 @@
             txtdescripcion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             txtdescripcion.Location = new Point(101, 63);
             txtdescripcion.Name = "txtdescripcion";
+            txtdescripcion.ReadOnly = true;
             txtdescripcion.Size = new Size(287, 23);
             txtdescripcion.TabIndex = 7;
             // 
@@ -317,25 +304,26 @@
             label8.TabIndex = 20;
             label8.Text = "Cantidad";
             // 
-            // txtexistencias
+            // txtExistencias
             // 
-            txtexistencias.BackColor = SystemColors.Window;
-            txtexistencias.BorderStyle = BorderStyle.FixedSingle;
-            txtexistencias.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtexistencias.Location = new Point(101, 122);
-            txtexistencias.Name = "txtexistencias";
-            txtexistencias.Size = new Size(91, 23);
-            txtexistencias.TabIndex = 10;
+            txtExistencias.BackColor = SystemColors.Window;
+            txtExistencias.BorderStyle = BorderStyle.FixedSingle;
+            txtExistencias.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtExistencias.Location = new Point(101, 122);
+            txtExistencias.Name = "txtExistencias";
+            txtExistencias.Size = new Size(91, 23);
+            txtExistencias.TabIndex = 10;
             // 
-            // txtarti
+            // txtArticulo
             // 
-            txtarti.BackColor = SystemColors.Window;
-            txtarti.BorderStyle = BorderStyle.FixedSingle;
-            txtarti.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtarti.Location = new Point(101, 35);
-            txtarti.Name = "txtarti";
-            txtarti.Size = new Size(287, 23);
-            txtarti.TabIndex = 6;
+            txtArticulo.BackColor = SystemColors.Window;
+            txtArticulo.BorderStyle = BorderStyle.FixedSingle;
+            txtArticulo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtArticulo.Location = new Point(101, 35);
+            txtArticulo.Name = "txtArticulo";
+            txtArticulo.ReadOnly = true;
+            txtArticulo.Size = new Size(287, 23);
+            txtArticulo.TabIndex = 6;
             // 
             // txtcodigo
             // 
@@ -346,6 +334,7 @@
             txtcodigo.Name = "txtcodigo";
             txtcodigo.Size = new Size(162, 23);
             txtcodigo.TabIndex = 5;
+            txtcodigo.KeyPress += txtcodigo_KeyPress;
             // 
             // label9
             // 
@@ -387,38 +376,40 @@
             label16.TabIndex = 10;
             label16.Text = "Articulo";
             // 
-            // button2
+            // btnLimpiar
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(204, 238);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 12;
-            button2.Text = "Limpiar";
-            button2.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiar.Cursor = Cursors.Hand;
+            btnLimpiar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(204, 240);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.RightToLeft = RightToLeft.No;
+            btnLimpiar.Size = new Size(100, 32);
+            btnLimpiar.TabIndex = 12;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // button4
+            // btnAgregarEntrada
             // 
-            button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(313, 238);
-            button4.Name = "button4";
-            button4.RightToLeft = RightToLeft.No;
-            button4.Size = new Size(100, 32);
-            button4.TabIndex = 11;
-            button4.Text = "Agregar";
-            button4.UseVisualStyleBackColor = false;
+            btnAgregarEntrada.BackColor = Color.FromArgb(64, 64, 64);
+            btnAgregarEntrada.Cursor = Cursors.Hand;
+            btnAgregarEntrada.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarEntrada.ForeColor = Color.White;
+            btnAgregarEntrada.Location = new Point(313, 240);
+            btnAgregarEntrada.Name = "btnAgregarEntrada";
+            btnAgregarEntrada.RightToLeft = RightToLeft.No;
+            btnAgregarEntrada.Size = new Size(100, 32);
+            btnAgregarEntrada.TabIndex = 11;
+            btnAgregarEntrada.Text = "Agregar";
+            btnAgregarEntrada.UseVisualStyleBackColor = false;
+            btnAgregarEntrada.Click += btnAgregarEntrada_Click;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(NombreProveedor);
+            panel2.Controls.Add(txtNombreProveedor);
             panel2.Controls.Add(txtIdProveedor);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
@@ -428,14 +419,15 @@
             panel2.Size = new Size(408, 65);
             panel2.TabIndex = 0;
             // 
-            // NombreProveedor
+            // txtNombreProveedor
             // 
-            NombreProveedor.BackColor = Color.LavenderBlush;
-            NombreProveedor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            NombreProveedor.Location = new Point(64, 35);
-            NombreProveedor.Name = "NombreProveedor";
-            NombreProveedor.Size = new Size(322, 23);
-            NombreProveedor.TabIndex = 3;
+            txtNombreProveedor.BackColor = Color.LavenderBlush;
+            txtNombreProveedor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNombreProveedor.Location = new Point(64, 35);
+            txtNombreProveedor.Name = "txtNombreProveedor";
+            txtNombreProveedor.ReadOnly = true;
+            txtNombreProveedor.Size = new Size(322, 23);
+            txtNombreProveedor.TabIndex = 3;
             // 
             // txtIdProveedor
             // 
@@ -444,6 +436,7 @@
             txtIdProveedor.Name = "txtIdProveedor";
             txtIdProveedor.Size = new Size(114, 23);
             txtIdProveedor.TabIndex = 2;
+            txtIdProveedor.KeyPress += txtIdProveedor_KeyPress;
             // 
             // label6
             // 
@@ -501,19 +494,20 @@
             button3.Text = "Eliminar Inventario";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnRegistrar
             // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(550, 547);
-            button6.Name = "button6";
-            button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(100, 34);
-            button6.TabIndex = 20;
-            button6.Text = "Guardar";
-            button6.UseVisualStyleBackColor = false;
+            btnRegistrar.BackColor = Color.FromArgb(64, 64, 64);
+            btnRegistrar.Cursor = Cursors.Hand;
+            btnRegistrar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrar.ForeColor = Color.White;
+            btnRegistrar.Location = new Point(798, 547);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.RightToLeft = RightToLeft.No;
+            btnRegistrar.Size = new Size(100, 34);
+            btnRegistrar.TabIndex = 20;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // button5
             // 
@@ -542,7 +536,20 @@
             btnGestionArticulos.TabIndex = 34;
             btnGestionArticulos.Text = "Gestionar Articulos";
             btnGestionArticulos.UseVisualStyleBackColor = false;
-            btnGestionArticulos.Click += btnGestionArticulos_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // dtgvEntradas
+            // 
+            dtgvEntradas.BackgroundColor = Color.LavenderBlush;
+            dtgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvEntradas.Location = new Point(5, 278);
+            dtgvEntradas.Name = "dtgvEntradas";
+            dtgvEntradas.RowTemplate.Height = 25;
+            dtgvEntradas.Size = new Size(893, 263);
+            dtgvEntradas.TabIndex = 35;
             // 
             // FormInventario
             // 
@@ -550,28 +557,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(910, 593);
+            Controls.Add(dtgvEntradas);
             Controls.Add(btnGestionArticulos);
-            Controls.Add(button6);
+            Controls.Add(btnRegistrar);
             Controls.Add(button5);
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(listView1);
-            Controls.Add(iconPictureBox1);
-            Controls.Add(button4);
-            Controls.Add(button2);
+            Controls.Add(iconPictureBoxSalir);
+            Controls.Add(btnAgregarEntrada);
+            Controls.Add(btnLimpiar);
             Controls.Add(panel3);
             Controls.Add(btnLimpiarCampos);
             Name = "FormInventario";
             Text = "Control_Inventario [Inventario]";
+            Load += FormInventario_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBoxSalir).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvEntradas).EndInit();
             ResumeLayout(false);
         }
 
@@ -582,7 +592,6 @@
         private ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label3;
-        private TextBox txtarticulo;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -591,33 +600,34 @@
         private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private ListView listView1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalir;
         private Panel panel1;
         private TextBox txtdescripcion;
-        private Button button2;
-        private Button button4;
+        private Button btnLimpiar;
+        private Button btnAgregarEntrada;
         private TextBox txtvalor;
         private Label label8;
-        private TextBox txtexistencias;
-        private TextBox txtarti;
+        private TextBox txtExistencias;
+        private TextBox txtArticulo;
         private TextBox txtcodigo;
         private Label label9;
         private Label label19;
         private Label label17;
         private Label label16;
-        private TextBox textBox3;
+        private TextBox txtValorVenta;
         private Label label10;
         private Panel panel2;
-        private TextBox NombreProveedor;
+        private TextBox txtNombreProveedor;
         private TextBox txtIdProveedor;
         private Label label6;
         private Label label7;
         private TextBox txtFactura;
         private Button button1;
         private Button button3;
-        private Button button6;
+        private Button btnRegistrar;
         private Button button5;
         private Button btnGestionArticulos;
+        private ErrorProvider errorProvider1;
+        private DataGridView dtgvEntradas;
     }
 }
