@@ -29,19 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btnLimpiarCampos = new Button();
-            panel3 = new Panel();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            label2 = new Label();
-            label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label3 = new Label();
+            btnIngresarInventario = new Button();
             iconPictureBoxSalir = new FontAwesome.Sharp.IconPictureBox();
             panel1 = new Panel();
             txtValorVenta = new TextBox();
@@ -64,158 +52,44 @@
             label6 = new Label();
             label7 = new Label();
             txtFactura = new TextBox();
-            button1 = new Button();
-            button3 = new Button();
+            btnEditarInventario = new Button();
+            btnEliminarInventario = new Button();
             btnRegistrar = new Button();
-            button5 = new Button();
+            btnLimpirForm = new Button();
             btnGestionArticulos = new Button();
             errorProvider1 = new ErrorProvider(components);
             dtgvEntradas = new DataGridView();
-            panel3.SuspendLayout();
+            panel4 = new Panel();
+            btnGuardarCambios = new Button();
+            btnEliminarRegistro = new Button();
+            label3 = new Label();
+            iBtnBuscar = new FontAwesome.Sharp.IconButton();
+            cmbTipoBusqueda = new ComboBox();
+            txtBuscar = new TextBox();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)iconPictureBoxSalir).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvEntradas).BeginInit();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // btnLimpiarCampos
+            // btnIngresarInventario
             // 
-            btnLimpiarCampos.BackColor = Color.FromArgb(64, 64, 64);
-            btnLimpiarCampos.Cursor = Cursors.Hand;
-            btnLimpiarCampos.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLimpiarCampos.ForeColor = Color.White;
-            btnLimpiarCampos.Location = new Point(530, 5);
-            btnLimpiarCampos.Name = "btnLimpiarCampos";
-            btnLimpiarCampos.RightToLeft = RightToLeft.No;
-            btnLimpiarCampos.Size = new Size(100, 40);
-            btnLimpiarCampos.TabIndex = 21;
-            btnLimpiarCampos.Text = "Ingresar Inventario";
-            btnLimpiarCampos.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(textBox2);
-            panel3.Controls.Add(textBox1);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(dateTimePicker2);
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(iconButton1);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(419, 49);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(474, 155);
-            panel3.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(285, 121);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(54, 23);
-            textBox2.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(285, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(54, 23);
-            textBox1.TabIndex = 16;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(247, 125);
-            label5.Name = "label5";
-            label5.Size = new Size(36, 14);
-            label5.TabIndex = 18;
-            label5.Text = "Max:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(246, 93);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 14);
-            label4.TabIndex = 17;
-            label4.Text = "Min:";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(138, 121);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(103, 23);
-            dateTimePicker2.TabIndex = 15;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(91, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 14);
-            label2.TabIndex = 15;
-            label2.Text = "Hasta:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(87, 94);
-            label1.Name = "label1";
-            label1.Size = new Size(48, 14);
-            label1.TabIndex = 14;
-            label1.Text = "Desde:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(138, 90);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(103, 23);
-            dateTimePicker1.TabIndex = 15;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Articulo", "Articulo Por Factura", "Articulo Por Proveedor", "Articulo Por Fecha", "Articulo Por Valor", "Articulo Por Cantidad" });
-            comboBox1.Location = new Point(85, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(254, 23);
-            comboBox1.TabIndex = 13;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(64, 64, 64);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(363, 37);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(52, 43);
-            iconButton1.TabIndex = 10;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(3, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 14);
-            label3.TabIndex = 6;
-            label3.Text = "Buscar por:";
+            btnIngresarInventario.BackColor = Color.FromArgb(64, 64, 64);
+            btnIngresarInventario.Cursor = Cursors.Hand;
+            btnIngresarInventario.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnIngresarInventario.ForeColor = Color.White;
+            btnIngresarInventario.Location = new Point(533, 62);
+            btnIngresarInventario.Name = "btnIngresarInventario";
+            btnIngresarInventario.RightToLeft = RightToLeft.No;
+            btnIngresarInventario.Size = new Size(100, 40);
+            btnIngresarInventario.TabIndex = 21;
+            btnIngresarInventario.Text = "Ingresar Inventario";
+            btnIngresarInventario.UseVisualStyleBackColor = false;
+            btnIngresarInventario.Click += btnIngresarInventario_Click;
             // 
             // iconPictureBoxSalir
             // 
@@ -227,11 +101,12 @@
             iconPictureBoxSalir.IconColor = Color.FromArgb(64, 64, 64);
             iconPictureBoxSalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconPictureBoxSalir.IconSize = 38;
-            iconPictureBoxSalir.Location = new Point(855, 5);
+            iconPictureBoxSalir.Location = new Point(858, 62);
             iconPictureBoxSalir.Name = "iconPictureBoxSalir";
             iconPictureBoxSalir.Size = new Size(38, 40);
             iconPictureBoxSalir.TabIndex = 33;
             iconPictureBoxSalir.TabStop = false;
+            iconPictureBoxSalir.Click += iconPictureBoxSalir_Click;
             // 
             // panel1
             // 
@@ -248,7 +123,7 @@
             panel1.Controls.Add(label19);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label16);
-            panel1.Location = new Point(5, 80);
+            panel1.Location = new Point(5, 74);
             panel1.Name = "panel1";
             panel1.Size = new Size(408, 153);
             panel1.TabIndex = 4;
@@ -382,7 +257,7 @@
             btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(204, 240);
+            btnLimpiar.Location = new Point(207, 233);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.RightToLeft = RightToLeft.No;
             btnLimpiar.Size = new Size(100, 32);
@@ -397,7 +272,7 @@
             btnAgregarEntrada.Cursor = Cursors.Hand;
             btnAgregarEntrada.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarEntrada.ForeColor = Color.White;
-            btnAgregarEntrada.Location = new Point(313, 240);
+            btnAgregarEntrada.Location = new Point(313, 233);
             btnAgregarEntrada.Name = "btnAgregarEntrada";
             btnAgregarEntrada.RightToLeft = RightToLeft.No;
             btnAgregarEntrada.Size = new Size(100, 32);
@@ -414,7 +289,7 @@
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(txtFactura);
-            panel2.Location = new Point(5, 12);
+            panel2.Location = new Point(4, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(408, 65);
             panel2.TabIndex = 0;
@@ -466,33 +341,35 @@
             txtFactura.Size = new Size(99, 23);
             txtFactura.TabIndex = 1;
             // 
-            // button1
+            // btnEditarInventario
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(636, 5);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 22;
-            button1.Text = "Editar Inventario";
-            button1.UseVisualStyleBackColor = false;
+            btnEditarInventario.BackColor = Color.FromArgb(64, 64, 64);
+            btnEditarInventario.Cursor = Cursors.Hand;
+            btnEditarInventario.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditarInventario.ForeColor = Color.White;
+            btnEditarInventario.Location = new Point(639, 62);
+            btnEditarInventario.Name = "btnEditarInventario";
+            btnEditarInventario.RightToLeft = RightToLeft.No;
+            btnEditarInventario.Size = new Size(100, 40);
+            btnEditarInventario.TabIndex = 22;
+            btnEditarInventario.Text = "Editar Inventario";
+            btnEditarInventario.UseVisualStyleBackColor = false;
+            btnEditarInventario.Click += btnEditarInventario_Click;
             // 
-            // button3
+            // btnEliminarInventario
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Cursor = Cursors.Hand;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(743, 5);
-            button3.Name = "button3";
-            button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(100, 40);
-            button3.TabIndex = 23;
-            button3.Text = "Eliminar Inventario";
-            button3.UseVisualStyleBackColor = false;
+            btnEliminarInventario.BackColor = Color.FromArgb(64, 64, 64);
+            btnEliminarInventario.Cursor = Cursors.Hand;
+            btnEliminarInventario.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarInventario.ForeColor = Color.White;
+            btnEliminarInventario.Location = new Point(746, 62);
+            btnEliminarInventario.Name = "btnEliminarInventario";
+            btnEliminarInventario.RightToLeft = RightToLeft.No;
+            btnEliminarInventario.Size = new Size(100, 40);
+            btnEliminarInventario.TabIndex = 23;
+            btnEliminarInventario.Text = "Eliminar Inventario";
+            btnEliminarInventario.UseVisualStyleBackColor = false;
+            btnEliminarInventario.Click += btnEliminarInventario_Click;
             // 
             // btnRegistrar
             // 
@@ -500,28 +377,30 @@
             btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrar.ForeColor = Color.White;
-            btnRegistrar.Location = new Point(798, 547);
+            btnRegistrar.Location = new Point(796, 547);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.RightToLeft = RightToLeft.No;
             btnRegistrar.Size = new Size(100, 34);
             btnRegistrar.TabIndex = 20;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Visible = false;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
-            // button5
+            // btnLimpirForm
             // 
-            button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(676, 547);
-            button5.Name = "button5";
-            button5.RightToLeft = RightToLeft.No;
-            button5.Size = new Size(100, 34);
-            button5.TabIndex = 19;
-            button5.Text = "Limpiar";
-            button5.UseVisualStyleBackColor = false;
+            btnLimpirForm.BackColor = Color.FromArgb(64, 64, 64);
+            btnLimpirForm.Cursor = Cursors.Hand;
+            btnLimpirForm.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpirForm.ForeColor = Color.White;
+            btnLimpirForm.Location = new Point(676, 547);
+            btnLimpirForm.Name = "btnLimpirForm";
+            btnLimpirForm.RightToLeft = RightToLeft.No;
+            btnLimpirForm.Size = new Size(100, 34);
+            btnLimpirForm.TabIndex = 19;
+            btnLimpirForm.Text = "Limpiar";
+            btnLimpirForm.UseVisualStyleBackColor = false;
+            btnLimpirForm.Click += btnLimpirForm_Click;
             // 
             // btnGestionArticulos
             // 
@@ -529,13 +408,14 @@
             btnGestionArticulos.Cursor = Cursors.Hand;
             btnGestionArticulos.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGestionArticulos.ForeColor = Color.White;
-            btnGestionArticulos.Location = new Point(424, 5);
+            btnGestionArticulos.Location = new Point(427, 62);
             btnGestionArticulos.Name = "btnGestionArticulos";
             btnGestionArticulos.RightToLeft = RightToLeft.No;
             btnGestionArticulos.Size = new Size(100, 40);
             btnGestionArticulos.TabIndex = 34;
             btnGestionArticulos.Text = "Gestionar Articulos";
             btnGestionArticulos.UseVisualStyleBackColor = false;
+            btnGestionArticulos.Click += btnGestionArticulos_Click;
             // 
             // errorProvider1
             // 
@@ -548,8 +428,111 @@
             dtgvEntradas.Location = new Point(5, 278);
             dtgvEntradas.Name = "dtgvEntradas";
             dtgvEntradas.RowTemplate.Height = 25;
+            dtgvEntradas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgvEntradas.Size = new Size(893, 263);
             dtgvEntradas.TabIndex = 35;
+            dtgvEntradas.CellContentClick += dtgvEntradas_CellContentClick;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(panel2);
+            panel4.Controls.Add(panel1);
+            panel4.Controls.Add(btnAgregarEntrada);
+            panel4.Controls.Add(btnLimpiar);
+            panel4.Enabled = false;
+            panel4.Location = new Point(5, 1);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(413, 271);
+            panel4.TabIndex = 36;
+            // 
+            // btnGuardarCambios
+            // 
+            btnGuardarCambios.BackColor = Color.FromArgb(64, 64, 64);
+            btnGuardarCambios.Cursor = Cursors.Hand;
+            btnGuardarCambios.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarCambios.ForeColor = Color.White;
+            btnGuardarCambios.Location = new Point(795, 541);
+            btnGuardarCambios.Name = "btnGuardarCambios";
+            btnGuardarCambios.RightToLeft = RightToLeft.No;
+            btnGuardarCambios.Size = new Size(114, 47);
+            btnGuardarCambios.TabIndex = 37;
+            btnGuardarCambios.Text = "Guardar Cambios";
+            btnGuardarCambios.UseVisualStyleBackColor = false;
+            btnGuardarCambios.Visible = false;
+            btnGuardarCambios.Click += btnGuardarCambios_Click;
+            // 
+            // btnEliminarRegistro
+            // 
+            btnEliminarRegistro.BackColor = Color.Red;
+            btnEliminarRegistro.Cursor = Cursors.Hand;
+            btnEliminarRegistro.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarRegistro.ForeColor = Color.White;
+            btnEliminarRegistro.Location = new Point(788, 541);
+            btnEliminarRegistro.Name = "btnEliminarRegistro";
+            btnEliminarRegistro.RightToLeft = RightToLeft.No;
+            btnEliminarRegistro.Size = new Size(114, 47);
+            btnEliminarRegistro.TabIndex = 38;
+            btnEliminarRegistro.Text = "Eliminar Registros";
+            btnEliminarRegistro.UseVisualStyleBackColor = false;
+            btnEliminarRegistro.Visible = false;
+            btnEliminarRegistro.Click += btnEliminarRegistro_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(3, 24);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 14);
+            label3.TabIndex = 6;
+            label3.Text = "Buscar por:";
+            // 
+            // iBtnBuscar
+            // 
+            iBtnBuscar.BackColor = Color.FromArgb(64, 64, 64);
+            iBtnBuscar.Cursor = Cursors.Hand;
+            iBtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iBtnBuscar.IconColor = Color.White;
+            iBtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iBtnBuscar.IconSize = 30;
+            iBtnBuscar.Location = new Point(363, 37);
+            iBtnBuscar.Name = "iBtnBuscar";
+            iBtnBuscar.Size = new Size(52, 43);
+            iBtnBuscar.TabIndex = 10;
+            iBtnBuscar.UseVisualStyleBackColor = false;
+            iBtnBuscar.Click += iBtnBuscar_Click;
+            // 
+            // cmbTipoBusqueda
+            // 
+            cmbTipoBusqueda.FormattingEnabled = true;
+            cmbTipoBusqueda.Items.AddRange(new object[] { "Articulo", "Factura", "Proveedor" });
+            cmbTipoBusqueda.Location = new Point(85, 21);
+            cmbTipoBusqueda.Name = "cmbTipoBusqueda";
+            cmbTipoBusqueda.Size = new Size(254, 23);
+            cmbTipoBusqueda.TabIndex = 13;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.BackColor = SystemColors.Window;
+            txtBuscar.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscar.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBuscar.Location = new Point(85, 55);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(254, 23);
+            txtBuscar.TabIndex = 31;
+            // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(txtBuscar);
+            panel3.Controls.Add(cmbTipoBusqueda);
+            panel3.Controls.Add(iBtnBuscar);
+            panel3.Controls.Add(label3);
+            panel3.Enabled = false;
+            panel3.Location = new Point(424, 131);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(474, 97);
+            panel3.TabIndex = 12;
             // 
             // FormInventario
             // 
@@ -557,24 +540,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(910, 593);
+            Controls.Add(panel4);
             Controls.Add(dtgvEntradas);
             Controls.Add(btnGestionArticulos);
-            Controls.Add(btnRegistrar);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(btnLimpirForm);
+            Controls.Add(btnEliminarInventario);
+            Controls.Add(btnEditarInventario);
             Controls.Add(iconPictureBoxSalir);
-            Controls.Add(btnAgregarEntrada);
-            Controls.Add(btnLimpiar);
             Controls.Add(panel3);
-            Controls.Add(btnLimpiarCampos);
+            Controls.Add(btnIngresarInventario);
+            Controls.Add(btnRegistrar);
+            Controls.Add(btnGuardarCambios);
+            Controls.Add(btnEliminarRegistro);
             Name = "FormInventario";
             Text = "Control_Inventario [Inventario]";
             Load += FormInventario_Load;
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBoxSalir).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -582,24 +562,15 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtgvEntradas).EndInit();
+            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button btnLimpiarCampos;
-        private Panel panel3;
-        private ComboBox comboBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label3;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label5;
-        private Label label4;
-        private DateTimePicker dateTimePicker2;
-        private Label label2;
-        private Label label1;
+        private Button btnIngresarInventario;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalir;
         private Panel panel1;
         private TextBox txtdescripcion;
@@ -622,12 +593,20 @@
         private Label label6;
         private Label label7;
         private TextBox txtFactura;
-        private Button button1;
-        private Button button3;
+        private Button btnEditarInventario;
+        private Button btnEliminarInventario;
         private Button btnRegistrar;
-        private Button button5;
+        private Button btnLimpirForm;
         private Button btnGestionArticulos;
         private ErrorProvider errorProvider1;
         private DataGridView dtgvEntradas;
+        private Panel panel4;
+        private Button btnGuardarCambios;
+        private Button btnEliminarRegistro;
+        private Panel panel3;
+        private TextBox txtBuscar;
+        private ComboBox cmbTipoBusqueda;
+        private FontAwesome.Sharp.IconButton iBtnBuscar;
+        private Label label3;
     }
 }
