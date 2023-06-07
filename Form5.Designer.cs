@@ -28,100 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel3 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            rbtndescripcion = new RadioButton();
-            rbtncodigo = new RadioButton();
+            iconButtonBuscar = new FontAwesome.Sharp.IconButton();
+            rbtnDescripcion = new RadioButton();
+            rbtnCodigo = new RadioButton();
             label2 = new Label();
-            rbtnnombre = new RadioButton();
-            txtarticulo = new TextBox();
+            rbtnNombre = new RadioButton();
+            txtBuscar = new TextBox();
             label3 = new Label();
             label20 = new Label();
-            listView1 = new ListView();
             panel1 = new Panel();
-            txtdescripcion = new TextBox();
+            txtDescripcion = new TextBox();
             btnLimpiarCampos = new Button();
-            button4 = new Button();
-            txttotal = new TextBox();
+            btnAgregar = new Button();
+            txtTotal = new TextBox();
             label6 = new Label();
-            txtcantidad = new TextBox();
+            txtCantidad = new TextBox();
             label5 = new Label();
-            txtvalor = new TextBox();
+            txtValor = new TextBox();
             label4 = new Label();
             txtexistencias = new TextBox();
-            txtarti = new TextBox();
+            txtArticulo = new TextBox();
             txtcodigo = new TextBox();
             label1 = new Label();
             label19 = new Label();
             label17 = new Label();
             label16 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button6 = new Button();
+            Registrar = new Button();
+            Eliminar = new Button();
+            btnSalir = new Button();
             dataGridView1 = new DataGridView();
             dgvVentas = new DataGridView();
             panel2 = new Panel();
+            txtNombreCliente = new TextBox();
             label7 = new Label();
-            textBox1 = new TextBox();
-            button5 = new Button();
+            txtIdCliente = new TextBox();
+            btnVentaDia = new Button();
+            dgvEncontrados = new DataGridView();
+            errorProvider1 = new ErrorProvider(components);
+            label8 = new Label();
+            txtTotalVenta = new TextBox();
+            txtRecibido = new TextBox();
+            label9 = new Label();
+            txtCambio = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            txtFactura = new TextBox();
+            dataGridView2 = new DataGridView();
+            btnLimpiarTodo = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEncontrados).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(iconButton1);
-            panel3.Controls.Add(rbtndescripcion);
-            panel3.Controls.Add(rbtncodigo);
+            panel3.Controls.Add(iconButtonBuscar);
+            panel3.Controls.Add(rbtnDescripcion);
+            panel3.Controls.Add(rbtnCodigo);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(rbtnnombre);
-            panel3.Controls.Add(txtarticulo);
+            panel3.Controls.Add(rbtnNombre);
+            panel3.Controls.Add(txtBuscar);
             panel3.Controls.Add(label3);
             panel3.Location = new Point(12, 12);
             panel3.Name = "panel3";
             panel3.Size = new Size(444, 75);
             panel3.TabIndex = 12;
             // 
-            // iconButton1
+            // iconButtonBuscar
             // 
-            iconButton1.BackColor = Color.FromArgb(64, 64, 64);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(374, 12);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(51, 45);
-            iconButton1.TabIndex = 10;
-            iconButton1.UseVisualStyleBackColor = false;
+            iconButtonBuscar.BackColor = Color.FromArgb(64, 64, 64);
+            iconButtonBuscar.Cursor = Cursors.Hand;
+            iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconButtonBuscar.IconColor = Color.White;
+            iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonBuscar.IconSize = 30;
+            iconButtonBuscar.Location = new Point(374, 12);
+            iconButtonBuscar.Name = "iconButtonBuscar";
+            iconButtonBuscar.Size = new Size(51, 45);
+            iconButtonBuscar.TabIndex = 10;
+            iconButtonBuscar.UseVisualStyleBackColor = false;
+            iconButtonBuscar.Click += iconButtonBuscar_Click;
             // 
-            // rbtndescripcion
+            // rbtnDescripcion
             // 
-            rbtndescripcion.AutoSize = true;
-            rbtndescripcion.Location = new Point(281, 41);
-            rbtndescripcion.Name = "rbtndescripcion";
-            rbtndescripcion.Size = new Size(87, 19);
-            rbtndescripcion.TabIndex = 9;
-            rbtndescripcion.TabStop = true;
-            rbtndescripcion.Text = "Descripción";
-            rbtndescripcion.UseVisualStyleBackColor = true;
+            rbtnDescripcion.AutoSize = true;
+            rbtnDescripcion.Location = new Point(281, 41);
+            rbtnDescripcion.Name = "rbtnDescripcion";
+            rbtnDescripcion.Size = new Size(87, 19);
+            rbtnDescripcion.TabIndex = 9;
+            rbtnDescripcion.TabStop = true;
+            rbtnDescripcion.Text = "Descripción";
+            rbtnDescripcion.UseVisualStyleBackColor = true;
             // 
-            // rbtncodigo
+            // rbtnCodigo
             // 
-            rbtncodigo.AutoSize = true;
-            rbtncodigo.Location = new Point(128, 41);
-            rbtncodigo.Name = "rbtncodigo";
-            rbtncodigo.Size = new Size(64, 19);
-            rbtncodigo.TabIndex = 8;
-            rbtncodigo.TabStop = true;
-            rbtncodigo.Text = "Codigo";
-            rbtncodigo.UseVisualStyleBackColor = true;
+            rbtnCodigo.AutoSize = true;
+            rbtnCodigo.Location = new Point(128, 41);
+            rbtnCodigo.Name = "rbtnCodigo";
+            rbtnCodigo.Size = new Size(64, 19);
+            rbtnCodigo.TabIndex = 8;
+            rbtnCodigo.TabStop = true;
+            rbtnCodigo.Text = "Codigo";
+            rbtnCodigo.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -132,26 +148,25 @@
             label2.Size = new Size(73, 19);
             label2.TabIndex = 4;
             label2.Text = "Articulo";
-            
             // 
-            // rbtnnombre
+            // rbtnNombre
             // 
-            rbtnnombre.AutoSize = true;
-            rbtnnombre.Location = new Point(206, 41);
-            rbtnnombre.Name = "rbtnnombre";
-            rbtnnombre.Size = new Size(69, 19);
-            rbtnnombre.TabIndex = 7;
-            rbtnnombre.TabStop = true;
-            rbtnnombre.Text = "Nombre";
-            rbtnnombre.UseVisualStyleBackColor = true;
+            rbtnNombre.AutoSize = true;
+            rbtnNombre.Location = new Point(206, 41);
+            rbtnNombre.Name = "rbtnNombre";
+            rbtnNombre.Size = new Size(69, 19);
+            rbtnNombre.TabIndex = 7;
+            rbtnNombre.TabStop = true;
+            rbtnNombre.Text = "Nombre";
+            rbtnNombre.UseVisualStyleBackColor = true;
             // 
-            // txtarticulo
+            // txtBuscar
             // 
-            txtarticulo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtarticulo.Location = new Point(85, 7);
-            txtarticulo.Name = "txtarticulo";
-            txtarticulo.Size = new Size(271, 23);
-            txtarticulo.TabIndex = 5;
+            txtBuscar.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBuscar.Location = new Point(85, 7);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(271, 23);
+            txtBuscar.TabIndex = 5;
             // 
             // label3
             // 
@@ -167,56 +182,46 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(17, 87);
+            label20.Location = new Point(20, 86);
             label20.Name = "label20";
             label20.Size = new Size(84, 14);
             label20.TabIndex = 14;
             label20.Text = "Encontrados";
             // 
-            // listView1
-            // 
-            listView1.BackColor = Color.LavenderBlush;
-            listView1.BorderStyle = BorderStyle.FixedSingle;
-            listView1.Location = new Point(12, 93);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(444, 119);
-            listView1.TabIndex = 13;
-            listView1.UseCompatibleStateImageBehavior = false;
-            
-            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(txtdescripcion);
+            panel1.Controls.Add(txtDescripcion);
             panel1.Controls.Add(btnLimpiarCampos);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(txttotal);
+            panel1.Controls.Add(btnAgregar);
+            panel1.Controls.Add(txtTotal);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(txtcantidad);
+            panel1.Controls.Add(txtCantidad);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtvalor);
+            panel1.Controls.Add(txtValor);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtexistencias);
-            panel1.Controls.Add(txtarti);
+            panel1.Controls.Add(txtArticulo);
             panel1.Controls.Add(txtcodigo);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label19);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label16);
-            panel1.Location = new Point(12, 272);
+            panel1.Location = new Point(12, 282);
             panel1.Name = "panel1";
-            panel1.Size = new Size(444, 243);
+            panel1.Size = new Size(444, 233);
             panel1.TabIndex = 16;
             // 
-            // txtdescripcion
+            // txtDescripcion
             // 
-            txtdescripcion.BackColor = Color.LavenderBlush;
-            txtdescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtdescripcion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtdescripcion.Location = new Point(116, 75);
-            txtdescripcion.Name = "txtdescripcion";
-            txtdescripcion.Size = new Size(311, 23);
-            txtdescripcion.TabIndex = 29;
+            txtDescripcion.BackColor = Color.LavenderBlush;
+            txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
+            txtDescripcion.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtDescripcion.Location = new Point(116, 75);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.ReadOnly = true;
+            txtDescripcion.Size = new Size(311, 23);
+            txtDescripcion.TabIndex = 29;
             // 
             // btnLimpiarCampos
             // 
@@ -231,31 +236,33 @@
             btnLimpiarCampos.TabIndex = 28;
             btnLimpiarCampos.Text = "Limpiar";
             btnLimpiarCampos.UseVisualStyleBackColor = false;
-            btnLimpiarCampos.Click += button5_Click;
+            btnLimpiarCampos.Click += btnLimpiarCampos_Click;
             // 
-            // button4
+            // btnAgregar
             // 
-            button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(327, 197);
-            button4.Name = "button4";
-            button4.RightToLeft = RightToLeft.No;
-            button4.Size = new Size(100, 32);
-            button4.TabIndex = 27;
-            button4.Text = "Agregar";
-            button4.UseVisualStyleBackColor = false;
+            btnAgregar.BackColor = Color.FromArgb(64, 64, 64);
+            btnAgregar.Cursor = Cursors.Hand;
+            btnAgregar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(327, 197);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.RightToLeft = RightToLeft.No;
+            btnAgregar.Size = new Size(100, 32);
+            btnAgregar.TabIndex = 27;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // txttotal
+            // txtTotal
             // 
-            txttotal.BackColor = Color.LavenderBlush;
-            txttotal.BorderStyle = BorderStyle.FixedSingle;
-            txttotal.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txttotal.Location = new Point(331, 160);
-            txttotal.Name = "txttotal";
-            txttotal.Size = new Size(96, 23);
-            txttotal.TabIndex = 26;
+            txtTotal.BackColor = Color.LavenderBlush;
+            txtTotal.BorderStyle = BorderStyle.FixedSingle;
+            txtTotal.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTotal.Location = new Point(331, 160);
+            txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(96, 23);
+            txtTotal.TabIndex = 26;
             // 
             // label6
             // 
@@ -267,14 +274,15 @@
             label6.TabIndex = 25;
             label6.Text = "Total";
             // 
-            // txtcantidad
+            // txtCantidad
             // 
-            txtcantidad.BackColor = Color.White;
-            txtcantidad.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtcantidad.Location = new Point(331, 124);
-            txtcantidad.Name = "txtcantidad";
-            txtcantidad.Size = new Size(96, 23);
-            txtcantidad.TabIndex = 24;
+            txtCantidad.BackColor = Color.White;
+            txtCantidad.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCantidad.Location = new Point(331, 124);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(96, 23);
+            txtCantidad.TabIndex = 24;
+            txtCantidad.Leave += txtCantidad_Leave;
             // 
             // label5
             // 
@@ -286,15 +294,16 @@
             label5.TabIndex = 23;
             label5.Text = "Cantidad";
             // 
-            // txtvalor
+            // txtValor
             // 
-            txtvalor.BackColor = Color.LavenderBlush;
-            txtvalor.BorderStyle = BorderStyle.FixedSingle;
-            txtvalor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtvalor.Location = new Point(116, 124);
-            txtvalor.Name = "txtvalor";
-            txtvalor.Size = new Size(91, 23);
-            txtvalor.TabIndex = 22;
+            txtValor.BackColor = Color.LavenderBlush;
+            txtValor.BorderStyle = BorderStyle.FixedSingle;
+            txtValor.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtValor.Location = new Point(116, 124);
+            txtValor.Name = "txtValor";
+            txtValor.ReadOnly = true;
+            txtValor.Size = new Size(91, 23);
+            txtValor.TabIndex = 22;
             // 
             // label4
             // 
@@ -313,18 +322,20 @@
             txtexistencias.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             txtexistencias.Location = new Point(394, 8);
             txtexistencias.Name = "txtexistencias";
+            txtexistencias.ReadOnly = true;
             txtexistencias.Size = new Size(33, 23);
             txtexistencias.TabIndex = 19;
             // 
-            // txtarti
+            // txtArticulo
             // 
-            txtarti.BackColor = Color.LavenderBlush;
-            txtarti.BorderStyle = BorderStyle.FixedSingle;
-            txtarti.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            txtarti.Location = new Point(116, 41);
-            txtarti.Name = "txtarti";
-            txtarti.Size = new Size(311, 23);
-            txtarti.TabIndex = 18;
+            txtArticulo.BackColor = Color.LavenderBlush;
+            txtArticulo.BorderStyle = BorderStyle.FixedSingle;
+            txtArticulo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtArticulo.Location = new Point(116, 41);
+            txtArticulo.Name = "txtArticulo";
+            txtArticulo.ReadOnly = true;
+            txtArticulo.Size = new Size(311, 23);
+            txtArticulo.TabIndex = 18;
             // 
             // txtcodigo
             // 
@@ -333,6 +344,7 @@
             txtcodigo.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             txtcodigo.Location = new Point(116, 8);
             txtcodigo.Name = "txtcodigo";
+            txtcodigo.ReadOnly = true;
             txtcodigo.Size = new Size(180, 23);
             txtcodigo.TabIndex = 17;
             // 
@@ -376,62 +388,50 @@
             label16.TabIndex = 10;
             label16.Text = "Articulo";
             // 
-            // button1
+            // Registrar
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(797, 521);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(100, 32);
-            button1.TabIndex = 29;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = false;
+            Registrar.BackColor = Color.FromArgb(64, 64, 64);
+            Registrar.Cursor = Cursors.Hand;
+            Registrar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Registrar.ForeColor = Color.White;
+            Registrar.Location = new Point(797, 521);
+            Registrar.Name = "Registrar";
+            Registrar.RightToLeft = RightToLeft.No;
+            Registrar.Size = new Size(100, 32);
+            Registrar.TabIndex = 29;
+            Registrar.Text = "Registrar";
+            Registrar.UseVisualStyleBackColor = false;
+            Registrar.Click += Registrar_Click;
             // 
-            // button2
+            // Eliminar
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(691, 521);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 30;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = false;
+            Eliminar.BackColor = Color.FromArgb(64, 64, 64);
+            Eliminar.Cursor = Cursors.Hand;
+            Eliminar.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Eliminar.ForeColor = Color.White;
+            Eliminar.Location = new Point(691, 521);
+            Eliminar.Name = "Eliminar";
+            Eliminar.RightToLeft = RightToLeft.No;
+            Eliminar.Size = new Size(100, 32);
+            Eliminar.TabIndex = 30;
+            Eliminar.Text = "Eliminar";
+            Eliminar.UseVisualStyleBackColor = false;
+            Eliminar.Click += Eliminar_Click;
             // 
-            // button3
+            // btnSalir
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Cursor = Cursors.Hand;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(581, 521);
-            button3.Name = "button3";
-            button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(100, 32);
-            button3.TabIndex = 31;
-            button3.Text = "Editar";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(12, 543);
-            button6.Name = "button6";
-            button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(100, 32);
-            button6.TabIndex = 32;
-            button6.Text = "Salir";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
+            btnSalir.BackColor = Color.FromArgb(64, 64, 64);
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(12, 543);
+            btnSalir.Name = "btnSalir";
+            btnSalir.RightToLeft = RightToLeft.No;
+            btnSalir.Size = new Size(100, 32);
+            btnSalir.TabIndex = 32;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click_1;
             // 
             // dataGridView1
             // 
@@ -446,53 +446,191 @@
             // 
             dgvVentas.BackgroundColor = Color.LavenderBlush;
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVentas.Location = new Point(475, 26);
+            dgvVentas.GridColor = Color.LavenderBlush;
+            dgvVentas.Location = new Point(475, 55);
             dgvVentas.Name = "dgvVentas";
+            dgvVentas.ReadOnly = true;
             dgvVentas.RowTemplate.Height = 25;
-            dgvVentas.Size = new Size(422, 489);
+            dgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVentas.Size = new Size(422, 375);
             dgvVentas.TabIndex = 34;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(txtNombreCliente);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox1);
-            panel2.Location = new Point(12, 218);
+            panel2.Controls.Add(txtIdCliente);
+            panel2.Location = new Point(12, 206);
             panel2.Name = "panel2";
-            panel2.Size = new Size(444, 48);
+            panel2.Size = new Size(444, 70);
             panel2.TabIndex = 13;
+            // 
+            // txtNombreCliente
+            // 
+            txtNombreCliente.BackColor = Color.LavenderBlush;
+            txtNombreCliente.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNombreCliente.Location = new Point(114, 36);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.ReadOnly = true;
+            txtNombreCliente.Size = new Size(299, 23);
+            txtNombreCliente.TabIndex = 6;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(24, 14);
+            label7.Location = new Point(24, 9);
             label7.Name = "label7";
             label7.Size = new Size(72, 16);
             label7.TabIndex = 4;
             label7.Text = "Id_Cliente";
             // 
-            // textBox1
+            // txtIdCliente
             // 
-            textBox1.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(114, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(299, 23);
-            textBox1.TabIndex = 5;
+            txtIdCliente.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtIdCliente.Location = new Point(114, 6);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.Size = new Size(299, 23);
+            txtIdCliente.TabIndex = 5;
+            txtIdCliente.Leave += txtIdCliente_Leave;
             // 
-            // button5
+            // btnVentaDia
             // 
-            button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(142, 543);
-            button5.Name = "button5";
-            button5.RightToLeft = RightToLeft.No;
-            button5.Size = new Size(100, 32);
-            button5.TabIndex = 33;
-            button5.Text = "Venta Dia";
-            button5.UseVisualStyleBackColor = false;
+            btnVentaDia.BackColor = Color.FromArgb(64, 64, 64);
+            btnVentaDia.Cursor = Cursors.Hand;
+            btnVentaDia.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVentaDia.ForeColor = Color.White;
+            btnVentaDia.Location = new Point(142, 543);
+            btnVentaDia.Name = "btnVentaDia";
+            btnVentaDia.RightToLeft = RightToLeft.No;
+            btnVentaDia.Size = new Size(100, 32);
+            btnVentaDia.TabIndex = 33;
+            btnVentaDia.Text = "Venta Dia";
+            btnVentaDia.UseVisualStyleBackColor = false;
+            btnVentaDia.Click += btnVentaDia_Click;
+            // 
+            // dgvEncontrados
+            // 
+            dgvEncontrados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvEncontrados.BackgroundColor = Color.LavenderBlush;
+            dgvEncontrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEncontrados.Location = new Point(12, 93);
+            dgvEncontrados.Name = "dgvEncontrados";
+            dgvEncontrados.ReadOnly = true;
+            dgvEncontrados.RowTemplate.Height = 25;
+            dgvEncontrados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEncontrados.Size = new Size(444, 107);
+            dgvEncontrados.TabIndex = 35;
+            dgvEncontrados.CellContentClick += dgvEncontrados_CellContentClick;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(475, 452);
+            label8.Name = "label8";
+            label8.Size = new Size(39, 16);
+            label8.TabIndex = 7;
+            label8.Text = "Total";
+            // 
+            // txtTotalVenta
+            // 
+            txtTotalVenta.BackColor = Color.LavenderBlush;
+            txtTotalVenta.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTotalVenta.Location = new Point(518, 449);
+            txtTotalVenta.Name = "txtTotalVenta";
+            txtTotalVenta.ReadOnly = true;
+            txtTotalVenta.Size = new Size(161, 23);
+            txtTotalVenta.TabIndex = 7;
+            // 
+            // txtRecibido
+            // 
+            txtRecibido.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtRecibido.Location = new Point(753, 450);
+            txtRecibido.Name = "txtRecibido";
+            txtRecibido.Size = new Size(144, 23);
+            txtRecibido.TabIndex = 36;
+            txtRecibido.Leave += txtRecibido_Leave;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(693, 453);
+            label9.Name = "label9";
+            label9.Size = new Size(61, 16);
+            label9.TabIndex = 37;
+            label9.Text = "Recibido";
+            // 
+            // txtCambio
+            // 
+            txtCambio.BackColor = Color.LavenderBlush;
+            txtCambio.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCambio.Location = new Point(753, 480);
+            txtCambio.Name = "txtCambio";
+            txtCambio.ReadOnly = true;
+            txtCambio.Size = new Size(144, 23);
+            txtCambio.TabIndex = 38;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(696, 483);
+            label10.Name = "label10";
+            label10.Size = new Size(53, 16);
+            label10.TabIndex = 39;
+            label10.Text = "Cambio";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(718, 28);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 19);
+            label11.TabIndex = 11;
+            label11.Text = "Factura";
+            // 
+            // txtFactura
+            // 
+            txtFactura.BackColor = Color.LavenderBlush;
+            txtFactura.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtFactura.Location = new Point(789, 26);
+            txtFactura.Name = "txtFactura";
+            txtFactura.ReadOnly = true;
+            txtFactura.Size = new Size(108, 23);
+            txtFactura.TabIndex = 11;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = Color.LavenderBlush;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(475, 331);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(422, 83);
+            dataGridView2.TabIndex = 40;
+            // 
+            // btnLimpiarTodo
+            // 
+            btnLimpiarTodo.BackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarTodo.Cursor = Cursors.Hand;
+            btnLimpiarTodo.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiarTodo.ForeColor = Color.White;
+            btnLimpiarTodo.Location = new Point(579, 521);
+            btnLimpiarTodo.Name = "btnLimpiarTodo";
+            btnLimpiarTodo.RightToLeft = RightToLeft.No;
+            btnLimpiarTodo.Size = new Size(100, 32);
+            btnLimpiarTodo.TabIndex = 30;
+            btnLimpiarTodo.Text = "Limpiar";
+            btnLimpiarTodo.UseVisualStyleBackColor = false;
+            btnLimpiarTodo.Click += btnLimpiarTodo_Click;
             // 
             // FormVentas
             // 
@@ -500,18 +638,27 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(909, 587);
+            Controls.Add(btnLimpiarTodo);
+            Controls.Add(txtFactura);
+            Controls.Add(label11);
+            Controls.Add(txtCambio);
+            Controls.Add(label10);
+            Controls.Add(txtRecibido);
+            Controls.Add(label9);
+            Controls.Add(txtTotalVenta);
+            Controls.Add(label8);
+            Controls.Add(label20);
+            Controls.Add(dgvEncontrados);
             Controls.Add(dgvVentas);
             Controls.Add(dataGridView1);
-            Controls.Add(button5);
+            Controls.Add(btnVentaDia);
             Controls.Add(panel2);
-            Controls.Add(button6);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnSalir);
+            Controls.Add(Eliminar);
+            Controls.Add(Registrar);
             Controls.Add(panel1);
-            Controls.Add(label20);
-            Controls.Add(listView1);
             Controls.Add(panel3);
+            Controls.Add(dataGridView2);
             Name = "FormVentas";
             Text = "Control de Inventario [Ventas]";
             Load += FormVentas_Load;
@@ -523,6 +670,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEncontrados).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -530,41 +680,52 @@
         #endregion
 
         private Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private RadioButton rbtndescripcion;
-        private RadioButton rbtncodigo;
+        private FontAwesome.Sharp.IconButton iconButtonBuscar;
+        private RadioButton rbtnDescripcion;
+        private RadioButton rbtnCodigo;
         private Label label2;
-        private RadioButton rbtnnombre;
-        private TextBox txtarticulo;
+        private RadioButton rbtnNombre;
+        private TextBox txtBuscar;
         private Label label3;
         private Label label20;
-        private ListView listView1;
         private Panel panel1;
         private Label label4;
         private TextBox txtexistencias;
-        private TextBox txtarti;
+        private TextBox txtArticulo;
         private TextBox txtcodigo;
         private Label label1;
         private Label label19;
         private Label label17;
         private Label label16;
-        private TextBox txtvalor;
-        private TextBox txttotal;
+        private TextBox txtValor;
+        private TextBox txtTotal;
         private Label label6;
-        private TextBox txtcantidad;
+        private TextBox txtCantidad;
         private Label label5;
         private Button btnLimpiarCampos;
-        private Button button4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button6;
+        private Button btnAgregar;
+        private Button Registrar;
+        private Button Eliminar;
+        private Button btnSalir;
         private DataGridView dataGridView1;
         private DataGridView dgvVentas;
         private Panel panel2;
         private Label label7;
-        private TextBox textBox1;
-        private Button button5;
-        private TextBox txtdescripcion;
+        private Button btnVentaDia;
+        private TextBox txtDescripcion;
+        private DataGridView dgvEncontrados;
+        private ErrorProvider errorProvider1;
+        private TextBox txtNombreCliente;
+        private TextBox txtIdCliente;
+        private TextBox txtTotalVenta;
+        private Label label8;
+        private TextBox txtRecibido;
+        private Label label9;
+        private TextBox txtCambio;
+        private Label label10;
+        private TextBox txtFactura;
+        private Label label11;
+        private DataGridView dataGridView2;
+        private Button btnLimpiarTodo;
     }
 }

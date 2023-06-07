@@ -76,40 +76,54 @@ namespace Control_Inventario
         }
         private void nuevoRegistro()
         {
-            //consultamos el numero de Documento ingresado para verificar que no este registrado
-            conectar.abrirDB();
-            SqlCommand consultaId = new SqlCommand("SELECT * FROM Articulos WHERE Codigo = @codigo", conectar.conectarDB);
-            consultaId.Parameters.AddWithValue("@codigo", txtcodigo.Text);
-            SqlDataReader valorId = consultaId.ExecuteReader();
-
-            if (!valorId.Read())
+            try
             {
-                conectar.cerrarDB();
-                //Realizamos el nuevo registro
+                //consultamos el numero de Documento ingresado para verificar que no este registrado
                 conectar.abrirDB();
-                string crear = "Insert into Articulos ([Codigo], [Articulo], [Descripcion])" +
-                                "values ('" + txtcodigo.Text + "', '" + txtArticulo.Text + "', '" + txtDescripcion.Text + "')";
-                SqlCommand comando = new SqlCommand(crear, conectar.conectarDB);
-                comando.ExecuteNonQuery();
-                //Invocamos el metodo para limpiarlos campos
-                limpiarCampos();
+                SqlCommand consultaId = new SqlCommand("SELECT * FROM Articulos WHERE Codigo = @codigo", conectar.conectarDB);
+                consultaId.Parameters.AddWithValue("@codigo", txtcodigo.Text);
+                SqlDataReader valorId = consultaId.ExecuteReader();
 
-                MessageBox.Show("Registro agregado con exito");
-                conectar.cerrarDB();
-                if (MessageBox.Show("¿desea Agregar otro Articulo?",
-                   "Consulta",
-                   MessageBoxButtons.YesNo,
-                   MessageBoxIcon.Question) == DialogResult.No)
+                if (!valorId.Read())
                 {
-                    this.panel2.Enabled = false;
-                    this.panel1.Enabled = false;
+                    conectar.cerrarDB();
+                    //Realizamos el nuevo registro
+                    conectar.abrirDB();
+                    string crear = "Insert into Articulos ([Codigo], [Articulo], [Descripcion])" +
+                                    "values ('" + txtcodigo.Text + "', '" + txtArticulo.Text + "', '" + txtDescripcion.Text + "')";
+                    SqlCommand comando = new SqlCommand(crear, conectar.conectarDB);
+                    comando.ExecuteNonQuery();
+                    conectar.cerrarDB();
+
+                    conectar.abrirDB();
+                    string crearStock = "Insert into Stock ([CodArticulo], [Entradas], [Valor], [Salidas], [Venta])" +
+                                   "values ('" + txtcodigo.Text + "',"+ 0 +", "+ 0 +", "+ 0 +", "+ 0 +")";
+                    SqlCommand comand = new SqlCommand(crearStock, conectar.conectarDB);
+                    comand.ExecuteNonQuery();
+                    //Invocamos el metodo para limpiarlos campos
+                    limpiarCampos();
+
+                    MessageBox.Show("Registro agregado con exito");
+                    conectar.cerrarDB();
+                    if (MessageBox.Show("¿desea Agregar otro Articulo?",
+                       "Consulta",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        this.panel2.Enabled = false;
+                        this.panel1.Enabled = false;
+                    }
                 }
-            }
-            else
+                else
+                {
+                    conectar.cerrarDB();
+                    MessageBox.Show("El articulo ya ha sido creado");
+                }
+            }catch (Exception ex)
             {
-                conectar.cerrarDB();
-                MessageBox.Show("El articulo ya ha sido creado");
+                MessageBox.Show(ex.Message);
             }
+            
         }
         private void actualizarRegistro()
         {

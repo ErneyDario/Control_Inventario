@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Windows.Media.TextFormatting;
 
 namespace Control_Inventario
 {
@@ -20,6 +21,15 @@ namespace Control_Inventario
         public FormInventario()
         {
             InitializeComponent();
+        }
+        bool ok;
+        string registro = "";
+        string factura = "";
+        string CodProveedor = "";
+        conexionDB conectar = new conexionDB();
+        private void FormInventario_Load(object sender, EventArgs e)
+        {
+            this.btnRegistrar.Visible = true;
             dt = new DataTable();
             dt.Columns.Add("Factura");
             dt.Columns.Add("IdProveedor");
@@ -31,15 +41,7 @@ namespace Control_Inventario
             dt.Columns.Add("Cantidad");
             dtgvEntradas.DataSource = dt;
             dtgvEntradas.AllowUserToAddRows = false;
-        }
-        bool ok;
-        string registro = "";
-        string factura = "";
-        string CodProveedor = "";
-        conexionDB conectar = new conexionDB();
-        private void FormInventario_Load(object sender, EventArgs e)
-        {
-            this.btnRegistrar.Visible = true;
+
         }
         private void txtIdProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -74,7 +76,7 @@ namespace Control_Inventario
         }
         private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) || e.KeyChar == Convert.ToChar(Keys.Tab))
             {
                 conectar.abrirDB();
                 // Consultar Proveedor
@@ -109,7 +111,7 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtValorVenta.Text = "";
             this.txtExistencias.Text = "";
-            this.dtgvEntradas.DataSource = null;
+            this.dt.Clear();
         }
         private bool confirmarTXT()
         {
@@ -181,7 +183,6 @@ namespace Control_Inventario
         }
         private void btnIngresarInventario_Click(object sender, EventArgs e)
         {
-
             this.panel4.Enabled = true;
             this.panel3.Enabled = false;
             this.btnRegistrar.Visible = true;
@@ -189,6 +190,8 @@ namespace Control_Inventario
             this.btnEliminarRegistro.Visible = false;
             this.btnLimpiar.Visible = true;
             this.btnAgregarEntrada.Visible = true;
+            this.btnAgregarEntrada.Enabled = true;
+            this.btnLimpiar.Enabled = true;
             this.txtFactura.Text = "";
             this.txtIdProveedor.Text = "";
             this.txtNombreProveedor.Text = "";
@@ -198,46 +201,52 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtValorVenta.Text = "";
             this.txtExistencias.Text = "";
-            this.dtgvEntradas.DataSource = null;
             this.cmbTipoBusqueda.ResetText();
             this.txtBuscar.Text = "";
+            this.dt.Clear();
         }
         private void btnAgregarEntrada_Click(object sender, EventArgs e)
         {
             limpiarConfirmarTXT();
             if (confirmarTXT())
             {
-                conectar.abrirDB();
-                SqlCommand consultaFactura = new SqlCommand("SELECT * FROM Entradas WHERE Factura  =  @Factura", conectar.conectarDB);
-                consultaFactura.Parameters.AddWithValue("@Factura", txtFactura.Text);
-                SqlDataReader valorId = consultaFactura.ExecuteReader();
-
-                if (!valorId.Read())
+                try
                 {
-                    conectar.cerrarDB();
+                    conectar.abrirDB();
+                    SqlCommand consultaFactura = new SqlCommand("SELECT * FROM Entradas WHERE Factura  =  @Factura", conectar.conectarDB);
+                    consultaFactura.Parameters.AddWithValue("@Factura", txtFactura.Text);
+                    SqlDataReader valorId = consultaFactura.ExecuteReader();
 
+                    if (!valorId.Read())
+                    {
+                        conectar.cerrarDB();
 
-                    DataRow dr = dt.NewRow();
-                    dr["Factura"] = txtFactura.Text;
-                    dr["IdProveedor"] = txtIdProveedor.Text;
-                    dr["Codigo"] = txtcodigo.Text;
-                    dr["Articulo"] = txtArticulo.Text;
-                    dr["Descripcion"] = txtdescripcion.Text;
-                    dr["Valor"] = txtvalor.Text;
-                    dr["Venta"] = txtValorVenta.Text;
-                    dr["Cantidad"] = txtExistencias.Text;
-                    dt.Rows.Add(dr);
-                    txtArticulo.Text = "";
-                    txtcodigo.Text = "";
-                    txtdescripcion.Text = "";
-                    txtvalor.Text = "";
-                    txtValorVenta.Text = "";
-                    txtExistencias.Text = "";
+                        DataRow dr = dt.NewRow();
+                        dr["Factura"] = txtFactura.Text;
+                        dr["IdProveedor"] = txtIdProveedor.Text;
+                        dr["Codigo"] = txtcodigo.Text;
+                        dr["Articulo"] = txtArticulo.Text;
+                        dr["Descripcion"] = txtdescripcion.Text;
+                        dr["Valor"] = txtvalor.Text;
+                        dr["Venta"] = txtValorVenta.Text;
+                        dr["Cantidad"] = txtExistencias.Text;
+                        dt.Rows.Add(dr);
+                        txtArticulo.Text = "";
+                        txtcodigo.Text = "";
+                        txtdescripcion.Text = "";
+                        txtvalor.Text = "";
+                        txtValorVenta.Text = "";
+                        txtExistencias.Text = "";
+                    }
+                    else
+                    {
+                        conectar.cerrarDB();
+                        MessageBox.Show("La factura digitada ya fue ingresada, por favir verifique e intente nuevamente");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    conectar.cerrarDB();
-                    MessageBox.Show("La factura digitada ya fue ingresada, por favir verifique e intente nuevamente");
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
@@ -247,24 +256,85 @@ namespace Control_Inventario
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            SqlCommand agregar = new SqlCommand("Insert into Entradas values (GetDate(), @Codigo ,@Cantidad, @Valor, @Venta, @Factura, @IdProveedor,@Usuario)", conectar.conectarDB);
-            conectar.abrirDB();
-
-            foreach (DataGridViewRow row in dtgvEntradas.Rows)
+            try
             {
-                agregar.Parameters.Clear();
-                agregar.Parameters.AddWithValue("@Factura", Convert.ToString(row.Cells["Factura"].Value));
-                agregar.Parameters.AddWithValue("@IdProveedor", Convert.ToString(row.Cells["IdProveedor"].Value));
-                agregar.Parameters.AddWithValue("@Codigo", Convert.ToString(row.Cells["Codigo"].Value));
-                agregar.Parameters.AddWithValue("@Valor", Convert.ToDecimal(row.Cells["Valor"].Value));
-                agregar.Parameters.AddWithValue("@Venta", Convert.ToDecimal(row.Cells["Venta"].Value));
-                agregar.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
-                agregar.Parameters.AddWithValue("@Cantidad", Convert.ToInt32(row.Cells["Cantidad"].Value));
-                agregar.ExecuteNonQuery();
+                // Declaramos las variables que controlaran la actualización de la tabla Stock
+                int Entrada = 0;
+                decimal Valor = 0;
+                decimal Venta = 0;
+                // Declaramos las sentencias, que agregaran un nuevo registro, consultaran y actualizaran la tabla Stock
+                SqlCommand agregar = new SqlCommand("Insert into Entradas values (GetDate(), @Codigo ,@Cantidad, @Valor, @Venta, @Factura, @IdProveedor,@Usuario)", conectar.conectarDB);
+                SqlCommand buscar = new SqlCommand("SELECT Entradas, Valor, Venta FROM Stock WHERE CodArticulo = @Buscar", conectar.conectarDB);
+                SqlCommand cadena = new SqlCommand("UPDATE Stock SET Entradas =  @Entrada, Valor = @ValorS, Venta = @VentaS  WHERE CodArticulo = @Parametro ", conectar.conectarDB);
+                DataTable encontrados = new DataTable();
+                conectar.abrirDB();
+                //Recorremos el datagridview
+                int i = 0; // contador para contar las filas del datagridview quien controla la actualizacion de la tabla stock
+                foreach (DataGridViewRow row in dtgvEntradas.Rows)
+                {
+                    //registramos la entrada
+                    agregar.Parameters.Clear();
+                    agregar.Parameters.AddWithValue("@Factura", Convert.ToString(row.Cells["Factura"].Value));
+                    agregar.Parameters.AddWithValue("@IdProveedor", Convert.ToString(row.Cells["IdProveedor"].Value));
+                    agregar.Parameters.AddWithValue("@Codigo", Convert.ToString(row.Cells["Codigo"].Value));
+                    agregar.Parameters.AddWithValue("@Valor", Convert.ToDecimal(row.Cells["Valor"].Value));
+                    agregar.Parameters.AddWithValue("@Venta", Convert.ToDecimal(row.Cells["Venta"].Value));
+                    agregar.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
+                    agregar.Parameters.AddWithValue("@Cantidad", Convert.ToInt32(row.Cells["Cantidad"].Value));
+                    //Traemos los Articulos en Stock que se afectaran con la nueva entrada
+                    agregar.ExecuteNonQuery();
+                    buscar.Parameters.Clear();
+                    buscar.Parameters.AddWithValue("@Buscar", Convert.ToString(row.Cells["Codigo"].Value));
+                    SqlDataAdapter Adaptador = new SqlDataAdapter(buscar);
+                    Adaptador.Fill(encontrados);
+                    //Capturamos los valores que contienen cada articulo para hacer la operacion de actualizacion de valores
+                    dataGridView1.DataSource = encontrados;
+                    Entrada = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    Valor = Convert.ToDecimal(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                    Venta = Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                    //Condicionamos la actualizacion
+                    if (Entrada == 0)
+                    {
+                        cadena.Parameters.Clear();
+                        cadena.Parameters.AddWithValue("@Parametro", Convert.ToString(row.Cells["Codigo"].Value));
+                        cadena.Parameters.AddWithValue("@Entrada", Convert.ToInt32(row.Cells["Cantidad"].Value));
+                        cadena.Parameters.AddWithValue("@ValorS", Convert.ToDecimal(row.Cells["Valor"].Value));
+                        cadena.Parameters.AddWithValue("VentaS", Convert.ToDecimal(row.Cells["Venta"].Value));
+                        cadena.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        cadena.Parameters.Clear();
+                        cadena.Parameters.AddWithValue("@Parametro", Convert.ToString(row.Cells["Codigo"].Value));
+                        cadena.Parameters.AddWithValue("@Entrada", Entrada + Convert.ToInt32(row.Cells["Cantidad"].Value));
+                        cadena.Parameters.AddWithValue("@ValorS", (Convert.ToDecimal(row.Cells["Valor"].Value) + Valor) / 2);
+                        cadena.Parameters.AddWithValue("VentaS", Convert.ToDecimal(row.Cells["Venta"].Value));
+                        cadena.ExecuteNonQuery();
+                    }
+                    Entrada = 0;
+                    Valor = 0;
+                    Venta = 0;
+                    i++;
+                }
+                MessageBox.Show("Registros Agregados exitosamente");
+                conectar.cerrarDB();
+                limpiarCampos();
+                //dtgvEntradas.DataSource = dt;
+                if (MessageBox.Show("¿desea Agregar otra Factura?",
+                          "Consulta",
+                          MessageBoxButtons.YesNo,
+                          MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    this.panel4.Enabled = false;
+                    this.panel3.Enabled = false;
+                }
+
+
             }
-            MessageBox.Show("Registros Agregados exitosamente");
-            conectar.cerrarDB();
-            limpiarCampos();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
         private void btnEditarInventario_Click(object sender, EventArgs e)
@@ -285,12 +355,11 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtValorVenta.Text = "";
             this.txtExistencias.Text = "";
-            this.dtgvEntradas.DataSource = null;
             this.cmbTipoBusqueda.ResetText();
             this.txtBuscar.Text = "";
             this.btnAgregarEntrada.Enabled = false;
             this.btnLimpiar.Enabled = false;
-
+            this.dt.Clear();
         }
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
@@ -298,58 +367,22 @@ namespace Control_Inventario
             limpiarConfirmarTXT();
             if (confirmarTXT())
             {
-                conectar.abrirDB();
-                if (factura != txtFactura.Text)
+                try
                 {
-                    if (MessageBox.Show("Esta a punto de actualizar el numero de la Factura,¿esta seguro?",
-                        "consulta",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    conectar.abrirDB();
+                    if (factura != txtFactura.Text)
                     {
-                        SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(),  Factura = @Factura, Usuario = @Usuario  WHERE Factura = @Parametro ", conectar.conectarDB);
-                        cadena.Parameters.AddWithValue("@Factura", txtFactura.Text);
-                        cadena.Parameters.AddWithValue("@Parametro", factura);
-                        cadena.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
-                        cadena.ExecuteNonQuery();
-                        MessageBox.Show("Actualización exitosa");
-                        this.txtFactura.Text = "";
-                        this.txtIdProveedor.Text = "";
-                        this.txtNombreProveedor.Text = "";
-                        this.txtcodigo.Text = "";
-                        this.txtArticulo.Text = "";
-                        this.txtdescripcion.Text = "";
-                        this.txtvalor.Text = "";
-                        this.txtValorVenta.Text = "";
-                        this.txtExistencias.Text = "";
-                        this.dtgvEntradas.DataSource = null;
-                        this.cmbTipoBusqueda.ResetText();
-                        this.txtBuscar.Text = "";
-                        this.panel4.Enabled = false;
-                        if (MessageBox.Show("¿desea Actualizar otro registro?",
-                           "Consulta",
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Question) == DialogResult.No)
+                        if (MessageBox.Show("Esta a punto de actualizar el numero de la Factura,¿esta seguro?",
+                            "consulta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            this.panel4.Enabled = false;
-                            this.panel3.Enabled = false;
-                        }
-                    }
-                }
-                else
-                {
-                    if (CodProveedor != txtIdProveedor.Text)
-                    {
-                        if (MessageBox.Show("Esta a punto de actualizar el Codigo del Proveedor,¿esta seguro?",
-                        "consulta",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(), CodProveedor = @CodProveedor, Usuario = @Usuario  WHERE Factura = @Parametro ", conectar.conectarDB);
-                            cadena.Parameters.AddWithValue("@CodProveedor", txtIdProveedor.Text);
+                            SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(),  Factura = @Factura, Usuario = @Usuario  WHERE Factura = @Parametro ", conectar.conectarDB);
+                            cadena.Parameters.AddWithValue("@Factura", txtFactura.Text);
                             cadena.Parameters.AddWithValue("@Parametro", factura);
                             cadena.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
                             cadena.ExecuteNonQuery();
-                            MessageBox.Show("Actualización Exitosa");
+                            MessageBox.Show("Actualización exitosa");
                             this.txtFactura.Text = "";
                             this.txtIdProveedor.Text = "";
                             this.txtNombreProveedor.Text = "";
@@ -359,14 +392,14 @@ namespace Control_Inventario
                             this.txtvalor.Text = "";
                             this.txtValorVenta.Text = "";
                             this.txtExistencias.Text = "";
-                            this.dtgvEntradas.DataSource = null;
+                            this.dtgvEntradas.Columns.Clear();
                             this.cmbTipoBusqueda.ResetText();
                             this.txtBuscar.Text = "";
                             this.panel4.Enabled = false;
                             if (MessageBox.Show("¿desea Actualizar otro registro?",
-                           "Consulta",
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Question) == DialogResult.No)
+                               "Consulta",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question) == DialogResult.No)
                             {
                                 this.panel4.Enabled = false;
                                 this.panel3.Enabled = false;
@@ -375,48 +408,91 @@ namespace Control_Inventario
                     }
                     else
                     {
-                        if (MessageBox.Show("Esta a punto de actualizar los datos de un registro,¿esta seguro?",
-                        "consulta",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (CodProveedor != txtIdProveedor.Text)
                         {
-                            SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(), CodArticulo = @CodArticulo, Valor = @Valor, ValorVenta = @ValorVenta, Cantidad = @Cantidad, Usuario = @Usuario  WHERE Item = @Parametro ", conectar.conectarDB);
-                            cadena.Parameters.AddWithValue("@CodArticulo", txtcodigo.Text);
-                            cadena.Parameters.AddWithValue("@Valor", Convert.ToDecimal(txtvalor.Text));
-                            cadena.Parameters.AddWithValue("@ValorVenta", Convert.ToDecimal(txtValorVenta.Text));
-                            cadena.Parameters.AddWithValue("@Cantidad", Convert.ToInt32(txtExistencias.Text));
-                            cadena.Parameters.AddWithValue("@Parametro", registro);
-                            cadena.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
-                            cadena.ExecuteNonQuery();
-                            MessageBox.Show("Actualización Exitosa");
-                            this.txtFactura.Text = "";
-                            this.txtIdProveedor.Text = "";
-                            this.txtNombreProveedor.Text = "";
-                            this.txtcodigo.Text = "";
-                            this.txtArticulo.Text = "";
-                            this.txtdescripcion.Text = "";
-                            this.txtvalor.Text = "";
-                            this.txtValorVenta.Text = "";
-                            this.txtExistencias.Text = "";
-                            this.dtgvEntradas.DataSource = null;
-                            this.cmbTipoBusqueda.ResetText();
-                            this.txtBuscar.Text = "";
-                            this.panel4.Enabled = false;
-                            if (MessageBox.Show("¿desea Actualizar otro registro?",
-                           "Consulta",
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Question) == DialogResult.No)
+                            if (MessageBox.Show("Esta a punto de actualizar el Codigo del Proveedor,¿esta seguro?",
+                            "consulta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) == DialogResult.Yes)
                             {
+                                SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(), CodProveedor = @CodProveedor, Usuario = @Usuario  WHERE Factura = @Parametro ", conectar.conectarDB);
+                                cadena.Parameters.AddWithValue("@CodProveedor", txtIdProveedor.Text);
+                                cadena.Parameters.AddWithValue("@Parametro", factura);
+                                cadena.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
+                                cadena.ExecuteNonQuery();
+                                MessageBox.Show("Actualización Exitosa");
+                                this.txtFactura.Text = "";
+                                this.txtIdProveedor.Text = "";
+                                this.txtNombreProveedor.Text = "";
+                                this.txtcodigo.Text = "";
+                                this.txtArticulo.Text = "";
+                                this.txtdescripcion.Text = "";
+                                this.txtvalor.Text = "";
+                                this.txtValorVenta.Text = "";
+                                this.txtExistencias.Text = "";
+                                this.dtgvEntradas.Columns.Clear();
+                                this.cmbTipoBusqueda.ResetText();
+                                this.txtBuscar.Text = "";
                                 this.panel4.Enabled = false;
-                                this.panel3.Enabled = false;
+                                if (MessageBox.Show("¿desea Actualizar otro registro?",
+                               "Consulta",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question) == DialogResult.No)
+                                {
+                                    this.panel4.Enabled = false;
+                                    this.panel3.Enabled = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("Esta a punto de actualizar los datos de un registro,¿esta seguro?",
+                            "consulta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                SqlCommand cadena = new SqlCommand("UPDATE Entradas SET Fecha = GetDate(), CodArticulo = @CodArticulo, Valor = @Valor, ValorVenta = @ValorVenta, Cantidad = @Cantidad, Usuario = @Usuario  WHERE Item = @Parametro ", conectar.conectarDB);
+                                cadena.Parameters.AddWithValue("@CodArticulo", txtcodigo.Text);
+                                cadena.Parameters.AddWithValue("@Valor", Convert.ToDecimal(txtvalor.Text));
+                                cadena.Parameters.AddWithValue("@ValorVenta", Convert.ToDecimal(txtValorVenta.Text));
+                                cadena.Parameters.AddWithValue("@Cantidad", Convert.ToInt32(txtExistencias.Text));
+                                cadena.Parameters.AddWithValue("@Parametro", registro);
+                                cadena.Parameters.AddWithValue("@Usuario", variablesGlobales.vNombreUsuario);
+                                cadena.ExecuteNonQuery();
+                                MessageBox.Show("Actualización Exitosa");
+                                this.txtFactura.Text = "";
+                                this.txtIdProveedor.Text = "";
+                                this.txtNombreProveedor.Text = "";
+                                this.txtcodigo.Text = "";
+                                this.txtArticulo.Text = "";
+                                this.txtdescripcion.Text = "";
+                                this.txtvalor.Text = "";
+                                this.txtValorVenta.Text = "";
+                                this.txtExistencias.Text = "";
+                                this.dtgvEntradas.Columns.Clear();
+                                this.cmbTipoBusqueda.ResetText();
+                                this.txtBuscar.Text = "";
+                                this.panel4.Enabled = false;
+                                if (MessageBox.Show("¿desea Actualizar otro registro?",
+                               "Consulta",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question) == DialogResult.No)
+                                {
+                                    this.panel4.Enabled = false;
+                                    this.panel3.Enabled = false;
 
+
+                                }
 
                             }
-
                         }
                     }
+                    conectar.cerrarDB();
                 }
-                conectar.cerrarDB();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
         }
@@ -438,41 +514,49 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtValorVenta.Text = "";
             this.txtExistencias.Text = "";
-            this.dtgvEntradas.DataSource = null;
+            this.dt.Clear();
             this.cmbTipoBusqueda.ResetText();
             this.txtBuscar.Text = "";
+
         }
         private void btnEliminarRegistro_Click(object sender, EventArgs e)
         {
             limpiarConfirmarTXT();
             if (confirmarTXT())
             {
-                conectar.abrirDB();
-                SqlCommand eliminar = new SqlCommand("DELETE ENTRADAS WHERE Item = @Eliminar", conectar.conectarDB);
-                eliminar.Parameters.AddWithValue("@Eliminar", registro);
-                eliminar.ExecuteNonQuery();
-                MessageBox.Show("Registro eliminado exitosamente");
-                this.txtFactura.Text = "";
-                this.txtIdProveedor.Text = "";
-                this.txtNombreProveedor.Text = "";
-                this.txtcodigo.Text = "";
-                this.txtArticulo.Text = "";
-                this.txtdescripcion.Text = "";
-                this.txtvalor.Text = "";
-                this.txtValorVenta.Text = "";
-                this.txtExistencias.Text = "";
-                this.dtgvEntradas.DataSource = null;
-                this.cmbTipoBusqueda.ResetText();
-                this.txtBuscar.Text = "";
-                this.panel4.Enabled = false;
-                conectar.cerrarDB();
-                if (MessageBox.Show("¿desea Eliminar otro registro?",
-               "Consulta",
-               MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question) == DialogResult.No)
+                try
                 {
+                    conectar.abrirDB();
+                    SqlCommand eliminar = new SqlCommand("DELETE ENTRADAS WHERE Item = @Eliminar", conectar.conectarDB);
+                    eliminar.Parameters.AddWithValue("@Eliminar", registro);
+                    eliminar.ExecuteNonQuery();
+                    MessageBox.Show("Registro eliminado exitosamente");
+                    this.txtFactura.Text = "";
+                    this.txtIdProveedor.Text = "";
+                    this.txtNombreProveedor.Text = "";
+                    this.txtcodigo.Text = "";
+                    this.txtArticulo.Text = "";
+                    this.txtdescripcion.Text = "";
+                    this.txtvalor.Text = "";
+                    this.txtValorVenta.Text = "";
+                    this.txtExistencias.Text = "";
+                    this.dtgvEntradas.DataSource = null;
+                    this.cmbTipoBusqueda.ResetText();
+                    this.txtBuscar.Text = "";
                     this.panel4.Enabled = false;
-                    this.panel3.Enabled = false;
+                    conectar.cerrarDB();
+                    if (MessageBox.Show("¿desea Eliminar otro registro?",
+                   "Consulta",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        this.panel4.Enabled = false;
+                        this.panel3.Enabled = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
@@ -653,12 +737,10 @@ namespace Control_Inventario
             this.txtvalor.Text = "";
             this.txtValorVenta.Text = "";
             this.txtExistencias.Text = "";
-            this.dtgvEntradas.DataSource = null;
             this.cmbTipoBusqueda.ResetText();
             this.txtBuscar.Text = "";
-
+            this.dt.Clear();
         }
-        
     }
 }
 

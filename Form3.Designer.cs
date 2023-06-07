@@ -201,6 +201,7 @@
             iButtonInformes.TabIndex = 4;
             iButtonInformes.Text = "Informes";
             iButtonInformes.UseVisualStyleBackColor = false;
+            iButtonInformes.Click += iButtonInformes_Click;
             // 
             // iButtonProveedores
             // 

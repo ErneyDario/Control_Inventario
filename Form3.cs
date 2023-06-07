@@ -33,8 +33,8 @@ namespace Control_Inventario
             if (variablesGlobales.vRol.Contains("Auxiliar", StringComparison.OrdinalIgnoreCase))
             {
                 this.iButtonInformes.Enabled = false;
-                this.iButtonUsuarios.Enabled = false;  
-            }  
+                this.iButtonUsuarios.Enabled = false;
+            }
         }
 
         public void iButtonUsuarios_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Control_Inventario
             frmUsuarios.TopLevel = false;
             panelTrabajo.Controls.Add(frmUsuarios);
             frmUsuarios.Show();
-            
+
         }
         public void iButtonVentas_Click(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace Control_Inventario
             FormClientes frmClientes = new FormClientes();
             frmClientes.TopLevel = false;
             panelTrabajo.Controls.Add(frmClientes);
-            frmClientes.Show();   
+            frmClientes.Show();
         }
         private void iButtonProveedores_Click_1(object sender, EventArgs e)
         {
@@ -84,6 +84,14 @@ namespace Control_Inventario
                 form.Show();
                 this.Hide();
             }
+        }
+
+        private void iButtonInformes_Click(object sender, EventArgs e)
+        {
+            FormInformes frmInformes = new FormInformes();
+            frmInformes.TopLevel = false;
+            panelTrabajo.Controls.Add(frmInformes);
+            frmInformes.Show();
         }
     }
 }

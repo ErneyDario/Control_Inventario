@@ -16,7 +16,7 @@ namespace Control_Inventario
 {
     public partial class FormUsuarios : Form
     {
-       
+
         public FormUsuarios()
         {
             InitializeComponent();
@@ -287,15 +287,7 @@ namespace Control_Inventario
                 else
                     errorProvider1.SetError(txtBuscarUsuario, "");
             }
-            /*else
-           {
-                bool validar = CondicionandoTxt.soloTex(e);
-                if (!validar)
-                    errorProvider1.SetError(txtBuscarUsuario, "Ingrese solo Texto");
-                else
-                    errorProvider1.SetError(txtBuscarUsuario, "");
-            }*/
-
+           
         }
         // Condicionamos el txtCorreo para que reciba formatos de correo solamente
         private void txtCorreo_Leave(object sender, EventArgs e)
@@ -344,7 +336,7 @@ namespace Control_Inventario
 
 
             }
-            
+
             //condicion para determinar el rbtn seleccionado
             if (tipoDocumento.Contains("CC"))
             {
@@ -610,6 +602,7 @@ namespace Control_Inventario
                 this.Close();
             }
         }
+
     }
 }
 

@@ -67,6 +67,7 @@
             cmbTipoBusqueda = new ComboBox();
             txtBuscar = new TextBox();
             panel3 = new Panel();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)iconPictureBoxSalir).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)dtgvEntradas).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnIngresarInventario
@@ -425,11 +427,11 @@
             // 
             dtgvEntradas.BackgroundColor = Color.LavenderBlush;
             dtgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvEntradas.Location = new Point(5, 278);
+            dtgvEntradas.Location = new Point(3, 278);
             dtgvEntradas.Name = "dtgvEntradas";
             dtgvEntradas.RowTemplate.Height = 25;
             dtgvEntradas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvEntradas.Size = new Size(893, 263);
+            dtgvEntradas.Size = new Size(893, 257);
             dtgvEntradas.TabIndex = 35;
             dtgvEntradas.CellContentClick += dtgvEntradas_CellContentClick;
             // 
@@ -534,14 +536,25 @@
             panel3.Size = new Size(474, 97);
             panel3.TabIndex = 12;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.LavenderBlush;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 443);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(893, 92);
+            dataGridView1.TabIndex = 39;
+            // 
             // FormInventario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(910, 593);
-            Controls.Add(panel4);
             Controls.Add(dtgvEntradas);
+            Controls.Add(panel4);
             Controls.Add(btnGestionArticulos);
             Controls.Add(btnLimpirForm);
             Controls.Add(btnEliminarInventario);
@@ -552,6 +565,7 @@
             Controls.Add(btnRegistrar);
             Controls.Add(btnGuardarCambios);
             Controls.Add(btnEliminarRegistro);
+            Controls.Add(dataGridView1);
             Name = "FormInventario";
             Text = "Control_Inventario [Inventario]";
             Load += FormInventario_Load;
@@ -565,6 +579,7 @@
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -608,5 +623,6 @@
         private ComboBox cmbTipoBusqueda;
         private FontAwesome.Sharp.IconButton iBtnBuscar;
         private Label label3;
+        private DataGridView dataGridView1;
     }
 }

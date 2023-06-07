@@ -32,3 +32,4 @@ C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inven
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.genruntimeconfig.cache
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\ref\Control_Inventario.dll
 C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.FormArticulos.resources
+C:\Users\erney\Desktop\Control_Inventario\obj\Debug\net6.0-windows\Control_Inventario.FormInformes.resources
